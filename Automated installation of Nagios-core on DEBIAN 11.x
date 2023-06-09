@@ -16,13 +16,7 @@
 
 # Prérequis avoir installé au paravant sudo
 #
-# Script created by Marc Malet
-# Script created on 28-05-2023
-# Csript modified the 28-05-2023
-# Script open: GPLv3
-#
-# Syntaxe: root> chmod a+x auto-install_nagios4.sh
-# Syntaxe: root> ./auto-install_nagios4.sh
+
 #
 # /usr/local/nagios/bin
 # /usr/local/nagios/etc
