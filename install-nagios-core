@@ -3,7 +3,7 @@ Installation de Nagios core de manièere automatisée sur DEBIAN 11.x
 ``
 #!/bin/bash
 
-# Automated installation of Nagios on DEBIAN 8.x / 9.x / 10.x / 11.x
+# Automated installation of Nagios on DEBIAN 11.x
 #
 # Script created by Marc Malet
 # Script created on 28-05-2023
