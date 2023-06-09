@@ -14,7 +14,7 @@
 # --------------------------------------------------------
 # 
 
-# Prérequis avoir installé au paravant sudo
+# Prérequis avoir installé au paravant sudo si celui-ci n'est pas présent.
 
 # su - root
 # apt install sudo
