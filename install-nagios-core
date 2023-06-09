@@ -1,6 +1,3 @@
-Installation de Nagios core de manièere automatisée sur DEBIAN 11.x
-
-``
 #!/bin/bash
 
 # Automated installation of Nagios on DEBIAN 11.x
@@ -179,5 +176,3 @@ systemctl restart nagios.service
 rm -rf /root/nagios-*
 
 # The end...
-``
- 
