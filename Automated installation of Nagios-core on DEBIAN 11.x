@@ -15,9 +15,12 @@
 # 
 
 # Prérequis avoir installé au paravant sudo
-#
 
-#
+# su - root
+# apt install sudo
+# adduser mmalet sudo
+# init 6
+
 # /usr/local/nagios/bin
 # /usr/local/nagios/etc
 # /usr/local/nagios/libexec
