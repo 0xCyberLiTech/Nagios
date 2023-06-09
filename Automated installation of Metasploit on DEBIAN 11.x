@@ -2,7 +2,9 @@
 
 # Installation de Metaploit sur DEBIAN 11.x
 # -----------------------------------------
-# Prérequis avoir installé au paravant sudo
+# 
+
+# Prérequis avoir installé au paravant sudo si celui-ci n'est pas présent
 
 # su - root
 # apt install sudo
