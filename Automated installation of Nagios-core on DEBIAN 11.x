@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Installation automatisée de Nagios-core sur DEBIAN 11.x
-# -----------------------------------------
+# -------------------------------------------------------
 # 
 
 # Prérequis avoir installé au paravant sudo
