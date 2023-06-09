@@ -1,6 +1,10 @@
 #!/bin/bash
 
-# Automated installation of Nagios on DEBIAN 11.x
+# Installation automatisée de Nagios-core sur DEBIAN 11.x
+# -----------------------------------------
+# 
+
+# Prérequis avoir installé au paravant sudo
 #
 # Script created by Marc Malet
 # Script created on 28-05-2023
