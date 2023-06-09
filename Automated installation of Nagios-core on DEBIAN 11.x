@@ -1,4 +1,14 @@
-#!/bin/bash
+#!/bin/sh
+
+# --------------------------------------------------------
+# Marc MALET
+# Script créé le 09-06-2023 
+# Script modifié le 09-06-2023
+#
+# Automated_installation_of_Nagios-core_on_DEBIAN_11_x.sh
+# chmod +x Automated_installation_of_Nagios-core_on_DEBIAN_11_x.sh
+#
+# --------------------------------------------------------
 
 # Installation automatisée de Nagios-core sur DEBIAN 11.x
 # -------------------------------------------------------
