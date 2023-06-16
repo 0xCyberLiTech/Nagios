@@ -12,14 +12,17 @@
 
 | Cat | Thème |
 |------|------| 
-| - A. | [Présentation de Nagios.](#présentation-nagios) |
+| - A. | [Présentation de Nagios.](#présentation-de-nagios) |
 | - B. | [Préparation avant l'installation de Nagios.](#préparation-avant-installation-de-nagios) |
 | - C. | [Téléchargement de Nagios-core dans sa dernère version stable.](#téléchargement-de-nagios-core) |
 | - D. | [Compilation de Nagios-core.](#compilation-de-Nagios-core) |
 | - E. | [Mise à jour manuelle de Portainer.](#mise-à-jour-manuelle-de-portainer) |
 | - F. | [Mise à jour automatisée de Portainer.](#mise-à-jour-automatisée-de-portainer) |
 
-<a name="présentation"></a>
+<a name="préparation-avant-installation-de-nagios"></a>
+Présentation de Nagios.
+--------------------------------------------------------
+
 
 
 
