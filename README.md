@@ -12,22 +12,28 @@
 
 | Cat | Thème |
 |------|------| 
-| - A. | [Installation manuelle de Docker.](#installation-manuelle-de-docker) |
-| - B. | [Installation automatisée de Docker.](#installation-automatisée-de-docker) |
-| - C. | [Installation manuelle de Portainer.](#installation-manuelle-de-portainer) |
-| - D. | [Installation automatisée de Portainer.](#installation-automatisée-de-portainer) |
+| - A. | [Présentation de Nagios.](#présentation-nagios) |
+| - B. | [Préparation avant l'installation de Nagios.](#préparation-avant-installation-de-nagios) |
+| - C. | [Téléchargement de Nagios-core dans sa dernère version stable.](#téléchargement-de-nagios-core) |
+| - D. | [Compilation de Nagios-core.](#compilation-de-Nagios-core) |
 | - E. | [Mise à jour manuelle de Portainer.](#mise-à-jour-manuelle-de-portainer) |
 | - F. | [Mise à jour automatisée de Portainer.](#mise-à-jour-automatisée-de-portainer) |
 
+<a name="présentation"></a>
 
 
+
+<a name="préparation-avant-installation-de-nagios"></a>
 ## Se positionner vers /opt/, puis créer le sous dossier nagios.
 
 ```
-cd /opt/ && mkdir nagios
+cd /opt/
+mkdir nagios/
+cd nagios/
+pwd /opt/nagios/
 ```
 ## Conditions préalables.
-## Effectuez ces étapes pour installer les packages prérequis.
+## Installation des packages prérequis.
 --------------------------------------------------------
 ```
 apt install -y \
@@ -48,7 +54,7 @@ apt install -y \
        libssl-dev \
        curl
 ```
-
+<a name="téléchargement-de-nagios-core"></a>
 ## Téléchargement de Nagios-core dans sa dernère version stable.
 --------------------------------------------------------
 ```
@@ -59,6 +65,7 @@ wget https://github.com/NagiosEnterprises/nagioscore/releases/download/$NAGIOS_V
 ```
 tar -xvzf $NAGIOS_VER.tar.gz
 ```
+<a name="compilation-de-nagios-core"></a>
 ## Compilation
 --------------------------------------------------------
 ```
