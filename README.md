@@ -10,7 +10,7 @@
 ```
 # Les étapes suivantes sont à réalisées :
 
-| Cat | Thème |
+| Cat | Etapes |
 |------|------| 
 | - A. | [Présentation de Nagios.](#présentation-de-nagios) |
 | - B. | [Préparation avant l'installation de Nagios.](#préparation-avant-installation-de-nagios) |
@@ -20,14 +20,12 @@
 | - F. | [Mise à jour automatisée de Portainer.](#mise-à-jour-automatisée-de-portainer) |
 
 <a name="préparation-avant-installation-de-nagios"></a>
-Présentation de Nagios.
---------------------------------------------------------
+## -A. Présentation de Nagios.
 
-
-
+bla bla
 
 <a name="préparation-avant-installation-de-nagios"></a>
-## Se positionner vers /opt/, puis créer le sous dossier nagios.
+## - B. Se positionner vers /opt/, puis créer le sous dossier nagios.
 
 ```
 cd /opt/
@@ -58,7 +56,7 @@ apt install -y \
        curl
 ```
 <a name="téléchargement-de-nagios-core"></a>
-## Téléchargement de Nagios-core dans sa dernère version stable.
+## - C. Téléchargement de Nagios-core dans sa dernère version stable.
 --------------------------------------------------------
 ```
 NAGIOS_VER=$(curl -s https://api.github.com/repos/NagiosEnterprises/nagioscore/releases/latest|grep tag_name | cut -d '"' -f 4)
