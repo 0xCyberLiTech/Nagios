@@ -7,13 +7,13 @@
 /usr/local/nagios/share
 /usr/local/nagios/var
 ```
-Se positionner vers /opt/, puis créer le sous dossier nagios.
+## Se positionner vers /opt/, puis créer le sous dossier nagios.
 
 ```
 cd /opt/ && mkdir nagios
 ```
-Conditions préalables.
-Effectuez ces étapes pour installer les packages prérequis.
+## Conditions préalables.
+## Effectuez ces étapes pour installer les packages prérequis.
 --------------------------------------------------------
 ```
 apt install -y \
@@ -35,24 +35,24 @@ apt install -y \
        curl
 ```
 
-Téléchargement de Nagios-core dans sa dernère version stable.
+## Téléchargement de Nagios-core dans sa dernère version stable.
 --------------------------------------------------------
 ```
 NAGIOS_VER=$(curl -s https://api.github.com/repos/NagiosEnterprises/nagioscore/releases/latest|grep tag_name | cut -d '"' -f 4)
 wget https://github.com/NagiosEnterprises/nagioscore/releases/download/$NAGIOS_VER/$NAGIOS_VER.tar.gz
 ```
-Extraire l'archive
+## Extraire l'archive
 ```
 tar -xvzf $NAGIOS_VER.tar.gz
 ```
-Compilation
+## Compilation
 --------------------------------------------------------
 ```
 cd $NAGIOS_VER
 ./configure --with-httpd-conf=/etc/apache2/sites-enabled
 make all
 ```
-Créer un utilisateur et un groupe
+## Créer un utilisateur et un groupe
 Cela crée l'utilisateur et le groupe nagios. 
 L'utilisateur www-data est également ajouté au groupe nagios.
 --------------------------------------------------------
@@ -60,73 +60,73 @@ L'utilisateur www-data est également ajouté au groupe nagios.
 make install-groups-users
 usermod -a -G nagios www-data
 ```
-Installer les binaires
+## Installer les binaires
 Cette étape installe les fichiers binaires, les CGI et les fichiers HTML.
 --------------------------------------------------------
 ```
 make install
 ```
-Installer le service / le démon
+## Installer le service / le démon
 Cela installe les fichiers de service ou de démon et les configure également pour démarrer automatiquement.
 --------------------------------------------------------
 ```
 make install-daemoninit
 ```
 
-Installer le mode de commande
+## Installer le mode de commande
 Ceci installe et configure le fichier de commande externe.
 --------------------------------------------------------
 ```
 make install-commandmode
 ```
-Installer les fichiers de configuration
-Ceci installe les fichiers de configuration *SAMPLE*. 
-Ceux-ci sont nécessaires car Nagios a besoin de certains fichiers de configuration pour lui permettre de démarrer.
+## Installer les fichiers de configuration
+### Ceci installe les fichiers de configuration *SAMPLE*. 
+### Ceux-ci sont nécessaires car Nagios a besoin de certains fichiers de configuration pour lui permettre de démarrer.
 --------------------------------------------------------
 ```
 make install-config
 ```
-Installer les fichiers de configuration Apache
-Cela installe les fichiers de configuration du serveur Web Apache et configure les paramètres Apache.
+## Installer les fichiers de configuration Apache
+### Cela installe les fichiers de configuration du serveur Web Apache et configure les paramètres Apache.
 --------------------------------------------------------
 ```
 make install-webconf
 a2enmod rewrite
 a2enmod cgi
 ```
-Conditions préalables
-Effectuez ces étapes pour installer les packages prérequis.
+## Conditions préalables
+## Effectuez ces étapes pour installer les packages prérequis.
 
-Configurer le pare-feu
+## Configurer le pare-feu
 Vous devez autoriser le trafic entrant du port 80 sur le pare-feu local afin de pouvoir accéder à l'interface Web de Nagios Core.
 ```
 iptables -I INPUT -p tcp --destination-port 80 -j ACCEPT
 apt-get install -y iptables-persistent
 Answer yes to saving existing rules
 ```
-Créer un compte utilisateur nagiosadmin
-Vous devrez créer un compte utilisateur Apache pour pouvoir vous connecter à Nagios.
+## Créer un compte utilisateur nagiosadmin
+### Vous devrez créer un compte utilisateur Apache pour pouvoir vous connecter à Nagios.
 
-La commande suivante créera un compte d'utilisateur appelé nagiosadmin et vous serez invité à fournir un mot de passe pour le compte.
+### La commande suivante créera un compte d'utilisateur appelé nagiosadmin et vous serez invité à fournir un mot de passe pour le compte.
 ```
 htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
 ```
 Service / Daemon Commands
-Démarrer le serveur Web Apache
+### Démarrer le serveur Web Apache
 
-Redirection root URL (/) to /nagios
+## Redirection root URL (/) to /nagios
 ```
 echo 'RedirectMatch ^/$ /nagios' >> /etc/apache2/apache2.conf
 systemctl restart apache2.service
 ```
-Start Service / Daemon
+## Start Service / Daemon
 ```
 systemctl start nagios.service
 ```
-Test Nagios
-Nagios est maintenant en cours d'exécution, pour le confirmer, vous devez vous connecter à l'interface Web de Nagios.
+## Test Nagios
+### Nagios est maintenant en cours d'exécution, pour le confirmer, vous devez vous connecter à l'interface Web de Nagios.
 
-Faites pointer votre navigateur Web vers l'adresse IP ou le FQDN de votre serveur Nagios Core, par exemple :
+### Faites pointer votre navigateur Web vers l'adresse IP ou le FQDN de votre serveur Nagios Core, par exemple :
 
 http://10.25.5.143/nagios
 http://core-013.domain.local/nagios
