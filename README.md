@@ -66,65 +66,67 @@ Cette étape installe les fichiers binaires, les CGI et les fichiers HTML.
 ```
 make install
 ```
-Install Service / Daemon
-This installs the service or daemon files and also configures them to start on boot.
+Installer le service / le démon
+Cela installe les fichiers de service ou de démon et les configure également pour démarrer automatiquement.
 --------------------------------------------------------
 ```
 make install-daemoninit
 ```
-Install Command Mode
-This installs and configures the external command file.
+
+Installer le mode de commande
+Ceci installe et configure le fichier de commande externe.
 --------------------------------------------------------
 ```
 make install-commandmode
 ```
-Install Configuration Files
-This installs the *SAMPLE* configuration files. These are required as Nagios needs some configuration files to allow it to start.
+Installer les fichiers de configuration
+Ceci installe les fichiers de configuration *SAMPLE*. 
+Ceux-ci sont nécessaires car Nagios a besoin de certains fichiers de configuration pour lui permettre de démarrer.
 --------------------------------------------------------
 ```
 make install-config
 ```
-Install Apache Config Files
-This installs the Apache web server configuration files and configures the Apache settings.
+Installer les fichiers de configuration Apache
+Cela installe les fichiers de configuration du serveur Web Apache et configure les paramètres Apache.
 --------------------------------------------------------
 ```
 make install-webconf
 a2enmod rewrite
 a2enmod cgi
 ```
-Prerequisites
-Perform these steps to install the pre-requisite packages.
+Conditions préalables
+Effectuez ces étapes pour installer les packages prérequis.
 
-Configure Firewall
-You need to allow port 80 inbound traffic on the local firewall so you can reach the Nagios Core web interface.
-
+Configurer le pare-feu
+Vous devez autoriser le trafic entrant du port 80 sur le pare-feu local afin de pouvoir accéder à l'interface Web de Nagios Core.
+```
 iptables -I INPUT -p tcp --destination-port 80 -j ACCEPT
 apt-get install -y iptables-persistent
 Answer yes to saving existing rules
+```
+Créer un compte utilisateur nagiosadmin
+Vous devrez créer un compte utilisateur Apache pour pouvoir vous connecter à Nagios.
 
-Create nagiosadmin User Account
-You'll need to create an Apache user account to be able to log into Nagios.
-
-The following command will create a user account called nagiosadmin and you will be prompted to provide a password for the account.
+La commande suivante créera un compte d'utilisateur appelé nagiosadmin et vous serez invité à fournir un mot de passe pour le compte.
 ```
 htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
 ```
 Service / Daemon Commands
-Start Apache Web Server
+Démarrer le serveur Web Apache
 
-Redirect root URL (/) to /nagios
+Redirection root URL (/) to /nagios
 ```
 echo 'RedirectMatch ^/$ /nagios' >> /etc/apache2/apache2.conf
 systemctl restart apache2.service
 ```
-# Start Service / Daemon
+Start Service / Daemon
 ```
 systemctl start nagios.service
 ```
 Test Nagios
-Nagios is now running, to confirm this you need to log into the Nagios Web Interface.
+Nagios est maintenant en cours d'exécution, pour le confirmer, vous devez vous connecter à l'interface Web de Nagios.
 
-Point your web browser to the ip address or FQDN of your Nagios Core server, for example:
+Faites pointer votre navigateur Web vers l'adresse IP ou le FQDN de votre serveur Nagios Core, par exemple :
 
 http://10.25.5.143/nagios
 http://core-013.domain.local/nagios
