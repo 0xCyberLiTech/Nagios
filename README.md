@@ -1,15 +1,4 @@
---------------------------------------------------------
-OxCyberLiTeck
-Script créé le 16-06-2023
-Script modifié le 16-06-2023
---------------------------------------------------------
-```
-touch Automated_installation_of_Nagios-core_on_DEBIAN_11_x.sh
-chmod +x Automated_installation_of_Nagios-core_on_DEBIAN_11_x.sh
-./Automated_installation_of_Nagios-core_on_DEBIAN_11_x.sh
-```
-Installation automatisée de Nagios-core
---------------------------------------------------------
+# Installation de Nagios-core & nagios-plugins.
 ```
 /usr/local/nagios/bin
 /usr/local/nagios/etc
@@ -18,20 +7,13 @@ Installation automatisée de Nagios-core
 /usr/local/nagios/share
 /usr/local/nagios/var
 ```
+Se positionner vers /opt/, puis créer le sous dossier nagios.
 
-GLOBALS VARIABLES COLORS :
---------------------------------------------------------
 ```
-ID=`hostname`
-DATE=$(date +%d-%m-%Y-%H-%M)
-TEMP_FOLDER='/root/temp/'
-
-mkdir -p $TEMP_FOLDER
-cd $TEMP_FOLDER
+cd /opt/ && mkdir nagios
 ```
-
-Prerequisites.
-Perform these steps to install the pre-requisite packages.
+Conditions préalables.
+Effectuez ces étapes pour installer les packages prérequis.
 --------------------------------------------------------
 ```
 apt install -y \
@@ -53,32 +35,33 @@ apt install -y \
        curl
 ```
 
-Downloading the Source nagios core
+Téléchargement de Nagios-core dans sa dernère version stable.
 --------------------------------------------------------
 ```
 NAGIOS_VER=$(curl -s https://api.github.com/repos/NagiosEnterprises/nagioscore/releases/latest|grep tag_name | cut -d '"' -f 4)
 wget https://github.com/NagiosEnterprises/nagioscore/releases/download/$NAGIOS_VER/$NAGIOS_VER.tar.gz
 ```
-Extract the tarball
+Extraire l'archive
 ```
 tar -xvzf $NAGIOS_VER.tar.gz
 ```
-Compile
+Compilation
 --------------------------------------------------------
 ```
 cd $NAGIOS_VER
 ./configure --with-httpd-conf=/etc/apache2/sites-enabled
 make all
 ```
-Create User And Group
-This creates the nagios user and group. The www-data user is also added to the nagios group.
+Créer un utilisateur et un groupe
+Cela crée l'utilisateur et le groupe nagios. 
+L'utilisateur www-data est également ajouté au groupe nagios.
 --------------------------------------------------------
 ```
 make install-groups-users
 usermod -a -G nagios www-data
 ```
-Install Binaries
-This step installs the binary files, CGIs, and HTML files.
+Installer les binaires
+Cette étape installe les fichiers binaires, les CGI et les fichiers HTML.
 --------------------------------------------------------
 ```
 make install
