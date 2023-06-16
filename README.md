@@ -1,7 +1,7 @@
-![Docker Banner](![image](https://github.com/0xCyberLiTech/Nagios/assets/136077064/42ad268b-5503-435a-ad85-7eb707eaee16)
+
 
 # Installation de Nagios-core & nagios-plugins depuis les sources.
-# Nagios sera installé vers les dossiers suivants :
+## Nagios sera installé vers les dossiers suivants :
 ```
 /usr/local/nagios/bin
 /usr/local/nagios/etc
@@ -10,7 +10,7 @@
 /usr/local/nagios/share
 /usr/local/nagios/var
 ```
-# Les étapes suivantes sont à réalisées :
+## Les étapes suivantes sont à réalisées :
 
 | Cat | Etapes |
 |------|------| 
@@ -22,12 +22,12 @@
 | - F. | [Mise à jour automatisée de Portainer.](#mise-à-jour-automatisée-de-portainer) |
 
 <a name="préparation-avant-installation-de-nagios"></a>
-## -A. Présentation de Nagios.
+### -A. Présentation de Nagios.
 
 bla bla
 
 <a name="préparation-avant-installation-de-nagios"></a>
-## - B. Se positionner vers /opt/, puis créer le sous dossier nagios.
+### - B. Se positionner vers /opt/, puis créer le sous dossier nagios.
 
 ```
 cd /opt/
@@ -35,7 +35,6 @@ mkdir nagios/
 cd nagios/
 pwd /opt/nagios/
 ```
-## Conditions préalables.
 ## Installation des packages prérequis.
 --------------------------------------------------------
 ```
