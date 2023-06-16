@@ -1,4 +1,5 @@
 # Installation de Nagios-core & nagios-plugins.
+
 ```
 /usr/local/nagios/bin
 /usr/local/nagios/etc
@@ -7,6 +8,19 @@
 /usr/local/nagios/share
 /usr/local/nagios/var
 ```
+# Les étapes suivantes sont à réalisées :
+
+| Cat | Thème |
+|------|------| 
+| - A. | [Installation manuelle de Docker.](#installation-manuelle-de-docker) |
+| - B. | [Installation automatisée de Docker.](#installation-automatisée-de-docker) |
+| - C. | [Installation manuelle de Portainer.](#installation-manuelle-de-portainer) |
+| - D. | [Installation automatisée de Portainer.](#installation-automatisée-de-portainer) |
+| - E. | [Mise à jour manuelle de Portainer.](#mise-à-jour-manuelle-de-portainer) |
+| - F. | [Mise à jour automatisée de Portainer.](#mise-à-jour-automatisée-de-portainer) |
+
+
+
 ## Se positionner vers /opt/, puis créer le sous dossier nagios.
 
 ```
