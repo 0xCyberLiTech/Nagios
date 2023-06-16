@@ -1,5 +1,5 @@
-# Installation de Nagios-core & nagios-plugins.
-
+# Installation de Nagios-core & nagios-plugins depuis les sources.
+# Nagios sera installé vers les dossiers suivants :
 ```
 /usr/local/nagios/bin
 /usr/local/nagios/etc
