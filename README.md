@@ -164,8 +164,8 @@ systemctl start nagios.service
 
 ### Faites pointer votre navigateur Web vers l'adresse IP ou le FQDN de votre serveur Nagios Core, par exemple :
 
-http://FQDN/nagios
-http://IP/nagios
+- http://FQDN/nagios
+- http://IP/nagios
 
 Vous serez invité à entrer un nom d'utilisateur et un mot de passe. Le nom d'utilisateur est nagiosadmin (vous l'avez créé lors d'une étape précédente) et le mot de passe est celui que vous avez fourni précédemment.
 
