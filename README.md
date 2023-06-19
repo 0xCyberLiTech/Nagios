@@ -196,7 +196,9 @@ apt install -y \
        libnet-snmp-perl \
        gettext
 ```
-## - C. Téléchargement de Nagios-core dans sa dernère version stable.
+<a name="téléchargement-de-nagios-plugins"></a>
+## - D. Téléchargement de Nagios-plugind dans sa dernère version stable.
+------------------------------------------------------------------------
 
 ```
 VER=$(curl -s https://api.github.com/repos/nagios-plugins/nagios-plugins/releases/latest|grep tag_name | cut -d '"' -f 4|sed 's/release-//')
@@ -206,7 +208,9 @@ wget https://github.com/nagios-plugins/nagios-plugins/releases/download/release-
 ```
 tar xvf nagios-plugins-$VER.tar.gz
 ```
-## Naviguez dans le nouveau dossier de plugins puis compilez et installez.
+<a name="téléchargement-de-nagios-plugins"></a>
+## - E .Compilation de Nagios-plugins.
+--------------------------------------
 ```
 cd nagios-plugins-$VER
 ./tools/setup
