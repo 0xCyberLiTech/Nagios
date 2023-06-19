@@ -28,14 +28,33 @@ bla bla
 
 <a name="préparation-avant-installation-de-nagios"></a>
 ### - B. Se positionner vers /opt/, puis créer le sous dossier nagios.
-
 ```
 cd /opt/
 mkdir nagios/
 cd nagios/
 pwd /opt/nagios/
 ```
-## Installation des packages prérequis.
+### Mettre en place les dépots contrib et non-free dans "/etc/apt/sources.list"
+
+### Sauvegarder le sources.list avant de le modifier.
+```
+cp /etc/apt/sources.list{,.back}
+```
+### Puis, si besoin, réactiver l'ancien sources.list
+```
+cp -f /etc/apt/sources.list{.back,}
+```
+### sources.list - ajout des dépôts contrib et non-free
+```
+apt install software-properties-common
+add-apt-repository contrib
+add-apt-repository non-free
+```
+### Mettre à jour les paquets
+```
+apt update && apt upgrade -y
+```
+### Installation des packages prérequis.
 --------------------------------------------------------
 ```
 apt install -y \
