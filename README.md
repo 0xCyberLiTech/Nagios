@@ -1,5 +1,5 @@
 # Installation de Nagios-core & nagios-plugins sur DEBIAN 11 & 12.
-# Celle-ci est effectuée depuis les sources.
+## Celle-ci est effectuée depuis les sources.
 ## Nagios sera installé vers les dossiers suivants :
 ```
 /usr/local/nagios/bin
