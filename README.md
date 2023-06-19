@@ -22,6 +22,7 @@
 
 <a name="préparation-avant-installation-de-nagios"></a>
 ### - A. Se positionner vers /opt/, puis créer le sous dossier nagios.
+----------------------------------------------------------------------
 ```
 cd /opt/
 mkdir nagios/
