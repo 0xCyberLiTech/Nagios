@@ -1,6 +1,5 @@
-
-
-# Installation de Nagios-core & nagios-plugins depuis les sources.
+# Installation de Nagios-core & nagios-plugins sur DEBIAN 11 & 12.
+# Celle-ci est effectuée depuis les sources.
 ## Nagios sera installé vers les dossiers suivants :
 ```
 /usr/local/nagios/bin
@@ -154,10 +153,14 @@ systemctl start nagios.service
 http://10.25.5.143/nagios
 http://core-013.domain.local/nagios
 
-You will be prompted for a username and password. The username is nagiosadmin (you created it in a previous step) and the password is what you provided earlier.
+Vous serez invité à entrer un nom d'utilisateur et un mot de passe. Le nom d'utilisateur est nagiosadmin (vous l'avez créé lors d'une étape précédente) et le mot de passe est celui que vous avez fourni précédemment.
 
-Once you have logged in you are presented with the Nagios interface. Congratulations you have installed Nagios Core.
+Une fois connecté, l'interface de Nagios s'affiche. Félicitations, vous avez installé Nagios Core.
 
+
+# Installation de nagios-plugin
+## Installation des packages prérequis.
+--------------------------------------------------------
 ```
 cd $TEMP_FOLDER
 
@@ -179,16 +182,17 @@ apt install -y \
        libnet-snmp-perl \
        gettext
 ```
-Downloading The Source
+## - C. Téléchargement de Nagios-core dans sa dernère version stable.
+
 ```
 VER=$(curl -s https://api.github.com/repos/nagios-plugins/nagios-plugins/releases/latest|grep tag_name | cut -d '"' -f 4|sed 's/release-//')
 wget https://github.com/nagios-plugins/nagios-plugins/releases/download/release-$VER/nagios-plugins-$VER.tar.gz
 ```
-Extract the tarball
+## Extraire l'archive
 ```
 tar xvf nagios-plugins-$VER.tar.gz
 ```
-Navigate into the new plugins folder then compile and install.
+## Naviguez dans le nouveau dossier de plugins puis compilez et installez.
 ```
 cd nagios-plugins-$VER
 ./tools/setup
@@ -196,23 +200,22 @@ cd nagios-plugins-$VER
 make
 make install
 ```
-Test Plugins
-Point your web browser to the ip address or FQDN of your Nagios Core server, for example:
+## Test Plugins
+## Faites pointer votre navigateur Web vers l'adresse IP ou le FQDN de votre serveur Nagios Core, par exemple :
 
 http://10.25.5.143/nagios
 http://core-013.domain.local/nagios
 
-Service / Daemon Commands
-start Apache Web Server
+## Commandes service/démon
+## démarrer le serveur Web Apache
 ```
 systemctl restart apache2.service
 ```
-restart Service / Daemon
+## restart Service / Daemon
 ```
 systemctl restart nagios.service
 ```
-Purge
+## Purge
 ```
 rm -rf $TEMP_FOLDER
 ```
-# The end...
