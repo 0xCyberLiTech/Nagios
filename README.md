@@ -77,7 +77,7 @@ apt install -y \
 NAGIOS_VER=$(curl -s https://api.github.com/repos/NagiosEnterprises/nagioscore/releases/latest|grep tag_name | cut -d '"' -f 4)
 wget https://github.com/NagiosEnterprises/nagioscore/releases/download/$NAGIOS_VER/$NAGIOS_VER.tar.gz
 ```
-### Extraire l'archive
+### Extraire l'archive $NAGIOS_VER.tar.gz.
 ```
 tar -xvzf $NAGIOS_VER.tar.gz
 ```
@@ -172,14 +172,11 @@ Vous serez invité à entrer un nom d'utilisateur et un mot de passe. Le nom d'u
 Une fois connecté, l'interface de Nagios s'affiche. Félicitations, vous avez installé Nagios Core.
 
 
-## Installation de nagios-plugin
-### Installation des packages prérequis.
+## Installation de nagios-plugins
+### Effectuez ces étapes pour installer les packages prérequis.
 --------------------------------------------------------
 ```
 cd $TEMP_FOLDER
-
-### Prerequisites
-### Perform these steps to install the pre-requisite packages.
 apt install -y \
        autoconf \
        gcc \
@@ -204,7 +201,7 @@ apt install -y \
 VER=$(curl -s https://api.github.com/repos/nagios-plugins/nagios-plugins/releases/latest|grep tag_name | cut -d '"' -f 4|sed 's/release-//')
 wget https://github.com/nagios-plugins/nagios-plugins/releases/download/release-$VER/nagios-plugins-$VER.tar.gz
 ```
-## Extraire l'archive
+## Extraire l'archive nagios-plugins-$VER.tar.gz.
 ```
 tar xvf nagios-plugins-$VER.tar.gz
 ```
