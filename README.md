@@ -17,6 +17,8 @@
 | - B. | [Préparation avant l'installation de Nagios.](#préparation-avant-installation-de-nagios) |
 | - C. | [Téléchargement de Nagios-core dans sa dernère version stable.](#téléchargement-de-nagios-core) |
 | - D. | [Compilation de Nagios-core.](#compilation-de-Nagios-core) |
+| - C. | [Téléchargement de Nagios-plugins dans sa dernère version stable.](#téléchargement-de-nagios-core) |
+| - D. | [Compilation de Nagios-core.](#compilation-de-Nagios-core) |
 | - E. | [Mise à jour manuelle de Portainer.](#mise-à-jour-manuelle-de-portainer) |
 | - F. | [Mise à jour automatisée de Portainer.](#mise-à-jour-automatisée-de-portainer) |
 
@@ -67,7 +69,7 @@ wget https://github.com/NagiosEnterprises/nagioscore/releases/download/$NAGIOS_V
 tar -xvzf $NAGIOS_VER.tar.gz
 ```
 <a name="compilation-de-nagios-core"></a>
-## Compilation
+## - D. Compilation de Nagios-core
 --------------------------------------------------------
 ```
 cd $NAGIOS_VER
