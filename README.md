@@ -197,7 +197,7 @@ apt install -y \
        gettext
 ```
 <a name="téléchargement-de-nagios-plugins"></a>
-## - D. Téléchargement de Nagios-plugind dans sa dernère version stable.
+## - D. Téléchargement de Nagios-plugins dans sa dernère version stable.
 ------------------------------------------------------------------------
 
 ```
@@ -208,7 +208,7 @@ wget https://github.com/nagios-plugins/nagios-plugins/releases/download/release-
 ```
 tar xvf nagios-plugins-$VER.tar.gz
 ```
-<a name="téléchargement-de-nagios-plugins"></a>
+<a name="compilation-de-Nagios-plugins"></a>
 ## - E .Compilation de Nagios-plugins.
 --------------------------------------
 ```
