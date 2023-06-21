@@ -4,10 +4,21 @@
 #### Il est donc nécessaire de déclarer ce fichier dans /usr/local/nagios/etc/nagios.cfg
 
 ```
+Exemple :
+
+cfg_file=/usr/local/nagios/etc/objects/serveurs-linux.cfg
+#cfg_file=/usr/local/nagios/etc/objects/serveurs-windows.cfg
+#cfg_file=/usr/local/nagios/etc/objects/routeurs.cfg
+#cfg_file=/usr/local/nagios/etc/objects/imprimantes.cfg
+
 cfg_file=/usr/local/nagios/etc/objects/hostextinfo.cfg
 ```
-
 #### Nous allons pouvoir créer celui-ci dans /usr/local/nagios/etc/objects/
+
+```
+touch /usr/local/nagios/etc/objects/hostextinfo.cfg
+```
+
 
 ```
 # --------------------------------------------------------------------------
