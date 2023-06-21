@@ -1,5 +1,5 @@
 
-## Exemple concernant le fichier /usr/local/nagios/etc/hostextinfo.cfg
+## Exemple concernant le fichier /usr/local/nagios/etc/objects/hostextinfo.cfg
 
 #### Introduction :
 
