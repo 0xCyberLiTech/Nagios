@@ -15,17 +15,17 @@
 <a name="préparation-avant-installation-de-nagios"></a>
 
 ### - A. préparation-avant-installation-de-nagios
-####   - Création du sous dossier /opt/nagios/.
+#### - Création du sous dossier /opt/nagios/.
 ```
 mkdir -p /opt/nagios
 cd /opt/nagios
 ```
-#### Mettre à jour les paquets.
+#### - Mettre à jour les paquets.
 ```
 apt update && apt upgrade -y
 ```
-#### Conditions préalables.
-#### Effectuez ces étapes pour installer les packages prérequis.
+#### - Conditions préalables.
+#### - Effectuez ces étapes pour installer les packages prérequis.
 ```
 apt install -y \
        autoconf \
@@ -45,35 +45,34 @@ apt install -y \
        libssl-dev \
        curl
 ```
-
-#### Téléchargement du noyau source de nagios.
+#### - Téléchargement du noyau source de nagios.
 ```
 NAGIOS_VER=$(curl -s https://api.github.com/repos/NagiosEnterprises/nagioscore/releases/latest|grep tag_name | cut -d '"' -f 4)
 wget https://github.com/NagiosEnterprises/nagioscore/releases/download/$NAGIOS_VER/$NAGIOS_VER.tar.gz
 ```
-#### Extraire l'archive $NAGIOS_VER.tar.gz.
+#### - Extraire l'archive $NAGIOS_VER.tar.gz.
 ```
 tar -xvzf $NAGIOS_VER.tar.gz
 ```
-#### Compilation de Nagios-core.
+#### - Compilation de Nagios-core.
 ```
 cd $NAGIOS_VER
 ./configure --with-httpd-conf=/etc/apache2/sites-enabled
 make all
 ```
-#### Créer un utilisateur et un groupe.
-#### Cela crée l'utilisateur et le groupe nagios. L'utilisateur www-data est également ajouté au groupe nagios.
+#### - Créer un utilisateur et un groupe.
+#### - Cela crée l'utilisateur et le groupe nagios. L'utilisateur www-data est également ajouté au groupe nagios.
 ```
 make install-groups-users
 usermod -a -G nagios www-data
 ```
-#### Installer les binaires.
-#### Cette étape installe les fichiers binaires, les CGI et les fichiers HTML.
+#### - Installer les binaires.
+#### - Cette étape installe les fichiers binaires, les CGI et les fichiers HTML.
 ```
 make install
 ```
-#### Install Service / Daemon
-#### Cela installe les fichiers de service ou de démon et les configure également pour démarrer automatiquement ...
+#### - Install Service / Daemon
+#### - Cela installe les fichiers de service ou de démon et les configure également pour démarrer automatiquement ...
 ```
 make install-daemoninit
 ```
