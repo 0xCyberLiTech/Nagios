@@ -41,7 +41,7 @@ cfg_file=/usr/local/nagios/etc/objects/localhost.cfg
 # Definitions for monitoring a network printer
 #cfg_file=/usr/local/nagios/etc/objects/printer.cfg
 ```
-Nous pouvons constater que les lignes suivantes de base ne sont pas commentées (#) :
+#### Nous pouvons constater que les lignes suivantes de base ne sont pas commentées (#) :
 
 ```
 cfg_file=/usr/local/nagios/etc/objects/commands.cfg
@@ -94,7 +94,7 @@ chown nagios:nagios /usr/local/nagios/etc/objects/imprimantes.cfg
 # --------------------------------------------------------------------------
 /usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
 ```
-Exemple, configuration injectée dans le fichier /usr/local/nagios/etc/objects/serveurs-linux.cfg
+#### Exemple, configuration injectée dans le fichier /usr/local/nagios/etc/objects/serveurs-linux.cfg
 
 ```
 # --------------------------------------------------------------------------
