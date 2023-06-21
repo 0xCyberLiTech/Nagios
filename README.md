@@ -54,7 +54,6 @@ apt install -y \
 <a name="téléchargement-de-nagios-core"></a>
 
 ## B. Téléchargement des sources de Nagios-core dans sa dernère version stable.
--------------------------------------------------------------------------------
 
 ```
 NAGIOS_VER=$(curl -s https://api.github.com/repos/NagiosEnterprises/nagioscore/releases/latest|grep tag_name | cut -d '"' -f 4)
@@ -70,7 +69,6 @@ tar -xvzf $NAGIOS_VER.tar.gz
 <a name="compilation-de-Nagios-core"></a>
 
 ## - C. Compilation depuis les sources de Nagios-core.
-------------------------------------------------------
 
 ```
 cd $NAGIOS_VER
@@ -198,7 +196,6 @@ apt install -y \
 <a name="téléchargement-de-nagios-plugins"></a>
 
 ## - D. Téléchargement des sources de Nagios-plugins dans sa dernère version stable.
--------------------------------------------------------------------------------------
 
 ```
 VER=$(curl -s https://api.github.com/repos/nagios-plugins/nagios-plugins/releases/latest|grep tag_name | cut -d '"' -f 4|sed 's/release-//')
@@ -213,7 +210,6 @@ tar xvf nagios-plugins-$VER.tar.gz
 <a name="compilation-de-Nagios-plugins"></a>
 
 ## - E. Compilation depuis les sources de Nagios-plugins.
-----------------------------------------------------------
 
 ```
 cd nagios-plugins-$VER
@@ -226,7 +222,6 @@ make install
 <a name="test-de-Nagios"></a>
 
 ## - F. Tester à nouveau Nagios.
----------------------------------
 #### Faites pointer votre navigateur Web vers l'adresse IP ou le FQDN de votre serveur Nagios Core, par exemple :
 
 ```
@@ -255,7 +250,6 @@ rm -rf $TEMP_FOLDER
 <a name="installation-automatisée-Nagios-core"></a>
 
 ## - G. [Installation automatisée de Nagios-core & Nagios-plugins.
-----------------------------------------------------------------------
 #### Via un fichier bash.
 [Disponible ici](install-nagios.sh)
 ```
