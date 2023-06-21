@@ -47,7 +47,7 @@ cfg_file=/usr/local/nagios/etc/objects/localhost.cfg
 # Definitions for monitoring a network printer
 #cfg_file=/usr/local/nagios/etc/objects/printer.cfg
 ```
-Nous pouvons constater que les lignes suivantes de base ne sont pas igniorées :
+Nous pouvons constater que les lignes suivantes de base ne sont pas commentées (#) :
 
 ```
 cfg_file=/usr/local/nagios/etc/objects/commands.cfg
@@ -168,7 +168,7 @@ define service {
 }
 
 ```
-#### Si il n'y a pas d'erreur sur cette nouvelle configuration (serveurs-linux.cfg), redémarrer Nagios.
+#### Si il n'y a pas d'erreur sur cette nouvelle configuration (serveurs-linux.cfg), redémarrer Nagios pour la prise en compte de cette configuration.
 
 ```
 systemctl restart nagios.service
