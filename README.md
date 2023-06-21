@@ -9,8 +9,8 @@
 | - B. | [Téléchargement des sources de Nagios-core dans sa dernère version stable.](#téléchargement-de-nagios-core) |
 | - C. | [Compilation depuis les sources de Nagios-core.](#compilation-de-Nagios-core) |
 | - D. | [Téléchargement des sources de Nagios-plugins dans sa dernère version stable.](#téléchargement-de-nagios-plugins) |
-| - E. | [Compilation de Nagios-plugins.](#compilation-de-Nagios-plugins) |
-| - F. | [Test de Nagios.](#test-de-Nagios) |
+| - E. | [Compilation depuis les sources de Nagios-plugins.](#compilation-de-Nagios-plugins) |
+| - F. | [Tester à nouveau Nagios.](#test-de-Nagios) |
 
 <a name="préparation-avant-installation-de-nagios"></a>
 ### - A. Préparation avant l'installation de Nagios-core.
@@ -117,12 +117,11 @@ htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
 ```
 #### - Commandes service / démon
 #### - Démarrer le serveur Web Apache.
-
 #### - Redirect root URL (/) to /nagios
 ```
 echo 'RedirectMatch ^/$ /nagios' >> /etc/apache2/apache2.conf
 systemctl restart apache2.service
-
+```
 #### - Démarrer Service / Daemon Nagios.
 ```
 systemctl start nagios.service
@@ -142,6 +141,9 @@ http://FQDN/nagios
 ### - Installation de Nagios-plugins dans ca dernière version stable.
 #### - Conditions préalables.
 #### - Effectuez ces étapes pour installer les packages prérequis.
+```
+cd /opt/nagios/
+```
 ```
 apt install -y \
        autoconf \
@@ -170,7 +172,9 @@ wget https://github.com/nagios-plugins/nagios-plugins/releases/download/release-
 ```
 tar xvf nagios-plugins-$VER.tar.gz
 ```
-#### - Naviguez dans le nouveau dossier de plugins puis compilez et installez.
+<a name="compilation-de-Nagios-plugins"></a>
+### - E. Compilation depuis les sources de Nagios-plugins.
+----------------------------------------------------------
 ```
 cd nagios-plugins-$VER
 ./tools/setup
@@ -178,18 +182,20 @@ cd nagios-plugins-$VER
 make
 make install
 ```
-#### - Test Nagios-plugins
+<a name="test-de-Nagios"></a>
+### - F. Tester à nouveau Nagios.
+---------------------------------
 #### - Faites pointer votre navigateur Web vers l'adresse IP ou le FQDN de votre serveur Nagios Core, par exemple :
 ```
 http://mon-ip/nagios
 http://FQDN/nagios
 ```
-#### - Démarrer / Daemon Commands.
+#### - Démarrer / Daemon Apache2.
 #### - Démarrer le serveur Web Apache.
 ```
 systemctl restart apache2.service
 ```
-#### - Démarrer Service / Daemon.
+#### - Redémarrer / Daemon Nagios.
 ```
 systemctl restart nagios.service
 ```
