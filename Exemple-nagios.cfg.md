@@ -10,7 +10,6 @@
 # NAGIOS.CFG - Exemple de fichier de configuration principal pour Nagios 4.x.x
 # --------------------------------------------------------------------------
 
-
 # LOG FILE
 # This is the main log file where service and host events are logged
 # for historical purposes.  This should be the first option specified
@@ -112,8 +111,9 @@ define host {
     host_name               srv-linux-01
     alias                   srv-linux-01
     address                 10.111.111.111
+    hostgroups              grp-serveurs-linux
+    #parents
 }
-
 
 # --------------------------------------------------------------------------
 # HOST DEFINITION - srv-linux-02
@@ -125,18 +125,19 @@ define host {
     host_name               srv-linux-02
     alias                   srv-linux-02
     address                 10.111.111.222
+    hostgroups              grp-serveurs-linux
+    #parents
 }
 
 # --------------------------------------------------------------------------
-# HOST GROUP DEFINITION - grp-linux-servers
+# HOST GROUP DEFINITION - grp-serveurs-linux
 # --------------------------------------------------------------------------
 # Define an optional hostgroup for Linux machines
 
 define hostgroup {
 
-    hostgroup_name          grp-linux-servers
-    alias                   group Linux Servers
-    members                 srv-linux-02, srv-linux-02
+    hostgroup_name          grp-serveurs-linux
+    alias                   Groupe serveurs linux
 }
 
 # --------------------------------------------------------------------------
@@ -148,6 +149,10 @@ define service {
     host_name               srv-linux-01
     service_description     PING
     check_command           check_ping!100.0,20%!500.0,60%
+    #check_command          check_ping!900.0,40%!1500.0,70%
+    #check_command          check_ping!3000.0,80%!5000.0,100%
+    check_interval          5
+    retry_interval          1
 }
 
 # --------------------------------------------------------------------------
@@ -159,6 +164,10 @@ define service {
     host_name               srv-linux-02
     service_description     PING
     check_command           check_ping!100.0,20%!500.0,60%
+    #check_command          check_ping!900.0,40%!1500.0,70%
+    #check_command          check_ping!3000.0,80%!5000.0,100%
+    check_interval          5
+    retry_interval          1
 }
 
 ```
