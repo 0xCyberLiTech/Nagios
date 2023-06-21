@@ -30,7 +30,7 @@ apt update && apt upgrade -y
 ```
 ## Installation de Nagios-core dans sa dernière version stable.
 #### Conditions préalables.
-Effectuez ces étapes pour installer les packages prérequis.
+Effectuer ces étapes pour installer les packages prérequis.
 ```
 apt install -y \
        autoconf \
@@ -171,7 +171,7 @@ http://FQDN/nagios
 #### Une fois connecté, l'interface de Nagios s'affiche. Félicitations, vous avez installé Nagios Core.
 ## Installation de Nagios-plugins dans sa dernière version stable.
 #### Conditions préalables.
-#### Effectuez ces étapes pour installer les packages prérequis.
+#### Effectuer ces étapes pour installer les packages prérequis.
 
 ```
 cd /opt/nagios/
