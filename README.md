@@ -25,7 +25,7 @@ cd /opt/nagios
 ```
 apt update && apt upgrade -y
 ```
-### - Installation de Nagios-core dans ca dernière version stable.
+### - Installation de Nagios-core dans sa dernière version stable.
 #### - Conditions préalables.
 #### - Effectuez ces étapes pour installer les packages prérequis.
 ```
