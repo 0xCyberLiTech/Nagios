@@ -1,16 +1,11 @@
-###############################################################################
-# TEMPLATES.CFG - SAMPLE OBJECT TEMPLATES
-#
-#
-# NOTES: This config file provides you with some example object definition
-#        templates that are referred by other host, service, contact, etc.
-#        definitions in other config files.
-#
-#        You don't need to keep these definitions in a separate file from your
-#        other object definitions.  This has been done just to make things
-#        easier to understand.
-#
-###############################################################################
+## Exemple concernant le fichier /usr/local/nagios/etc/objects/templates.cfg
+```
+# --------------------------------------------------------------------------
+# 0xCyberLiTech
+# Date de création : le 21-06-2023
+# Date de modification : le 21-06-2023
+# TEMPLATES.CFG - Exemple de fichier de configuration pour Nagios
+# --------------------------------------------------------------------------
 
 
 
