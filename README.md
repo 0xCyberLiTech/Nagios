@@ -6,15 +6,15 @@
 | Cat | Etapes |
 |------|------| 
 | - A. | [Préparation avant l'installation de Nagios.](#préparation-avant-installation-de-nagios) |
-| - B. | [Téléchargement de Nagios-core dans sa dernère version stable.](#téléchargement-de-nagios-core) |
-| - C. | [Compilation de Nagios-core.](#compilation-de-Nagios-core) |
-| - D. | [Téléchargement de Nagios-plugins dans sa dernère version stable.](#téléchargement-de-nagios-plugins) |
+| - B. | [Téléchargement des sources de Nagios-core dans sa dernère version stable.](#téléchargement-de-nagios-core) |
+| - C. | [Compilation depuis les sources de Nagios-core.](#compilation-de-Nagios-core) |
+| - D. | [Téléchargement des sources de Nagios-plugins dans sa dernère version stable.](#téléchargement-de-nagios-plugins) |
 | - E. | [Compilation de Nagios-plugins.](#compilation-de-Nagios-plugins) |
 | - F. | [Test de Nagios.](#test-de-Nagios) |
 
 <a name="préparation-avant-installation-de-nagios"></a>
-
 ### - A. Préparation avant l'installation de Nagios-core.
+---------------------------------------------------------
 #### - Création du sous dossier /opt/nagios/.
 ```
 mkdir -p /opt/nagios
@@ -46,7 +46,9 @@ apt install -y \
        libssl-dev \
        curl
 ```
-#### - Téléchargement du noyau source de nagios.
+<a name="téléchargement-de-nagios-core"></a>
+### - B. Téléchargement des sources de Nagios-core dans sa dernère version stable.
+----------------------------------------------------------------------------------
 ```
 NAGIOS_VER=$(curl -s https://api.github.com/repos/NagiosEnterprises/nagioscore/releases/latest|grep tag_name | cut -d '"' -f 4)
 wget https://github.com/NagiosEnterprises/nagioscore/releases/download/$NAGIOS_VER/$NAGIOS_VER.tar.gz
@@ -55,7 +57,9 @@ wget https://github.com/NagiosEnterprises/nagioscore/releases/download/$NAGIOS_V
 ```
 tar -xvzf $NAGIOS_VER.tar.gz
 ```
-#### - Compilation de Nagios-core.
+<a name="compilation-de-Nagios-core"></a>
+### - C. Compilation depuis les sources de Nagios-core.
+-------------------------------------------------------
 ```
 cd $NAGIOS_VER
 ./configure --with-httpd-conf=/etc/apache2/sites-enabled
@@ -155,7 +159,9 @@ apt install -y \
        libnet-snmp-perl \
        gettext
 ```
-#### Téléchargement de la source.
+<a name="téléchargement-de-nagios-plugins"></a>
+### - D. Téléchargement des sources de Nagios-plugins dans sa dernère version stable.
+-------------------------------------------------------------------------------------
 ```
 VER=$(curl -s https://api.github.com/repos/nagios-plugins/nagios-plugins/releases/latest|grep tag_name | cut -d '"' -f 4|sed 's/release-//')
 wget https://github.com/nagios-plugins/nagios-plugins/releases/download/release-$VER/nagios-plugins-$VER.tar.gz
