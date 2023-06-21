@@ -81,6 +81,7 @@ cfg_file=/usr/local/nagios/etc/objects/serveurs-linux.cfg
 #cfg_file=/usr/local/nagios/etc/objects/routeurs.cfg
 #cfg_file=/usr/local/nagios/etc/objects/imprimantes.cfg
 ```
+#### Ne pas oublier de sauvegarder votre fichier /usr/local/nagios/etc/nagios.cfg
 #### Positionner les droits qui conviennent sur ces fichiers.
 
 ```
@@ -89,8 +90,6 @@ chown nagios:nagios /usr/local/nagios/etc/objects/serveurs-windows.cfg
 chown nagios:nagios /usr/local/nagios/etc/objects/routeurs.cfg
 chown nagios:nagios /usr/local/nagios/etc/objects/imprimantes.cfg
 ```
-
-#### Ne pas oublier de sauvegarder votre fichier /usr/local/nagios/etc/nagios.cfg
 #### Tester dabord votre nouvelle configuration que vous avez saisie dans le fichier /usr/local/nagios/etc/objects/serveurs-linux.cfg avec la commande suivante :
 
 ```
@@ -168,4 +167,9 @@ define service {
     check_command           check_ping!100.0,20%!500.0,60%
 }
 
+```
+#### Si il n'y a pas d'erreur sur cette nouvelle configuration (serveurs-linux.cfg), redémarrer Nagios.
+
+```
+systemctl restart nagios.service
 ```
