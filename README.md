@@ -11,7 +11,7 @@
 | - D. | [Téléchargement des sources de Nagios-plugins dans sa dernère version stable.](#téléchargement-de-nagios-plugins) |
 | - E. | [Compilation depuis les sources de Nagios-plugins.](#compilation-de-Nagios-plugins) |
 | - F. | [Tester à nouveau Nagios.](#test-de-Nagios) |
-| - G. | [Installation automatisée de de Nagios-core & Nagios-plugins.](installation-automatisée-Nagios-core) |
+| - G. | [Installation automatisée de Nagios-core & Nagios-plugins.](installation-automatisée-Nagios-core) |
 
 
 <a name="préparation-avant-installation-de-nagios"></a>
@@ -205,7 +205,7 @@ systemctl restart nagios.service
 rm -rf $TEMP_FOLDER
 
 <a name="installation-automatisée-Nagios-core"></a>
-### - G. [Installation automatisée de de Nagios-core & Nagios-plugins.
+### - G. [Installation automatisée de Nagios-core & Nagios-plugins.
 ----------------------------------------------------------------------
 #### Via un fichier bash.
 [Disponible ici](install-nagios.sh)
