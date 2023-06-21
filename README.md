@@ -94,7 +94,7 @@ make install
 ```
 
 #### Install Service / Daemon
-#### Cela installe les fichiers de service ou de démon et les configure également pour démarrer automatiquement ...
+#### Cela installe les fichiers de service ou de deamon et les configure également pour démarrer automatiquement ...
 
 ```
 make install-daemoninit
@@ -124,7 +124,7 @@ a2enmod cgi
 ```
 
 #### Conditions préalables
-#### Effectuez ces étapes pour installer les packages prérequis.
+#### Effectuer ces étapes pour installer les packages prérequis.
 
 #### Configurer le pare-feu.
 #### Vous devez autoriser le trafic entrant du port 80 sur le pare-feu local afin de pouvoir accéder à l'interface Web de Nagios Core.
@@ -134,7 +134,7 @@ a2enmod cgi
 #apt-get install -y iptables-persistent
 ```
 
-#### Répondez oui à l'enregistrement des règles existantes.
+#### Répondre oui à l'enregistrement des règles existantes.
 #### Créer un compte utilisateur nagiosadmin.
 #### Vous devrez créer un compte utilisateur Apache pour pouvoir vous connecter à Nagios.
 #### La commande suivante créera un compte d'utilisateur appelé nagiosadmin et vous serez invité à fournir un mot de passe pour le compte.
@@ -143,7 +143,7 @@ a2enmod cgi
 htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
 ```
 
-#### Commandes service / démon
+#### Commandes service / deamon
 #### Démarrer le serveur Web Apache.
 #### Redirect root URL (/) to /nagios
 
