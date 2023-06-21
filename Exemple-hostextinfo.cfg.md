@@ -1,3 +1,7 @@
+
+## Exemple concernant le fichier /usr/local/nagios/etc/hostextinfo.cfg
+
+```
 # --------------------------------------------------------------------------
 # 0xCyberLiTech
 # Date de création : le 21-06-2023
@@ -33,3 +37,7 @@ define hostextinfo{
     #2d_coords                  400,600
     #3d_coords                  100.0,50.0,75.0
 }
+```
+
+
+
