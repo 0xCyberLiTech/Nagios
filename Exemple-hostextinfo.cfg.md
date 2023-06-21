@@ -1,6 +1,14 @@
 
 ## Exemple concernant le fichier /usr/local/nagios/etc/hostextinfo.cfg
 
+Il est donc nécessaire de déclarer ce fichier dans /usr/local/nagios/etc/nagios.cfg
+
+```
+cfg_file=/usr/local/nagios/etc/objects/hostextinfo.cfg
+```
+
+Nous allons pouvoir créer celui-ci dans /usr/local/nagios/etc/objects/
+
 ```
 # --------------------------------------------------------------------------
 # 0xCyberLiTech
