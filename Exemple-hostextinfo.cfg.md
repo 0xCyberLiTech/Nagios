@@ -3,9 +3,9 @@
 
 #### Introduction :
 
-#### De base, toutes les stations de la cartographie ont pour symbole un point d'interrogation. 
+#### De base, toutes les stations de la cartographie ont pour symbole un point. 
 #### Nagios permet d'afficher une icône différente pour chaque station. 
-#### Les images et icônes proposées par défaut se trouve dans /usr/share/nagios/images/logos/base pour ce qui est de l'installation automatique de la version 1.3 (sur fedora core 2).
+#### Les images et icônes proposées par défaut se trouve dans /usr/local/nagios/.........
 #### Vous pouvez bien entendu rajouter autant de logos que vous voulez ; Certains sites devraient vous permettre de trouver votre bonheur.
 #### Une fois que nous savons ça, il ne reste plus qu’à renseigner le fichier hostextinfo.cfg.
 
