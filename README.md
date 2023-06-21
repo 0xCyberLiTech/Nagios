@@ -24,8 +24,9 @@ cd /opt/nagios
 ```
 apt update && apt upgrade -y
 ```
-# Conditions préalables.
-# Effectuez ces étapes pour installer les packages prérequis.
+#### Conditions préalables.
+#### Effectuez ces étapes pour installer les packages prérequis.
+```
 apt install -y \
        autoconf \
        build-essential \
@@ -43,11 +44,13 @@ apt install -y \
        openssl \
        libssl-dev \
        curl
+```
 
-# Downloading the Source nagios core
+#### Téléchargement du noyau source de nagios
+```
 NAGIOS_VER=$(curl -s https://api.github.com/repos/NagiosEnterprises/nagioscore/releases/latest|grep tag_name | cut -d '"' -f 4)
 wget https://github.com/NagiosEnterprises/nagioscore/releases/download/$NAGIOS_VER/$NAGIOS_VER.tar.gz
-
+```
 # Extract the tarball
 tar -xvzf $NAGIOS_VER.tar.gz
 
