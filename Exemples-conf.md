@@ -57,8 +57,10 @@ cfg_file=/usr/local/nagios/etc/objects/templates.cfg
 cfg_file=/usr/local/nagios/etc/objects/localhost.cfg
 ```
 #### Donc ces fichiers existent vers /usr/local/nagios/etc/objects/
-#### Il est donc possible de déclarer de nouveaux fichiers dans /usr/local/nagios/etc/nagios.cfg
+#### Il est donc possible de déclarer arbitrairement de nouveaux fichiers dans /usr/local/nagios/etc/nagios.cfg
 ```
+Exemples :
+
 cfg_file=/usr/local/nagios/etc/objects/serveurs-linux.cfg
 cfg_file=/usr/local/nagios/etc/objects/serveurs-windows.cfg
 cfg_file=/usr/local/nagios/etc/objects/routeurs.cfg
@@ -90,7 +92,7 @@ chown nagios:nagios /usr/local/nagios/etc/objects/serveurs-windows.cfg
 chown nagios:nagios /usr/local/nagios/etc/objects/routeurs.cfg
 chown nagios:nagios /usr/local/nagios/etc/objects/imprimantes.cfg
 ```
-#### Tester dabord votre nouvelle configuration que vous avez saisie dans le fichier /usr/local/nagios/etc/objects/serveurs-linux.cfg avec la commande suivante :
+#### Tester dabord votre nouvelle configuration que vous avez saisie dans le fichier /usr/local/nagios/etc/objects/serveurs-linux.cfg à l'aide de la commande suivante :
 
 ```
 /usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
@@ -107,10 +109,8 @@ Exemple, configuration injectée dans le fichier /usr/local/nagios/etc/objects/s
 # --------------------------------------------------------------------------
 
 # --------------------------------------------------------------------------
-# HOST DEFINITION
+# HOST DEFINITION - srv-linux-01
 # --------------------------------------------------------------------------
-# Define a host for the local machine
-
 define host {
 
     use                     linux-server
@@ -120,6 +120,10 @@ define host {
     address                 10.111.111.111
 }
 
+
+# --------------------------------------------------------------------------
+# HOST DEFINITION - srv-linux-02
+# --------------------------------------------------------------------------
 define host {
 
     use                     linux-server
@@ -130,9 +134,8 @@ define host {
 }
 
 # --------------------------------------------------------------------------
-# HOST GROUP DEFINITION
+# HOST GROUP DEFINITION - grp-linux-servers
 # --------------------------------------------------------------------------
-
 # Define an optional hostgroup for Linux machines
 
 define hostgroup {
@@ -142,13 +145,9 @@ define hostgroup {
     members                 srv-linux-02, srv-linux-02
 }
 
-
 # --------------------------------------------------------------------------
-# SERVICE DEFINITIONS
+# SERVICE DEFINITION - PING - srv-linux-01
 # --------------------------------------------------------------------------
-
-# Define a service to "ping" the srv-linux-01
-
 define service {
 
     use                     generic-service
@@ -157,8 +156,9 @@ define service {
     check_command           check_ping!100.0,20%!500.0,60%
 }
 
-# Define a service to "ping" the srv-linux-02
-
+# --------------------------------------------------------------------------
+# SERVICE DEFINITION - PING - srv-linux-02
+# --------------------------------------------------------------------------
 define service {
 
     use                     generic-service
