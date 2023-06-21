@@ -7,12 +7,7 @@
 # 0xCyberLiTech
 # Date de création : le 21-06-2023
 # Date de modification : le 21-06-2023
-#
 # NAGIOS.CFG - Exemple de fichier de configuration principal pour Nagios 4.x.x
-#
-# Lire la documentation pour plus d'informations sur cette configuration
-# déposer. J'ai fourni quelques commentaires ici, mais les choses ne sont peut-être pas si
-# clair sans autre explication.
 # --------------------------------------------------------------------------
 
 
@@ -104,8 +99,7 @@ Exemple, configuration injectée dans le fichier /usr/local/nagios/etc/objects/s
 # 0xCyberLiTech
 # Date de création : le 21-06-2023
 # Date de modification : le 21-06-2023
-#
-# SERVEURS-LINUX.CFG - Exemple de fichier de configuration 
+# SERVEURS-LINUX.CFG - /usr/local/nagios/etc/objects/
 # --------------------------------------------------------------------------
 
 # --------------------------------------------------------------------------
