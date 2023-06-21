@@ -1,7 +1,6 @@
 
 
 ## Exemple concernant le fichier /usr/local/nagios/etc/nagios.cfg
-
 ```
 # --------------------------------------------------------------------------
 # 0xCyberLiTech
@@ -42,7 +41,6 @@ cfg_file=/usr/local/nagios/etc/objects/localhost.cfg
 #cfg_file=/usr/local/nagios/etc/objects/printer.cfg
 ```
 #### Nous pouvons constater que les lignes suivantes de base ne sont pas commentées (#) :
-
 ```
 cfg_file=/usr/local/nagios/etc/objects/commands.cfg
 cfg_file=/usr/local/nagios/etc/objects/contacts.cfg
@@ -59,10 +57,8 @@ cfg_file=/usr/local/nagios/etc/objects/serveurs-linux.cfg
 cfg_file=/usr/local/nagios/etc/objects/serveurs-windows.cfg
 cfg_file=/usr/local/nagios/etc/objects/routeurs.cfg
 cfg_file=/usr/local/nagios/etc/objects/imprimantes.cfg
-
 ```
 #### A partir de cet instant il faudra créer ceux-ci vers /usr/local/nagios/etc/objects/
-
 ```
 touch /usr/local/nagios/etc/objects/serveurs-linux.cfg
 touch /usr/local/nagios/etc/objects/serveurs-windows.cfg
@@ -70,7 +66,6 @@ touch /usr/local/nagios/etc/objects/routeurs.cfg
 touch /usr/local/nagios/etc/objects/imprimantes.cfg
 ```
 #### Je vous conseille de mettre en service qu'un fichier à la fois.
-
 ```
 cfg_file=/usr/local/nagios/etc/objects/serveurs-linux.cfg
 #cfg_file=/usr/local/nagios/etc/objects/serveurs-windows.cfg
@@ -79,23 +74,13 @@ cfg_file=/usr/local/nagios/etc/objects/serveurs-linux.cfg
 ```
 #### Ne pas oublier de sauvegarder votre fichier /usr/local/nagios/etc/nagios.cfg
 #### Positionner les droits qui conviennent sur ces fichiers.
-
 ```
 chown nagios:nagios /usr/local/nagios/etc/objects/serveurs-linux.cfg
 chown nagios:nagios /usr/local/nagios/etc/objects/serveurs-windows.cfg
 chown nagios:nagios /usr/local/nagios/etc/objects/routeurs.cfg
 chown nagios:nagios /usr/local/nagios/etc/objects/imprimantes.cfg
 ```
-#### Tester dabord votre nouvelle configuration que vous avez saisie dans le fichier /usr/local/nagios/etc/objects/serveurs-linux.cfg à l'aide de la commande suivante :
-
-```
-# --------------------------------------------------------------------------
-# - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG -
-# --------------------------------------------------------------------------
-/usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
-```
 #### Exemple, configuration injectée dans le fichier /usr/local/nagios/etc/objects/serveurs-linux.cfg
-
 ```
 # --------------------------------------------------------------------------
 # 0xCyberLiTech
@@ -172,10 +157,15 @@ define service {
     check_interval          5
     retry_interval          1
 }
-
+```
+#### Tester dabord votre nouvelle configuration que vous avez saisie dans le fichier /usr/local/nagios/etc/objects/serveurs-linux.cfg à l'aide de la commande suivante :
+```
+# --------------------------------------------------------------------------
+# - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG -
+# --------------------------------------------------------------------------
+/usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
 ```
 #### Si il n'y a pas d'erreur sur cette nouvelle configuration (serveurs-linux.cfg), redémarrer Nagios pour la prise en compte de cette configuration.
-
 ```
 systemctl restart nagios.service
 ```
