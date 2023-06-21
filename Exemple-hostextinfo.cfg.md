@@ -62,6 +62,12 @@ define hostextinfo{
     #3d_coords                  100.0,50.0,75.0
 }
 ```
-
+#### Tester dabord votre nouvelle configuration que vous avez saisie dans le fichier /usr/local/nagios/etc/objects/hostextinfo.cfg à l'aide de la commande suivante :
+```
+# --------------------------------------------------------------------------
+# - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG -
+# --------------------------------------------------------------------------
+/usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
+```
 
 
