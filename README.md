@@ -155,37 +155,40 @@ apt install -y \
        libnet-snmp-perl \
        gettext
 ```
-# Téléchargement de la source.
+#### Téléchargement de la source.
+```
 VER=$(curl -s https://api.github.com/repos/nagios-plugins/nagios-plugins/releases/latest|grep tag_name | cut -d '"' -f 4|sed 's/release-//')
 wget https://github.com/nagios-plugins/nagios-plugins/releases/download/release-$VER/nagios-plugins-$VER.tar.gz
-
-# Extract the tarball
+```
+#### Extraire l'archive nagios-plugins-$VER.tar.gz.
+```
 tar xvf nagios-plugins-$VER.tar.gz
-
-# Navigate into the new plugins folder then compile and install.
+```
+#### - Naviguez dans le nouveau dossier de plugins puis compilez et installez.
+```
 cd nagios-plugins-$VER
 ./tools/setup
 ./configure
 make
 make install
-
-# Test Plugins
-# Point your web browser to the ip address or FQDN of your Nagios Core server, for example:
-
-# http://10.25.5.143/nagios
-# http://core-013.domain.local/nagios
-
-# Service / Daemon Commands
-# start Apache Web Server
+```
+#### - Test Nagios-plugins
+#### - Faites pointer votre navigateur Web vers l'adresse IP ou le FQDN de votre serveur Nagios Core, par exemple :
+```
+http://mon-ip/nagios
+http://FQDN/nagios
+```
+#### - Démarrer / Daemon Commands.
+#### - Démarrer le serveur Web Apache.
+```
 systemctl restart apache2.service
-
-# restart Service / Daemon
+```
+#### - Démarrer Service / Daemon.
+```
 systemctl restart nagios.service
-
-# Purge
+```
+#### - Purge
 rm -rf $TEMP_FOLDER
-
-# The end...
 
 
 
