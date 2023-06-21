@@ -1,15 +1,5 @@
 # Installation de Nagios-core & nagios-plugins sur DEBIAN 11 & 12.
 # Celle-ci est effectuée depuis les sources.
-## Nagios sera installé vers les dossiers suivants :
-
-```
-/usr/local/nagios/bin
-/usr/local/nagios/etc
-/usr/local/nagios/libexec
-/usr/local/nagios/sbin
-/usr/local/nagios/share
-/usr/local/nagios/var
-```
 
 ## Les étapes suivantes sont à réalisées :
 
@@ -24,47 +14,18 @@
 
 <a name="préparation-avant-installation-de-nagios"></a>
 
-### - A. Se positionner vers /opt/, puis créer le sous dossier nagios.
-----------------------------------------------------------------------
-
+### - A. préparation-avant-installation-de-nagios
+####   - Création du sous dossier /opt/nagios/.
 ```
-cd /opt/
-mkdir nagios/
-cd nagios/
-pwd /opt/nagios/
+mkdir -p /opt/nagios
+cd /opt/nagios
 ```
-
-### Mettre en place les dépots contrib et non-free dans "/etc/apt/sources.list"
-
-### Sauvegarder le sources.list avant de le modifier.
-
-```
-cp /etc/apt/sources.list{,.back}
-```
-
-### Puis, si besoin, réactiver l'ancien sources.list.
-
-```
-cp -f /etc/apt/sources.list{.back,}
-```
-### sources.list - ajout des dépôts contrib et non-free.
-
-```
-apt install software-properties-common
-add-apt-repository contrib
-add-apt-repository non-free
-```
-
-### Mettre à jour les paquets.
-
+#### Mettre à jour les paquets.
 ```
 apt update && apt upgrade -y
 ```
-
-### Installation des packages prérequis.
-----------------------------------------
-
-```
+# Conditions préalables.
+# Effectuez ces étapes pour installer les packages prérequis.
 apt install -y \
        autoconf \
        build-essential \
@@ -82,140 +43,90 @@ apt install -y \
        openssl \
        libssl-dev \
        curl
-```
 
-<a name="téléchargement-de-nagios-core"></a>
-
-## - B. Téléchargement de Nagios-core dans sa dernère version stable.
----------------------------------------------------------------------
-
-```
+# Downloading the Source nagios core
 NAGIOS_VER=$(curl -s https://api.github.com/repos/NagiosEnterprises/nagioscore/releases/latest|grep tag_name | cut -d '"' -f 4)
 wget https://github.com/NagiosEnterprises/nagioscore/releases/download/$NAGIOS_VER/$NAGIOS_VER.tar.gz
-```
 
-### Extraire l'archive $NAGIOS_VER.tar.gz.
-
-```
+# Extract the tarball
 tar -xvzf $NAGIOS_VER.tar.gz
-```
 
-<a name="compilation-de-nagios-core"></a>
-
-## - C. Compilation de Nagios-core.
---------------------------------------------------------
-
-```
+# Compile
 cd $NAGIOS_VER
 ./configure --with-httpd-conf=/etc/apache2/sites-enabled
 make all
-```
 
-### Créer un utilisateur et un groupe. 
-L'utilisateur www-data est également ajouté au groupe nagios.
---------------------------------------------------------
-
-```
+# Create User And Group
+# This creates the nagios user and group. The www-data user is also added to the nagios group.
 make install-groups-users
 usermod -a -G nagios www-data
-```
 
-### Installer les binaires
-Cette étape installe les fichiers binaires, les CGI et les fichiers HTML.
---------------------------------------------------------
-
-```
+# Install Binaries
+# This step installs the binary files, CGIs, and HTML files.
 make install
-```
 
-### Installer le service / le démon
-Cela installe les fichiers de service ou de démon et les configure également pour démarrer automatiquement.
---------------------------------------------------------
-
-```
+# Install Service / Daemon
+# This installs the service or daemon files and also configures them to start on boot.
 make install-daemoninit
-```
 
-### Installer le mode de commande
-Ceci installe et configure le fichier de commande externe.
---------------------------------------------------------
-
-```
+# Install Command Mode
+# This installs and configures the external command file.
 make install-commandmode
-```
 
-### Installer les fichiers de configuration
-### Ceci installe les fichiers de configuration *SAMPLE*. 
-### Ceux-ci sont nécessaires car Nagios a besoin de certains fichiers de configuration pour lui permettre de démarrer.
---------------------------------------------------------
-
-```
+# Install Configuration Files
+# This installs the *SAMPLE* configuration files. These are required as Nagios needs some configuration files to allow it to start.
 make install-config
-```
 
-### Installer les fichiers de configuration Apache
-### Cela installe les fichiers de configuration du serveur Web Apache et configure les paramètres Apache.
---------------------------------------------------------
-
-```
+# Install Apache Config Files
+# This installs the Apache web server configuration files and configures the Apache settings.
 make install-webconf
 a2enmod rewrite
 a2enmod cgi
-```
 
-### Conditions préalables
-### Effectuez ces étapes pour installer les packages prérequis.
+# Prerequisites
+# Perform these steps to install the pre-requisite packages.
 
-### Configurer le pare-feu
-### Vous devez autoriser le trafic entrant du port 80 sur le pare-feu local afin de pouvoir accéder à l'interface Web de Nagios Core.
+# Configure Firewall
+# You need to allow port 80 inbound traffic on the local firewall so you can reach the Nagios Core web interface.
 
-```
-iptables -I INPUT -p tcp --destination-port 80 -j ACCEPT
-apt-get install -y iptables-persistent
-Answer yes to saving existing rules
-```
+#iptables -I INPUT -p tcp --destination-port 80 -j ACCEPT
+#apt-get install -y iptables-persistent
+# Answer yes to saving existing rules
 
-### Créer un compte utilisateur nagiosadmin
-### Vous devrez créer un compte utilisateur Apache pour pouvoir vous connecter à Nagios.
+# Create nagiosadmin User Account
+# You'll need to create an Apache user account to be able to log into Nagios.
 
-### La commande suivante créera un compte d'utilisateur appelé nagiosadmin et vous serez invité à fournir un mot de passe pour le compte.
+# The following command will create a user account called nagiosadmin and you will be prompted to provide a password for the account.
 
-```
 htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
-```
 
-### Redirection root URL (/) to /nagios
-### Démarrer le serveur Web Apache
+# Service / Daemon Commands
+# Start Apache Web Server
 
-```
+# Redirect root URL (/) to /nagios
 echo 'RedirectMatch ^/$ /nagios' >> /etc/apache2/apache2.conf
+
 systemctl restart apache2.service
-```
 
-### Start Service / Daemon
-
-```
+# Start Service / Daemon
 systemctl start nagios.service
-```
 
-### Test Nagios
-### Nagios est maintenant en cours d'exécution, pour le confirmer, vous devez vous connecter à l'interface Web de Nagios.
+# Test Nagios
+# Nagios is now running, to confirm this you need to log into the Nagios Web Interface.
 
-### Faites pointer votre navigateur Web vers l'adresse IP ou le FQDN de votre serveur Nagios Core, par exemple :
+# Point your web browser to the ip address or FQDN of your Nagios Core server, for example:
 
-- http://FQDN/nagios
-- http://IP/nagios
+# http://10.25.5.143/nagios
+# http://core-013.domain.local/nagios
 
-### Vous serez invité à entrer un nom d'utilisateur et un mot de passe. Le nom d'utilisateur est nagiosadmin (vous l'avez créé lors d'une étape précédente) et le mot de passe est celui que vous avez fourni précédemment.
+# You will be prompted for a username and password. The username is nagiosadmin (you created it in a previous step) and the password is what you provided earlier.
 
-Une fois connecté, l'interface de Nagios s'affiche. Félicitations, vous avez installé Nagios Core.
+# Once you have logged in you are presented with the Nagios interface. Congratulations you have installed Nagios Core.
 
-## Installation de nagios-plugins
-### Effectuez ces étapes pour installer les packages prérequis.
----------------------------------------------------------------
-
-```
 cd $TEMP_FOLDER
+
+# Prerequisites
+# Perform these steps to install the pre-requisite packages.
 apt install -y \
        autoconf \
        gcc \
@@ -231,51 +142,39 @@ apt install -y \
        snmp \
        libnet-snmp-perl \
        gettext
-```
-<a name="téléchargement-de-nagios-plugins"></a>
 
-## - D. Téléchargement de Nagios-plugins dans sa dernère version stable.
-------------------------------------------------------------------------
-
-```
+# Downloading The Source
 VER=$(curl -s https://api.github.com/repos/nagios-plugins/nagios-plugins/releases/latest|grep tag_name | cut -d '"' -f 4|sed 's/release-//')
 wget https://github.com/nagios-plugins/nagios-plugins/releases/download/release-$VER/nagios-plugins-$VER.tar.gz
-```
 
-### Extraire l'archive nagios-plugins-$VER.tar.gz.
-
-```
+# Extract the tarball
 tar xvf nagios-plugins-$VER.tar.gz
-```
 
-<a name="compilation-de-Nagios-plugins"></a>
-
-## - E .Compilation de Nagios-plugins.
---------------------------------------
-
-```
+# Navigate into the new plugins folder then compile and install.
 cd nagios-plugins-$VER
 ./tools/setup
 ./configure
 make
 make install
-```
 
-## Test Plugins
-## Faites pointer votre navigateur Web vers l'adresse IP ou le FQDN de votre serveur Nagios Core, par exemple :
+# Test Plugins
+# Point your web browser to the ip address or FQDN of your Nagios Core server, for example:
 
-http://10.25.5.143/nagios
-http://core-013.domain.local/nagios
+# http://10.25.5.143/nagios
+# http://core-013.domain.local/nagios
 
-## démarrer le serveur Web Apache.
-```
+# Service / Daemon Commands
+# start Apache Web Server
 systemctl restart apache2.service
-```
-## restart Service / Daemon
-```
+
+# restart Service / Daemon
 systemctl restart nagios.service
-```
-## Purge
-```
+
+# Purge
 rm -rf $TEMP_FOLDER
-```
+
+# The end...
+
+
+
+
