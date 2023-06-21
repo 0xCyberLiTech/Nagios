@@ -18,7 +18,7 @@ cfg_file=/usr/local/nagios/etc/objects/hostextinfo.cfg
 ```
 touch /usr/local/nagios/etc/objects/hostextinfo.cfg
 ```
-
+#### 
 
 ```
 # --------------------------------------------------------------------------
