@@ -18,6 +18,11 @@ cfg_file=/usr/local/nagios/etc/objects/hostextinfo.cfg
 ```
 touch /usr/local/nagios/etc/objects/hostextinfo.cfg
 ```
+#### Nous allons repositionner les droits qui conviennent sur ce fichier.
+
+```
+chown nagios:nagios /usr/local/nagios/etc/objects/hostextinfo.cfg
+```
 #### 
 
 ```
