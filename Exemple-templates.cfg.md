@@ -7,13 +7,9 @@
 # TEMPLATES.CFG - Exemple de fichier de configuration pour Nagios
 # --------------------------------------------------------------------------
 
-
-
-###############################################################################
-#
+# --------------------------------------------------------------------------
 # CONTACT TEMPLATES
-#
-###############################################################################
+# --------------------------------------------------------------------------
 
 # Generic contact definition template
 # This is NOT a real contact, just a template!
@@ -30,13 +26,9 @@ define contact {
     register                        0                       ; DON'T REGISTER THIS DEFINITION - ITS NOT A REAL CONTACT, JUST A TEMPLATE!
 }
 
-
-
-###############################################################################
-#
+# --------------------------------------------------------------------------
 # HOST TEMPLATES
-#
-###############################################################################
+# --------------------------------------------------------------------------
 
 # Generic host definition template
 # This is NOT a real host, just a template!
@@ -53,8 +45,6 @@ define host {
     notification_period             24x7                    ; Send host notifications at any time
     register                        0                       ; DON'T REGISTER THIS DEFINITION - ITS NOT A REAL HOST, JUST A TEMPLATE!
 }
-
-
 
 # Linux host definition template
 # This is NOT a real host, just a template!
@@ -163,26 +153,6 @@ define host {
     register                        0
 }
 
-
-
-
-# Define a template for ant-dect that we can reuse
-define host {
-    name                            generic-ant-dect
-    use                             generic-host
-    check_period                    24x7
-    check_interval                  5
-    retry_interval                  1
-    max_check_attempts              10
-    check_command                   check-host-alive
-    notification_period             24x7
-    notification_interval           30
-    notification_options            d,r
-    contact_groups                  admins
-    register                        0
-}
-
-
 # Define a template for vlans that we can reuse
 define host {
     name                            generic-vlan
@@ -247,11 +217,9 @@ define host {
     register                        0
 }
 
-###############################################################################
-#
+# --------------------------------------------------------------------------
 # SERVICE TEMPLATES
-#
-###############################################################################
+# --------------------------------------------------------------------------
 
 # Generic service definition template
 # This is NOT a real service, just a template!
@@ -282,8 +250,6 @@ define service {
     register                        0                       ; DON'T REGISTER THIS DEFINITION - ITS NOT A REAL SERVICE, JUST A TEMPLATE!
 }
 
-
-
 # Local service definition template
 # This is NOT a real service, just a template!
 
@@ -296,4 +262,4 @@ define service {
     retry_interval                  1                       ; Re-check the service every minute until a hard state can be determined
     register                        0                       ; DONT REGISTER THIS DEFINITION - ITS NOT A REAL SERVICE, JUST A TEMPLATE!
 }
-
+```
