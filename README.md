@@ -169,7 +169,7 @@ http://FQDN/nagios
 
 #### Vous serez invité à entrer un nom d'utilisateur et un mot de passe. Le nom d'utilisateur est nagiosadmin (vous l'avez créé lors d'une étape précédente) et le mot de passe est celui que vous avez fourni précédemment.
 #### Une fois connecté, l'interface de Nagios s'affiche. Félicitations, vous avez installé Nagios Core.
-## Installation de Nagios-plugins dans ca dernière version stable.
+## Installation de Nagios-plugins dans sa dernière version stable.
 #### Conditions préalables.
 #### Effectuez ces étapes pour installer les packages prérequis.
 
