@@ -6,7 +6,7 @@
 ##### De base, tous les hosts de la cartographie ont pour symbole un point. 
 ##### Nagios permet d'afficher une icône différente pour chaque hosts. 
 ##### Les images et icônes proposées par défaut se trouve dans /usr/local/nagios/share/images/icons.
-##### Vous pouvez bien entendu rajouter autant de logos que vous voulez ; Certains sites devraient vous permettre de trouver votre bonheur.
+##### Vous pouvez bien entendu rajouter autant de logos que vous voulez. Certains sites devraient vous permettre de trouver votre bonheur.
 ##### Une fois que nous savons ça, il ne reste plus qu’à renseigner le fichier hostextinfo.cfg.
 
 #### Il est donc nécessaire de déclarer ce fichier dans /usr/local/nagios/etc/nagios.cfg
@@ -76,14 +76,14 @@ define hostextinfo{
     #3d_coords                  100.0,50.0,75.0
 }
 ```
-#### Tester dabord votre nouvelle configuration que vous avez saisie dans le fichier /usr/local/nagios/etc/objects/hostextinfo.cfg à l'aide de la commande suivante :
+#### Nous allons tester notre nouvelle configuration que nous avons saisie dans le fichier /usr/local/nagios/etc/objects/hostextinfo.cfg à l'aide de la commande suivante :
 ```
 # --------------------------------------------------------------------------
 # - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG -
 # --------------------------------------------------------------------------
 /usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
 ```
-#### Si il n'y a pas d'erreur sur cette nouvelle configuration (hostextinfo.cfg), redémarrer Nagios pour la prise en compte de cette configuration.
+#### Si il n'y a pas d'erreur sur cette nouvelle configuration (hostextinfo.cfg), redémarrer Nagios pour la prise en compte de cette nouvelle configuration.
 ```
 systemctl restart nagios.service
 ```
