@@ -10,8 +10,9 @@ cfg_file=/usr/local/nagios/etc/objects/serveurs-linux.cfg
 #cfg_file=/usr/local/nagios/etc/objects/serveurs-windows.cfg
 #cfg_file=/usr/local/nagios/etc/objects/routeurs.cfg
 #cfg_file=/usr/local/nagios/etc/objects/imprimantes.cfg
-
+# --------------------------------------------------------------------------
 cfg_file=/usr/local/nagios/etc/objects/hostextinfo.cfg
+# --------------------------------------------------------------------------
 ```
 #### Nous allons pouvoir créer celui-ci dans /usr/local/nagios/etc/objects/
 
