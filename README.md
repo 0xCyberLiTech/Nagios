@@ -14,7 +14,7 @@
 
 <a name="préparation-avant-installation-de-nagios"></a>
 
-### - A. préparation-avant-installation-de-nagios
+### - A. Préparation avant installation de Nagios-core.
 #### - Création du sous dossier /opt/nagios/.
 ```
 mkdir -p /opt/nagios
