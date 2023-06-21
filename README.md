@@ -1,7 +1,7 @@
 # Installation de Nagios-core & nagios-plugins sur DEBIAN 11 & 12.
-# Celle-ci est effectuée depuis les sources.
+### Celle-ci est effectuée depuis les sources.
 
-## Les étapes suivantes sont à réalisées :
+## Les étapes suivantes sont à réaliser :
 
 | Cat | Etapes |
 |------|------| 
@@ -12,22 +12,22 @@
 | - E. | [Compilation depuis les sources de Nagios-plugins.](#compilation-de-Nagios-plugins) |
 | - F. | [Tester à nouveau Nagios.](#test-de-Nagios) |
 | - G. | [Installation automatisée de Nagios-core & Nagios-plugins.](#installation-automatisée-Nagios-core) |
-
-<a name="préparation-avant-installation-de-nagios"></a>
-### - A. Préparation avant l'installation de Nagios-core.
 ---------------------------------------------------------
-#### - Création du sous dossier /opt/nagios/.
+<a name="préparation-avant-installation-de-nagios"></a>
+## A. Préparation avant l'installation de Nagios-core.
+
+#### Création du sous dossier /opt/nagios/.
 ```
 mkdir -p /opt/nagios
 cd /opt/nagios
 ```
-#### - Mettre à jour les paquets.
+#### Mettre à jour les paquets.
 ```
 apt update && apt upgrade -y
 ```
-### - Installation de Nagios-core dans sa dernière version stable.
-#### - Conditions préalables.
-#### - Effectuez ces étapes pour installer les packages prérequis.
+## Installation de Nagios-core dans sa dernière version stable.
+#### Conditions préalables.
+Effectuez ces étapes pour installer les packages prérequis.
 ```
 apt install -y \
        autoconf \
@@ -48,7 +48,7 @@ apt install -y \
        curl
 ```
 <a name="téléchargement-de-nagios-core"></a>
-### - B. Téléchargement des sources de Nagios-core dans sa dernère version stable.
+## B. Téléchargement des sources de Nagios-core dans sa dernère version stable.
 ----------------------------------------------------------------------------------
 ```
 NAGIOS_VER=$(curl -s https://api.github.com/repos/NagiosEnterprises/nagioscore/releases/latest|grep tag_name | cut -d '"' -f 4)
