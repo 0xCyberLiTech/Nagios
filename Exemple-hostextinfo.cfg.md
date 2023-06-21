@@ -33,10 +33,12 @@ chown nagios:nagios /usr/local/nagios/etc/objects/hostextinfo.cfg
 # HOSTEXTINFO.CFG - Exemple de fichier de configuration pour Nagios
 # --------------------------------------------------------------------------
 
-
+# --------------------------------------------------------------------------
+# HOSTEXTINFO DEFINITION - srv-linux-01
+# --------------------------------------------------------------------------
 define hostextinfo{
 
-    host_name                   serveur-linux-01
+    host_name                   srv-linux-01
     notes                       (1) Serveur Linux
     #notes_url                  https://10.111.111.111:8443
     #action_url                 https://10.111.111.111:8444
@@ -48,9 +50,12 @@ define hostextinfo{
     #3d_coords                  100.0,50.0,75.0
 }
 
+# --------------------------------------------------------------------------
+# HOSTEXTINFO DEFINITION - srv-linux-02
+# --------------------------------------------------------------------------
 define hostextinfo{
 
-    host_name                   serveur-linux-02
+    host_name                   srv-linux-02
     notes                       (2) Serveur Linux
     #notes_url                  https://10.111.111.222:8443
     #action_url                 https://10.111.111.222:8444
