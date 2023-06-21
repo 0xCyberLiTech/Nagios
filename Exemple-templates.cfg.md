@@ -10,7 +10,6 @@
 # --------------------------------------------------------------------------
 # CONTACT TEMPLATES
 # --------------------------------------------------------------------------
-
 # Generic contact definition template
 # This is NOT a real contact, just a template!
 
@@ -29,7 +28,6 @@ define contact {
 # --------------------------------------------------------------------------
 # HOST TEMPLATES
 # --------------------------------------------------------------------------
-
 # Generic host definition template
 # This is NOT a real host, just a template!
 
@@ -220,7 +218,6 @@ define host {
 # --------------------------------------------------------------------------
 # SERVICE TEMPLATES
 # --------------------------------------------------------------------------
-
 # Generic service definition template
 # This is NOT a real service, just a template!
 
