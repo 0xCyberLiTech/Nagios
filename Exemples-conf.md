@@ -58,7 +58,7 @@ cfg_file=/usr/local/nagios/etc/objects/templates.cfg
 cfg_file=/usr/local/nagios/etc/objects/localhost.cfg
 ```
 #### Donc ces fichiers existent vers /usr/local/nagios/etc/objects/
-#### Il est donc possible de déclarer de nouveaux fichiers, exemples :
+#### Il est donc possible de déclarer de nouveaux fichiers dans /usr/local/nagios/etc/nagios.cfg
 ```
 cfg_file=/usr/local/nagios/etc/objects/serveurs-linux.cfg
 cfg_file=/usr/local/nagios/etc/objects/serveurs-windows.cfg
@@ -67,3 +67,23 @@ cfg_file=/usr/local/nagios/etc/objects/imprimantes.cfg
 
 ```
 #### A partir de cet instant il faudra créer ceux-ci vers /usr/local/nagios/etc/objects/
+
+```
+touch /usr/local/nagios/etc/objects/serveurs-linux.cfg
+touch /usr/local/nagios/etc/objects/serveurs-windows.cfg
+touch /usr/local/nagios/etc/objects/routeurs.cfg
+touch /usr/local/nagios/etc/objects/imprimantes.cfg
+```
+Je vous conseille de mettre en service qu'un fichier à la fois
+
+```
+cfg_file=/usr/local/nagios/etc/objects/serveurs-linux.cfg
+#cfg_file=/usr/local/nagios/etc/objects/serveurs-windows.cfg
+#cfg_file=/usr/local/nagios/etc/objects/routeurs.cfg
+#cfg_file=/usr/local/nagios/etc/objects/imprimantes.cfg
+````
+Tester dabord votre nouvelle conf que vous avez saisie dans le fichier /usr/local/nagios/etc/objects/serveurs-linux.cfg :
+
+```
+
+```
