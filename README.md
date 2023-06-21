@@ -13,7 +13,6 @@
 | - F. | [Tester à nouveau Nagios.](#test-de-Nagios) |
 | - G. | [Installation automatisée de Nagios-core & Nagios-plugins.](installation-automatisée-Nagios-core) |
 
-
 <a name="préparation-avant-installation-de-nagios"></a>
 ### - A. Préparation avant l'installation de Nagios-core.
 ---------------------------------------------------------
