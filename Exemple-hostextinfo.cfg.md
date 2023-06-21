@@ -9,7 +9,7 @@
 ##### Vous pouvez bien entendu rajouter autant de logos que vous voulez. Certains sites devraient vous permettre de trouver votre bonheur.
 ##### Une fois que nous savons ça, il ne reste plus qu’à renseigner le fichier hostextinfo.cfg.
 
-#### Il est donc nécessaire de déclarer ce fichier dans /usr/local/nagios/etc/nagios.cfg
+#### Il est donc nécessaire de déclarer ce fichier dans /usr/local/nagios/etc/nagios.cfg.
 
 ```
 Exemple :
