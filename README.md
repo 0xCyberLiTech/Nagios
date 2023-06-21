@@ -46,60 +46,65 @@ apt install -y \
        curl
 ```
 
-#### Téléchargement du noyau source de nagios
+#### Téléchargement du noyau source de nagios.
 ```
 NAGIOS_VER=$(curl -s https://api.github.com/repos/NagiosEnterprises/nagioscore/releases/latest|grep tag_name | cut -d '"' -f 4)
 wget https://github.com/NagiosEnterprises/nagioscore/releases/download/$NAGIOS_VER/$NAGIOS_VER.tar.gz
 ```
-# Extract the tarball
+#### Extraire l'archive $NAGIOS_VER.tar.gz.
+```
 tar -xvzf $NAGIOS_VER.tar.gz
-
-# Compile
+```
+#### Compilation de Nagios-core.
+```
 cd $NAGIOS_VER
 ./configure --with-httpd-conf=/etc/apache2/sites-enabled
 make all
-
-# Create User And Group
-# This creates the nagios user and group. The www-data user is also added to the nagios group.
+```
+#### Créer un utilisateur et un groupe.
+#### Cela crée l'utilisateur et le groupe nagios. L'utilisateur www-data est également ajouté au groupe nagios.
+```
 make install-groups-users
 usermod -a -G nagios www-data
-
-# Install Binaries
-# This step installs the binary files, CGIs, and HTML files.
+```
+#### Installer les binaires.
+#### Cette étape installe les fichiers binaires, les CGI et les fichiers HTML.
+```
 make install
-
-# Install Service / Daemon
-# This installs the service or daemon files and also configures them to start on boot.
+```
+#### Install Service / Daemon
+#### Cela installe les fichiers de service ou de démon et les configure également pour démarrer automatiquement ...
+```
 make install-daemoninit
-
-# Install Command Mode
-# This installs and configures the external command file.
+```
+#### Install Command Mode
+#### This installs and configures the external command file.
 make install-commandmode
 
-# Install Configuration Files
-# This installs the *SAMPLE* configuration files. These are required as Nagios needs some configuration files to allow it to start.
+#### Install Configuration Files
+#### This installs the *SAMPLE* configuration files. These are required as Nagios needs some configuration files to allow it to start.
 make install-config
 
-# Install Apache Config Files
-# This installs the Apache web server configuration files and configures the Apache settings.
+#### Install Apache Config Files
+#### This installs the Apache web server configuration files and configures the Apache settings.
 make install-webconf
 a2enmod rewrite
 a2enmod cgi
 
-# Prerequisites
-# Perform these steps to install the pre-requisite packages.
+#### Prerequisites
+#### Perform these steps to install the pre-requisite packages.
 
-# Configure Firewall
-# You need to allow port 80 inbound traffic on the local firewall so you can reach the Nagios Core web interface.
+#### Configure Firewall
+#### You need to allow port 80 inbound traffic on the local firewall so you can reach the Nagios Core web interface.
 
 #iptables -I INPUT -p tcp --destination-port 80 -j ACCEPT
 #apt-get install -y iptables-persistent
-# Answer yes to saving existing rules
+#### Answer yes to saving existing rules
 
-# Create nagiosadmin User Account
-# You'll need to create an Apache user account to be able to log into Nagios.
+#### Create nagiosadmin User Account
+#### You'll need to create an Apache user account to be able to log into Nagios.
 
-# The following command will create a user account called nagiosadmin and you will be prompted to provide a password for the account.
+#### The following command will create a user account called nagiosadmin and you will be prompted to provide a password for the account.
 
 htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
 
