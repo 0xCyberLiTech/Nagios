@@ -69,5 +69,8 @@ define hostextinfo{
 # --------------------------------------------------------------------------
 /usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
 ```
-
+#### Si il n'y a pas d'erreur sur cette nouvelle configuration (hostextinfo.cfg), redémarrer Nagios pour la prise en compte de cette configuration.
+```
+systemctl restart nagios.service
+```
 
