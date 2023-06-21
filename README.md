@@ -206,12 +206,13 @@ rm -rf $TEMP_FOLDER
 
 <a name="installation-automatisée-Nagios-core"></a>
 ### - G. [Installation automatisée de de Nagios-core & Nagios-plugins.
-### Via un fichier bash.
-[Disponible ici](mise-à-jour-automatisée-de-portainer.sh)
+----------------------------------------------------------------------
+#### Via un fichier bash.
+[Disponible ici](install-nagios.sh)
 ```
-touch mise-à-jour-automatisée-de-portainer.sh
-chmod +x mise-à-jour-automatisée-de-portainer.sh
-sudo ./mise-à-jour-automatisée-de-portainer.sh
+touch install-nagios.sh
+chmod +x install-nagios.sh
+sudo ./install-nagios.sh
 ```
 
 
