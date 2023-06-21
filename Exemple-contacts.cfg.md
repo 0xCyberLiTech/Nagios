@@ -1,47 +1,33 @@
-###############################################################################
-# CONTACTS.CFG - SAMPLE CONTACT/CONTACTGROUP DEFINITIONS
-#
-#
-# NOTES: This config file provides you with some example contact and contact
-#        group definitions that you can reference in host and service
-#        definitions.
-#
-#        You don't need to keep these definitions in a separate file from your
-#        other object definitions.  This has been done just to make things
-#        easier to understand.
-#
-###############################################################################
+## Exemple concernant le fichier /usr/local/nagios/etc/contacts.cfg
+```
+# --------------------------------------------------------------------------
+# 0xCyberLiTech
+# Date de création : le 21-06-2023
+# Date de modification : le 21-06-2023
+# CONTACTS.CFG - Exemple de fichier de configuration pour Nagios
+# --------------------------------------------------------------------------
 
-
-
-###############################################################################
-#
+# --------------------------------------------------------------------------
 # CONTACTS
-#
-###############################################################################
-
-# Just one contact defined by default - the Nagios admin (that's you)
-# This contact definition inherits a lot of default values from the
-# 'generic-contact' template which is defined elsewhere.
+# --------------------------------------------------------------------------
+# Un seul contact défini par défaut - l'administrateur Nagios (c'est vous)
+# Cette définition de contact hérite de nombreuses valeurs par défaut de la
+# modèle 'generic-contact' qui est défini ailleurs.
 
 define contact {
 
-    contact_name            nagiosadmin             ; Short name of user
-    use                     generic-contact         ; Inherit default values from generic-contact template (defined above)
-    alias                   Nagios Admin            ; Full name of user
-    # email                   marc.malet@lessablesdolonne.fr       ; <<***** CHANGE THIS TO YOUR EMAIL ADDRESS ******
+    contact_name            nagiosadmin
+    use                     generic-contact
+    alias                   Nagios Admin
+    # email                 marc.malet@lessablesdolonne.fr
 }
 
-
-
-###############################################################################
-#
+# --------------------------------------------------------------------------
 # CONTACT GROUPS
-#
-###############################################################################
+# --------------------------------------------------------------------------
 
-# We only have one contact in this simple configuration file, so there is
-# no need to create more than one contact group.
+# Nous n'avons qu'un seul contact dans ce fichier de configuration simple, il y a donc
+# pas besoin de créer plus d'un groupe de contacts.
 
 define contactgroup {
 
