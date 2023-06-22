@@ -1,3 +1,5 @@
+<a name="Exemple-contacts.cfg.md"></a>
+
 ## - A. Exemple concernant le fichier /usr/local/nagios/etc/contacts.cfg
 ```
 # --------------------------------------------------------------------------
