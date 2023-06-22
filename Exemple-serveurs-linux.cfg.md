@@ -67,7 +67,7 @@ define service {
 # DEFINITION SERVICE - srv-linux-01 - Current Users
 # --------------------------------------------------------------------------
 # define service {
-#   use                     local-service
+#   use                     generic-service
 #   host_name               srv-linux-01
 #   service_description     Current Users
 #   check_command           check_nrpe!check_users
@@ -78,7 +78,7 @@ define service {
 # --------------------------------------------------------------------------
 # define service {
 #
-#   use                     local-service
+#   use                     generic-service
 #   host_name               srv-linux-01
 #   service_description     Load average
 #   check_command           check_nrpe!check_load
@@ -89,7 +89,7 @@ define service {
 # --------------------------------------------------------------------------
 # define service{
 #
-#    use                     local-service
+#    use                     generic-service
 #    host_name               srv-linux-01
 #    service_description     Disk partition /
 #    check_command           check_nrpe!check_disk
@@ -102,7 +102,7 @@ define service {
 # --------------------------------------------------------------------------
 # define service{
 #
-#    use                     local-service
+#    use                     generic-service
 #    host_name               srv-linux-01
 #    service_description     Disk partition /swap
 #    check_command           check_nrpe!check_swap
@@ -113,7 +113,7 @@ define service {
 # --------------------------------------------------------------------------
 # define service{
 #
-#    use                     local-service
+#    use                     generic-service
 #    host_name               srv-linux-01
 #    service_description     Total Processes
 #    check_command           check_nrpe!check_total_procs
@@ -124,7 +124,7 @@ define service {
 # --------------------------------------------------------------------------
 # define service{
 #
-#    use                     local-service
+#    use                     generic-service
 #    host_name               srv-linux-01
 #    service_description     Zombies Processes
 #    check_command           check_nrpe!check_zombie_procs
@@ -137,7 +137,7 @@ define service {
 # --------------------------------------------------------------------------
 # efine service {
 #
-#    use                     local-service
+#    use                     generic-service
 #    host_name               srv-linux-01
 #    service_description     SSH_2234
 ##   heck_command            check_ssh!2234
@@ -150,7 +150,7 @@ define service {
 # --------------------------------------------------------------------------
 # define service {
 #
-#       use                     local-service
+#       use                     generic-service
 #       host_name               srv-linux-01
 #       service_description     HTTP
 #       check_command           check_http
@@ -176,7 +176,7 @@ define service {
 # DEFINITION SERVICE - srv-linux-02 - Current Users
 # --------------------------------------------------------------------------
 # define service {
-#   use                     local-service
+#   use                     generic-service
 #   host_name               srv-linux-02
 #   service_description     Current Users
 #   check_command           check_nrpe!check_users
@@ -187,7 +187,7 @@ define service {
 # --------------------------------------------------------------------------
 # define service {
 #
-#   use                     local-service
+#   use                     generic-service
 #   host_name               srv-linux-02
 #   service_description     Load average
 #   check_command           check_nrpe!check_load
@@ -198,7 +198,7 @@ define service {
 # --------------------------------------------------------------------------
 # define service{
 #
-#    use                     local-service
+#    use                     generic-service
 #    host_name               srv-linux-02
 #    service_description     Disk partition /
 #    check_command           check_nrpe!check_disk
@@ -211,7 +211,7 @@ define service {
 # --------------------------------------------------------------------------
 # define service{
 #
-#    use                     local-service
+#    use                     generic-service
 #    host_name               srv-linux-02
 #    service_description     Disk partition /swap
 #    check_command           check_nrpe!check_swap
@@ -222,7 +222,7 @@ define service {
 # --------------------------------------------------------------------------
 # define service{
 #
-#    use                     local-service
+#    use                     generic-service
 #    host_name               srv-linux-02
 #    service_description     Total Processes
 #    check_command           check_nrpe!check_total_procs
@@ -233,7 +233,7 @@ define service {
 # --------------------------------------------------------------------------
 # define service{
 #
-#    use                     local-service
+#    use                     generic-service
 #    host_name               srv-linux-02
 #    service_description     Zombies Processes
 #    check_command           check_nrpe!check_zombie_procs
@@ -246,7 +246,7 @@ define service {
 # --------------------------------------------------------------------------
 # efine service {
 #
-#    use                     local-service
+#    use                     generic-service
 #    host_name               srv-linux-02
 #    service_description     SSH_2234
 ##   heck_command            check_ssh!2234
@@ -259,7 +259,7 @@ define service {
 # --------------------------------------------------------------------------
 # define service {
 #
-#       use                     local-service
+#       use                     generic-service
 #       host_name               srv-linux-02
 #       service_description     HTTP
 #       check_command           check_http
