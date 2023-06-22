@@ -19,8 +19,10 @@
 
 | Cat | Etapes |
 |------|------| 
-| - A. | [ Exemple du fichier contacts.cfg.](Exemple-nagios.cfg.md) |
-
+| - A. | [ Exemple du fichier contacts.cfg.](Exemple-contacts.cfg.md) |
+| - B. | [ Exemple du fichier nagios.cfg.](Exemple-nagios.cfg.md) |
+| - C. | [ Exemple du fichier hostextinfo.cfg.](Exemple-hostextinfo.cfg.md) |
+| - D. | [ Exemple du fichier templates.cfg.](Exemple-templates.cfg.md) |
 
 ---------------------------------------------------------
 
