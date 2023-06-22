@@ -1,6 +1,6 @@
 <a name="Exemple-nagios.cfg.md"></a>
 
-## Exemple concernant le fichier /usr/local/nagios/etc/nagios.cfg
+## - B. Exemple concernant le fichier /usr/local/nagios/etc/nagios.cfg
 ```
 # --------------------------------------------------------------------------
 # 0xCyberLiTech
