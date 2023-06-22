@@ -23,7 +23,7 @@
 | - B. | [ Exemple du fichier nagios.cfg.](Exemple-nagios.cfg.md) |
 | - C. | [ Exemple du fichier hostextinfo.cfg.](Exemple-hostextinfo.cfg.md) |
 | - D. | [ Exemple du fichier templates.cfg.](Exemple-templates.cfg.md) |
-| - E. | [ Exemple du fichier serveurs-linux.cfg](Exemple-serveurs-linux.cfg.md) |
+| - E. | [ Exemple du fichier server-linux.cfg](Exemple-server-linux.cfg.md) |
 
 <a name="préparation-avant-installation-de-nagios"></a>
 
