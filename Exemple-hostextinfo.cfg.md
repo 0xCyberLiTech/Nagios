@@ -9,6 +9,7 @@
 ##### Les images et icônes proposées par défaut se trouve dans /usr/local/nagios/share/images/logos/.
 
 ```
+cd /usr/local/nagios/share/images/logos/
 ls -L
 
 aix.gd2        caldera.jpg         freebsd40.gif        ip-pbx.gif     mandrake.png     novell40.gif     router.gd2     storm.png        thin-client.gif   win40.gd2
