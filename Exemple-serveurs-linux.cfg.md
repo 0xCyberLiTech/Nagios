@@ -18,7 +18,7 @@ define host {
 
      host_name               srv-linux-01
      alias                   srv-linux-01
-     address                 127.0.0.1
+     address                 192.168.50.200
      hostgroups              grp-serveurs-linux
      #parents
 }
@@ -32,7 +32,7 @@ define host {
 
      host_name               srv-linux-02
      alias                   srv-linux-02
-     address                 10.111.111.222
+     address                 192.168.50.201
      hostgroups              grp-serveurs-linux
      #parents
 }
@@ -66,82 +66,82 @@ define service {
 # --------------------------------------------------------------------------
 # DEFINITION SERVICE - srv-linux-01 - Current Users
 # --------------------------------------------------------------------------
-define service {
-     use                     local-service
-     host_name               srv-linux-01
-     service_description     Current Users
-     check_command           check_nrpe!check_users
-}
+# define service {
+#    use                     local-service
+#    host_name               srv-linux-01
+#    service_description     Current Users
+#    check_command           check_nrpe!check_users
+# }
 
 # --------------------------------------------------------------------------
 # DEFINITION SERVICE - srv-linux-01 - Load average
 # --------------------------------------------------------------------------
-define service {
-
-     use                     local-service
-     host_name               srv-linux-01
-     service_description     Load average
-     check_command           check_nrpe!check_load
-}
+# define service {
+#
+#    use                     generic-service
+#    host_name               srv-linux-01
+#    service_description     Load average
+#    check_command           check_nrpe!check_load
+# }
 
 # --------------------------------------------------------------------------
 # DEFINITION SERVICE - srv-linux-01 - Disk partition /
 # --------------------------------------------------------------------------
-define service{
-
-     use                     local-service
-     host_name               srv-linux-01
-     service_description     Disk partition /
-     check_command           check_nrpe!check_disk
-     normal_check_interval   30
-     retry_check_interval    5
-}
+# define service{
+#
+#    use                     generic-service
+#    host_name               srv-linux-01
+#    service_description     Disk partition /
+#    check_command           check_nrpe!check_disk
+#    normal_check_interval   30
+#    retry_check_interval    5
+# }
 
 # --------------------------------------------------------------------------
 # DEFINITION SERVICE - srv-linux-01 - Disk partition /swap
 # --------------------------------------------------------------------------
-define service{
-
-     use                     local-service
-     host_name               srv-linux-01
-     service_description     Disk partition /swap
-     check_command           check_nrpe!check_swap
-}
+# define service{
+#
+#    use                     generic-service
+#    host_name               srv-linux-01
+#    service_description     Disk partition /swap
+#    check_command           check_nrpe!check_swap
+# }
 
 # --------------------------------------------------------------------------
 # DEFINITION SERVICE - srv-linux-01 - Total Processes
 # --------------------------------------------------------------------------
-define service{
-
-     use                     local-service
-     host_name               srv-linux-01
-     service_description     Total Processes
-     check_command           check_nrpe!check_total_procs
-}
+# define service{
+#
+#    use                     generic-service
+#    host_name               srv-linux-01
+#    service_description     Total Processes
+#    check_command           check_nrpe!check_total_procs
+# }
 
 # --------------------------------------------------------------------------
 # DEFINITION SERVICE - srv-linux-01 - Zombies Processes
 # --------------------------------------------------------------------------
-define service{
-
-     use                     local-service
-     host_name               srv-linux-01
-     service_description     Zombies Processes
-     check_command           check_nrpe!check_zombie_procs
-     normal_check_interval   60
-     retry_check_interval    5
-}
+# define service{
+#
+#    use                     generic-service
+#    host_name               srv-linux-01
+#    service_description     Zombies Processes
+#    check_command           check_nrpe!check_zombie_procs
+#    normal_check_interval   60
+#    retry_check_interval    5
+# }
 
 # --------------------------------------------------------------------------
 # DEFINITION SERVICE - srv-linux-01 - ssh port 2234
 # --------------------------------------------------------------------------
-efine service {
+define service {
 
      use                     local-service
      host_name               srv-linux-01
      service_description     SSH_2234
-#    heck_command            check_ssh!2234
-     check_command           check_ssh_altport!2234
+     check_command           check_ssh!2234
+#    check_command           check_ssh_altport!2234
      notifications_enabled   0
 }
 
@@ -265,7 +265,6 @@ define service {
 #    check_command           check_http
 #    notifications_enabled   0
 # }
-
 ```
 #### Nous allons tester notre nouvelle configuration que nous avons saisie dans le fichier /usr/local/nagios/etc/objects/hostextinfo.cfg à l'aide de la commande suivante :
 ```
