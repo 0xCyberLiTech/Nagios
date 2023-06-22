@@ -14,13 +14,13 @@
 # --------------------------------------------------------------------------
 define host {
 
-    use                     linux-server
+     use                     linux-server
 
-    host_name               srv-linux-01
-    alias                   srv-linux-01
-    address                 10.111.111.111
-    hostgroups              grp-serveurs-linux
-    #parents
+     host_name               srv-linux-01
+     alias                   srv-linux-01
+     address                 10.111.111.111
+     hostgroups              grp-serveurs-linux
+     #parents
 }
 
 # --------------------------------------------------------------------------
@@ -28,13 +28,13 @@ define host {
 # --------------------------------------------------------------------------
 define host {
 
-    use                     linux-server
+     use                     linux-server
 
-    host_name               srv-linux-02
-    alias                   srv-linux-02
-    address                 10.111.111.222
-    hostgroups              grp-serveurs-linux
-    #parents
+     host_name               srv-linux-02
+     alias                   srv-linux-02
+     address                 10.111.111.222
+     hostgroups              grp-serveurs-linux
+     #parents
 }
 
 # --------------------------------------------------------------------------
@@ -44,8 +44,8 @@ define host {
 
 define hostgroup {
 
-    hostgroup_name          grp-serveurs-linux
-    alias                   Groupe serveurs linux
+     hostgroup_name          grp-serveurs-linux
+     alias                   Groupe serveurs linux
 }
 
 # --------------------------------------------------------------------------
@@ -53,24 +53,24 @@ define hostgroup {
 # --------------------------------------------------------------------------
 define service {
 
-    use                     generic-service
-    host_name               srv-linux-01
-    service_description     PING
-    check_command           check_ping!100.0,20%!500.0,60%
-    #check_command          check_ping!900.0,40%!1500.0,70%
-    #check_command          check_ping!3000.0,80%!5000.0,100%
-    check_interval          5
-    retry_interval          1
+     use                     generic-service
+     host_name               srv-linux-01
+     service_description     PING
+     check_command           check_ping!100.0,20%!500.0,60%
+     #check_command          check_ping!900.0,40%!1500.0,70%
+     #check_command          check_ping!3000.0,80%!5000.0,100%
+     check_interval          5
+     retry_interval          1
 }
 
 # --------------------------------------------------------------------------
 # DEFINITION SERVICE - srv-linux-01 - Current Users
 # --------------------------------------------------------------------------
 # define service {
-#   use                     generic-service
-#   host_name               srv-linux-01
-#   service_description     Current Users
-#   check_command           check_nrpe!check_users
+#    use                     generic-service
+#    host_name               srv-linux-01
+#    service_description     Current Users
+#    check_command           check_nrpe!check_users
 # }
 
 # --------------------------------------------------------------------------
@@ -78,10 +78,10 @@ define service {
 # --------------------------------------------------------------------------
 # define service {
 #
-#   use                     generic-service
-#   host_name               srv-linux-01
-#   service_description     Load average
-#   check_command           check_nrpe!check_load
+#    use                     generic-service
+#    host_name               srv-linux-01
+#    service_description     Load average
+#    check_command           check_nrpe!check_load
 # }
 
 # --------------------------------------------------------------------------
@@ -150,11 +150,11 @@ define service {
 # --------------------------------------------------------------------------
 # define service {
 #
-#       use                     generic-service
-#       host_name               srv-linux-01
-#       service_description     HTTP
-#       check_command           check_http
-#       notifications_enabled   0
+#    use                     generic-service
+#    host_name               srv-linux-01
+#    service_description     HTTP
+#    check_command           check_http
+#    notifications_enabled   0
 # }
 
 # --------------------------------------------------------------------------
@@ -162,24 +162,24 @@ define service {
 # --------------------------------------------------------------------------
 define service {
 
-    use                     generic-service
-    host_name               srv-linux-02
-    service_description     PING
-    check_command           check_ping!100.0,20%!500.0,60%
-    #check_command          check_ping!900.0,40%!1500.0,70%
-    #check_command          check_ping!3000.0,80%!5000.0,100%
-    check_interval          5
-    retry_interval          1
+     use                     generic-service
+     host_name               srv-linux-02
+     service_description     PING
+     check_command           check_ping!100.0,20%!500.0,60%
+     #check_command          check_ping!900.0,40%!1500.0,70%
+     #check_command          check_ping!3000.0,80%!5000.0,100%
+     check_interval          5
+     retry_interval          1
 }
 
 # --------------------------------------------------------------------------
 # DEFINITION SERVICE - srv-linux-02 - Current Users
 # --------------------------------------------------------------------------
 # define service {
-#   use                     generic-service
-#   host_name               srv-linux-02
-#   service_description     Current Users
-#   check_command           check_nrpe!check_users
+#    use                     generic-service
+#    host_name               srv-linux-02
+#    service_description     Current Users
+#    check_command           check_nrpe!check_users
 # }
 
 # --------------------------------------------------------------------------
@@ -187,10 +187,10 @@ define service {
 # --------------------------------------------------------------------------
 # define service {
 #
-#   use                     generic-service
-#   host_name               srv-linux-02
-#   service_description     Load average
-#   check_command           check_nrpe!check_load
+#    use                     generic-service
+#    host_name               srv-linux-02
+#    service_description     Load average
+#    check_command           check_nrpe!check_load
 # }
 
 # --------------------------------------------------------------------------
@@ -259,12 +259,13 @@ define service {
 # --------------------------------------------------------------------------
 # define service {
 #
-#       use                     generic-service
-#       host_name               srv-linux-02
-#       service_description     HTTP
-#       check_command           check_http
-#       notifications_enabled   0
+#    use                     generic-service
+#    host_name               srv-linux-02
+#    service_description     HTTP
+#    check_command           check_http
+#    notifications_enabled   0
 # }
+
 ```
 #### Nous allons tester notre nouvelle configuration que nous avons saisie dans le fichier /usr/local/nagios/etc/objects/hostextinfo.cfg à l'aide de la commande suivante :
 ```
