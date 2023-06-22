@@ -19,7 +19,7 @@
 
 | Cat | Etapes |
 |------|------| 
-| - A. | [ Exemple du fichier contacts.cfg.](#contacts.cfg) |
+| - A. | [ Exemple du fichier contacts.cfg.](#Exemple-nagios.cfg.md) |
 
 
 ---------------------------------------------------------
