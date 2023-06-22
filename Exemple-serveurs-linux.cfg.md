@@ -128,6 +128,31 @@ define service{
 }
 
 # --------------------------------------------------------------------------
+# DEFINITION SERVICE - srv-linux-01 - ssh port 2234
+# --------------------------------------------------------------------------
+define service {
+
+        use                     local-service
+        host_name               srv-linux-01
+        service_description     SSH_2234
+        # check_command         check_ssh!2234
+        check_command           check_ssh_altport!2234
+        notifications_enabled   0
+}
+
+# --------------------------------------------------------------------------
+# DEFINITION SERVICE - srv-linux-01 - http port 80
+# --------------------------------------------------------------------------
+define service {
+
+        use                     local-service
+        host_name               srv-linux-01
+        service_description     HTTP
+        check_command           check_http
+        notifications_enabled   0
+}
+
+# --------------------------------------------------------------------------
 # DEFINITION SERVICE - srv-linux-02 - ping
 # --------------------------------------------------------------------------
 define service {
@@ -204,5 +229,30 @@ define service{
         check_command           check_nrpe!check_zombie_procs
         normal_check_interval   60
         retry_check_interval    5
+}
+
+# --------------------------------------------------------------------------
+# DEFINITION SERVICE - srv-linux-02 - ssh port 2234
+# --------------------------------------------------------------------------
+define service {
+
+        use                     local-service
+        host_name               srv-linux-02
+        service_description     SSH_2234
+        # check_command         check_ssh!2234
+        check_command           check_ssh_altport!2234
+        notifications_enabled   0
+}
+
+# --------------------------------------------------------------------------
+# DEFINITION SERVICE - srv-linux-02 - http port 80
+# --------------------------------------------------------------------------
+define service {
+
+        use                     local-service
+        host_name               srv-linux-02
+        service_description     HTTP
+        check_command           check_http
+        notifications_enabled   0
 }
 ```
