@@ -15,7 +15,7 @@
 
 # Introduction aux fichiers de configuration Nagios.
 
-## Exemples :
+## Exemples concernant les fichiers de configuration :
 
 | Cat | Etapes |
 |------|------| 
