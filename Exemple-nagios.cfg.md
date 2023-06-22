@@ -1,4 +1,4 @@
-<a name="nagios.cfg"></a>
+<a name="Exemple-nagios.cfg.md"></a>
 
 ## Exemple concernant le fichier /usr/local/nagios/etc/nagios.cfg
 ```
