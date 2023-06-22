@@ -6,7 +6,7 @@
 
 ##### De base, tous les hosts de la cartographie ont pour symbole un point. 
 ##### Nagios permet d'afficher une icône différente pour chaque hosts. 
-##### Les images et icônes proposées par défaut se trouve dans /usr/local/nagios/share/images/icons.
+##### Les images et icônes proposées par défaut se trouve dans /usr/local/nagios/share/images/logos/.
 ##### Vous pouvez bien entendu rajouter autant de logos que vous voulez. Certains sites devraient vous permettre de trouver votre bonheur.
 ##### Une fois que nous savons ça, il ne reste plus qu’à renseigner le fichier hostextinfo.cfg.
 
