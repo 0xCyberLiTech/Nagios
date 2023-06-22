@@ -25,8 +25,6 @@
 | - D. | [ Exemple du fichier templates.cfg.](Exemple-templates.cfg.md) |
 | - E. | [ Exemple du fichier serveurs-linux.cfg](Exemple-serveurs-linux.cfg.md) |
 
----------------------------------------------------------
-
 <a name="préparation-avant-installation-de-nagios"></a>
 
 ## A. Préparation avant l'installation de Nagios-core.
