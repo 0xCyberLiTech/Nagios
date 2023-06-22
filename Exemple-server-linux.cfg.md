@@ -6,7 +6,7 @@
 # 0xCyberLiTech
 # Date de création : le 21-06-2023
 # Date de modification : le 22-06-2023
-# SERVEURS-LINUX.CFG - /usr/local/nagios/etc/objects/
+# SERVERS-LINUX.CFG - /usr/local/nagios/etc/objects/
 # --------------------------------------------------------------------------
 
 # --------------------------------------------------------------------------
@@ -19,8 +19,8 @@ define host {
      host_name               srv-linux-01
      alias                   srv-linux-01
      address                 192.168.50.200
-     hostgroups              grp-serveurs-linux
-     #parents
+     hostgroups              grp-server-linux
+     parents                 router-01
 }
 
 # --------------------------------------------------------------------------
@@ -33,19 +33,17 @@ define host {
      host_name               srv-linux-02
      alias                   srv-linux-02
      address                 192.168.50.201
-     hostgroups              grp-serveurs-linux
-     #parents
+     hostgroups              grp-server-linux
+     parents                 router-01
 }
 
 # --------------------------------------------------------------------------
-# DEFINITION HOST GROUP - grp-serveurs-linux
+# DEFINITION HOST GROUP - grp-server-linux
 # --------------------------------------------------------------------------
-# Define an optional hostgroup for Linux machines
-
 define hostgroup {
 
-     hostgroup_name          grp-serveurs-linux
-     alias                   Groupe serveurs linux
+     hostgroup_name          grp-server-linux
+     alias                   Host Groups server linux
 }
 
 # --------------------------------------------------------------------------
