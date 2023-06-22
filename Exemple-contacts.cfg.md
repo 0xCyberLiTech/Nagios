@@ -1,4 +1,4 @@
-## Exemple concernant le fichier /usr/local/nagios/etc/contacts.cfg
+## - A. Exemple concernant le fichier /usr/local/nagios/etc/contacts.cfg
 ```
 # --------------------------------------------------------------------------
 # 0xCyberLiTech
