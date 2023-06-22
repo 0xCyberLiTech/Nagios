@@ -1,6 +1,6 @@
 <a name="Exemple-serveurs-linux.cfg.md"></a>
  
-## - E. Exemple concernant le fichier /usr/local/nagios/etc/objects/serveurs-linux.cfg
+## - E. Exemple concernant le fichier /usr/local/nagios/etc/objects/server-linux.cfg
 ```
 # --------------------------------------------------------------------------
 # 0xCyberLiTech
