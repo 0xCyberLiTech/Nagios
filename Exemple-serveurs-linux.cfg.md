@@ -256,3 +256,14 @@ define service {
         notifications_enabled   0
 }
 ```
+#### Nous allons tester notre nouvelle configuration que nous avons saisie dans le fichier /usr/local/nagios/etc/objects/hostextinfo.cfg à l'aide de la commande suivante :
+```
+# --------------------------------------------------------------------------
+# - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG -
+# --------------------------------------------------------------------------
+/usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
+```
+#### Si il n'y a pas d'erreur sur cette nouvelle configuration (hostextinfo.cfg), redémarrer Nagios pour la prise en compte de cette nouvelle configuration.
+```
+systemctl restart nagios.service
+```
