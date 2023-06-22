@@ -1,6 +1,6 @@
 <a name="Exemple-hostextinfo.cfg.md"></a>
 
-## Exemple concernant le fichier /usr/local/nagios/etc/objects/hostextinfo.cfg
+## - C. Exemple concernant le fichier /usr/local/nagios/etc/objects/hostextinfo.cfg
 
 #### Introduction :
 
