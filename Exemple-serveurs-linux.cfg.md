@@ -137,7 +137,7 @@ define service {
 # --------------------------------------------------------------------------
 define service {
 
-     use                     local-service
+     use                     generic-service
      host_name               srv-linux-01
      service_description     SSH_2234
      check_command           check_ssh!2234
@@ -150,7 +150,7 @@ define service {
 # --------------------------------------------------------------------------
 define service {
 
-     use                     local-service
+     use                     generic-service
      host_name               srv-linux-01
      service_description     HTTP
      check_command           check_http
