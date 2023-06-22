@@ -13,6 +13,15 @@
 | - F. | [Tester à nouveau Nagios.](#test-de-Nagios) |
 | - G. | [Installation automatisée de Nagios-core & Nagios-plugins.](#installation-automatisée-Nagios-core) |
 
+# Introduction aux fichiers de configuration Nagios.
+
+## Exemples :
+
+| Cat | Etapes |
+|------|------| 
+| - A. | [ Exemple du fichier contacts.cfg.](#contacts.cfg) |
+
+
 ---------------------------------------------------------
 
 <a name="préparation-avant-installation-de-nagios"></a>
