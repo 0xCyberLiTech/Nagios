@@ -1,6 +1,6 @@
 <a name="Exemple-templates.cfg.md"></a>
 
-## Exemple concernant le fichier /usr/local/nagios/etc/objects/templates.cfg
+## - D. Exemple concernant le fichier /usr/local/nagios/etc/objects/templates.cfg
 ```
 # --------------------------------------------------------------------------
 # 0xCyberLiTech
