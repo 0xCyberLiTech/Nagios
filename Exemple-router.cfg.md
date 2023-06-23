@@ -1,6 +1,6 @@
 <a name="Exemple-router.cfg.md"></a>
  
-## - E. Exemple concernant le fichier /usr/local/nagios/etc/objects/router.cfg
+## - F. Exemple concernant le fichier /usr/local/nagios/etc/objects/router.cfg
 ```
 # --------------------------------------------------------------------------
 # 0xCyberLiTech
