@@ -258,7 +258,7 @@ define service {
     retry_interval                  1
     register                        0
 ```
-#### Nous allons tester notre nouvelle configuration que nous avons saisie dans le fichier /usr/local/nagios/etc/objects/hostextinfo.cfg à l'aide de la commande suivante :
+#### Nous allons tester notre nouvelle configuration que nous avons saisie dans le fichier /usr/local/nagios/etc/objects/templates.cfg à l'aide de la commande suivante :
 ```
 # --------------------------------------------------------------------------
 # - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG -
@@ -288,7 +288,7 @@ Checking misc settings...
 Total Warnings: 0
 Total Errors:   0
 ```
-#### Si il n'y a pas d'erreur sur cette nouvelle configuration (hostextinfo.cfg), redémarrer Nagios pour la prise en compte de cette nouvelle configuration.
+#### Si il n'y a pas d'erreur sur cette nouvelle configuration (templates.cfg), redémarrer Nagios pour la prise en compte de cette nouvelle configuration.
 ```
 systemctl restart nagios.service
 ```
