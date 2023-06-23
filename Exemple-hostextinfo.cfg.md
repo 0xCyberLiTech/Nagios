@@ -76,8 +76,8 @@ define hostextinfo{
 
     host_name                   srv-linux-01
     notes                       (1) Serveur Linux
-    #notes_url                  https://10.111.111.111:8443
-    #action_url                 https://10.111.111.111:8444
+    #notes_url                  https://0.0.0.0:0000
+    #action_url                 https://0.0.0.0:0000
     icon_image_alt              (1) Serveur Linux
     icon_image                  linux40.gif
     statusmap_image             linux40.gd2
@@ -93,8 +93,8 @@ define hostextinfo{
 
     host_name                   srv-linux-02
     notes                       (2) Serveur Linux
-    #notes_url                  https://10.111.111.222:8443
-    #action_url                 https://10.111.111.222:8444
+    #notes_url                  https://0.0.0.0:0000
+    #action_url                 https://0.0.0.0:0000
     icon_image_alt              (2) Serveur Linux
     icon_image                  linux40.gif
     statusmap_image             linux40.gd2
@@ -102,6 +102,109 @@ define hostextinfo{
     #2d_coords                  400,600
     #3d_coords                  100.0,50.0,75.0
 }
+
+# --------------------------------------------------------------------------
+# HOSTEXTINFO DEFINITION - router-01
+# --------------------------------------------------------------------------
+define hostextinfo{
+
+    host_name                   router-01
+    notes                       (1) Router
+    #notes_url                  https://0.0.0.0:0000
+    #action_url                 https://0.0.0.0:0000
+    icon_image_alt              (1) Asus GT AXE-16000
+    icon_image                  router40.gif
+    statusmap_image             router40.gd2
+    vrml_image                  router40.gif
+    #2d_coords                  400,600
+    #3d_coords                  100.0,50.0,75.0
+}
+
+# --------------------------------------------------------------------------
+# HOSTEXTINFO DEFINITION - router-02
+# --------------------------------------------------------------------------
+define hostextinfo{
+
+    host_name                   router-02
+    notes                       (2) Router
+    #notes_url                  https://0.0.0.0:0000
+    #action_url                 https://0.0.0.0:0000
+    icon_image_alt              (2) Freebox DELTA
+    icon_image                  router40.gif
+    statusmap_image             router40.gd2
+    vrml_image                  router40.gif
+    #2d_coords                  400,600
+    #3d_coords                  100.0,50.0,75.0
+}
+
+# --------------------------------------------------------------------------
+# HOSTEXTINFO DEFINITION - mesh-wifi-A
+# --------------------------------------------------------------------------
+define hostextinfo{
+
+    host_name                   mesh-wifi-A
+    notes                       (A) Router wifi Mesh
+    #notes_url                  https://0.0.0.0:0000
+    #action_url                 https://0.0.0.0:0000
+    icon_image_alt              (A) Zen Wifi ET-12
+    icon_image                  router40.gif
+    statusmap_image             router40.gd2
+    vrml_image                  router40.gif
+    #2d_coords                  400,600
+    #3d_coords                  100.0,50.0,75.0
+}
+
+# --------------------------------------------------------------------------
+# HOSTEXTINFO DEFINITION - mesh-wifi-B
+# --------------------------------------------------------------------------
+define hostextinfo{
+
+    host_name                   mesh-wifi-B
+    notes                       (B) Router wifi Mesh
+    #notes_url                  https://0.0.0.0:0000
+    #action_url                 https://0.0.0.0:0000
+    icon_image_alt              (B) Zen Wifi ET-12
+    icon_image                  router40.gif
+    statusmap_image             router40.gd2
+    vrml_image                  router40.gif
+    #2d_coords                  400,600
+    #3d_coords                  100.0,50.0,75.0
+}
+
+# --------------------------------------------------------------------------
+# HOSTEXTINFO DEFINITION - ip-public-free
+# --------------------------------------------------------------------------
+define hostextinfo{
+
+    host_name                   ip-public-free
+    notes                       (1) FAI Free
+    #notes_url                  https://0.0.0.0:0000
+    #action_url                 https://0.0.0.0:0000
+    icon_image_alt              (1) FAI Free
+    icon_image                  internet.gif
+    statusmap_image             internet.gd2
+    vrml_image                  internet.gif
+    #2d_coords                  400,600
+    #3d_coords                  100.0,50.0,75.0
+}
+
+# --------------------------------------------------------------------------
+# HOSTEXTINFO DEFINITION - dns1-public-free
+# --------------------------------------------------------------------------
+define hostextinfo{
+
+    host_name                   dns1-public-free
+    notes                       (1) FAI Free DNS 1
+    #notes_url                  https://0.0.0.0:0000
+    #action_url                 https://0.0.0.0:0000
+    icon_image_alt              (1) FAI Free DNS 1
+    icon_image                  internet.gif
+    statusmap_image             internet.gd2
+    vrml_image                  internet.gif
+    #2d_coords                  400,600
+    #3d_coords                  100.0,50.0,75.0
+}
+
 ```
 #### Nous allons tester notre nouvelle configuration que nous avons saisie dans le fichier /usr/local/nagios/etc/objects/hostextinfo.cfg à l'aide de la commande suivante :
 ```
