@@ -27,6 +27,7 @@
 | - D. | [ Exemple du fichier templates.cfg.](Exemple-templates.cfg.md) |
 | - E. | [ Exemple du fichier server-linux.cfg](Exemple-server-linux.cfg.md) |
 | - F. | [ Exemple du fichier router.cfg](Exemple-router.cfg.md) |
+| - F. | [ Exemple du fichier ip-public.cfg](Exemple-ip-public.cfg.md) |
 
 <a name="préparation-avant-installation-de-nagios"></a>
 
