@@ -1,9 +1,11 @@
-
+<a name="Exemple-router.cfg.md"></a>
+ 
+## - E. Exemple concernant le fichier /usr/local/nagios/etc/objects/router.cfg
 ```
 # --------------------------------------------------------------------------
 # 0xCyberLiTech
 # Date de création : le 21-06-2023
-# Date de modification : le 22-06-2023
+# Date de modification : le 23-06-2023
 # ROUTER.CFG - Exemple de fichier de configuration pour Nagios.
 # /usr/local/nagios/etc/objects/
 # --------------------------------------------------------------------------
@@ -33,7 +35,7 @@ define host {
      alias                   Freebox DELTA
      address                 192.168.1.254
      hostgroups              grp-router
-     #parents
+     # parents               
 }
 
 # --------------------------------------------------------------------------
@@ -61,7 +63,7 @@ define host {
      alias                   ZEN-Wifi ET-12
      address                 192.168.0.110
      hostgroups              grp-router
-     parents                 mesh-wifi-A
+     parents                 router-01
 }
 
 # --------------------------------------------------------------------------
