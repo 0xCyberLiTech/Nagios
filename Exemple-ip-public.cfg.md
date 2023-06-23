@@ -1,3 +1,7 @@
+<a name="Exemple-ip-public.cfg.md"></a>
+ 
+## - G. Exemple concernant le fichier /usr/local/nagios/etc/objects/ip-public.cfg
+```
 # --------------------------------------------------------------------------
 # 0xCyberLiTech
 # Date de création : le 21-06-2023
