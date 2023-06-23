@@ -165,3 +165,7 @@ Checking misc settings...
 Total Warnings: 0
 Total Errors:   0
 ```
+Si il n'y a pas d'erreur sur cette nouvelle configuration (router.cfg), redémarrer Nagios pour la prise en compte de cette nouvelle configuration.
+```
+systemctl restart nagios.service
+```
