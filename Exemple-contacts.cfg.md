@@ -21,7 +21,7 @@ define contact {
     contact_name            nagiosadmin
     use                     generic-contact
     alias                   Nagios Admin
-    # email                 marc.malet@lessablesdolonne.fr
+    # email                 mon@mail.com
 }
 
 # --------------------------------------------------------------------------
