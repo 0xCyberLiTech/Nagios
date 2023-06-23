@@ -1,3 +1,7 @@
+<a name="Exemple-server-linux.cfg.md"></a>
+ 
+## - E. Exemple concernant le fichier /usr/local/nagios/etc/objects/server-linux.cfg
+
 #!/bin/sh
 
 # --------------------------------------------------------
