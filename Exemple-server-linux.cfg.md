@@ -6,7 +6,7 @@
 # 0xCyberLiTech
 # Date de création : le 21-06-2023
 # Date de modification : le 22-06-2023
-# SERVER-LINUX.CFG - /usr/local/nagios/etc/objects/
+# SERVER-LINUX.CFG -  Exemple de fichier de configuration pour Nagios.
 # --------------------------------------------------------------------------
 
 # --------------------------------------------------------------------------
