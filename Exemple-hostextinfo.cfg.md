@@ -65,8 +65,9 @@ chown nagios:nagios /usr/local/nagios/etc/objects/hostextinfo.cfg
 # --------------------------------------------------------------------------
 # 0xCyberLiTech
 # Date de création : le 21-06-2023
-# Date de modification : le 21-06-2023
+# Date de modification : le 23-06-2023
 # HOSTEXTINFO.CFG - Exemple de fichier de configuration pour Nagios.
+# /usr/local/nagios/etc/objects/
 # --------------------------------------------------------------------------
 
 # --------------------------------------------------------------------------
