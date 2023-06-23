@@ -6,7 +6,7 @@
 # 0xCyberLiTech
 # Date de création : le 21-06-2023
 # Date de modification : le 21-06-2023
-# TEMPLATES.CFG - Exemple de fichier de configuration pour Nagios
+# TEMPLATES.CFG - Exemple de fichier de configuration pour Nagios.
 # --------------------------------------------------------------------------
 
 # --------------------------------------------------------------------------
