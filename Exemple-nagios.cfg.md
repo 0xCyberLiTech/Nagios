@@ -81,13 +81,13 @@ chown nagios:nagios /usr/local/nagios/etc/objects/serveurs-windows.cfg
 chown nagios:nagios /usr/local/nagios/etc/objects/routeurs.cfg
 chown nagios:nagios /usr/local/nagios/etc/objects/imprimantes.cfg
 ```
-Exemple, configuration injectée dans le fichier /usr/local/nagios/etc/objects/serveurs-linux.cfg
+Exemple, configuration injectée dans le fichier /usr/local/nagios/etc/objects/serveur-linux.cfg
 ```
 # --------------------------------------------------------------------------
 # 0xCyberLiTech
 # Date de création : le 21-06-2023
-# Date de modification : le 22-06-2023
-# SERVER-LINUX.CFG -
+# Date de modification : le 23-06-2023
+# SERVER-LINUX.CFG -  Exemple de fichier de configuration pour Nagios.
 # /usr/local/nagios/etc/objects/
 # --------------------------------------------------------------------------
 
@@ -346,7 +346,7 @@ define service {
 #    notifications_enabled   0
 # }
 ```
-Tester dabord votre nouvelle configuration que vous avez saisie dans le fichier /usr/local/nagios/etc/objects/serveurs-linux.cfg à l'aide de la commande suivante :
+Tester dabord votre nouvelle configuration que vous avez saisie dans le fichier /usr/local/nagios/etc/objects/serveur-linux.cfg à l'aide de la commande suivante :
 ```
 # --------------------------------------------------------------------------
 # - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG -
@@ -376,7 +376,7 @@ Checking misc settings...
 Total Warnings: 0
 Total Errors:   0
 ```
-Si il n'y a pas d'erreur sur cette nouvelle configuration (serveurs-linux.cfg), redémarrer Nagios pour la prise en compte de cette configuration.
+Si il n'y a pas d'erreur sur cette nouvelle configuration (serveur-linux.cfg), redémarrer Nagios pour la prise en compte de cette configuration.
 ```
 systemctl restart nagios.service
 ```
