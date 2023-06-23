@@ -20,7 +20,7 @@ define host {
      alias                   srv-linux-01
      address                 192.168.0.200
      hostgroups              grp-server-linux
-     parents                 router-01
+     # parents               router-01
 }
 
 # --------------------------------------------------------------------------
@@ -34,7 +34,7 @@ define host {
      alias                   srv-linux-02
      address                 192.168.0.201
      hostgroups              grp-server-linux
-     parents                 router-01
+     # parents               router-01
 }
 
 # --------------------------------------------------------------------------
