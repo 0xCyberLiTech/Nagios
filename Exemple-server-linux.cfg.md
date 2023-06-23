@@ -18,7 +18,7 @@ define host {
 
      host_name               srv-linux-01
      alias                   srv-linux-01
-     address                 0.0.0.0
+     address                 192.168.0.200
      hostgroups              grp-server-linux
      parents                 router-01
 }
@@ -32,7 +32,7 @@ define host {
 
      host_name               srv-linux-02
      alias                   srv-linux-02
-     address                 0.0.0.0
+     address                 192.168.0.201
      hostgroups              grp-server-linux
      parents                 router-01
 }
@@ -264,7 +264,7 @@ define service {
 #    notifications_enabled   0
 # }
 ```
-#### Nous allons tester notre nouvelle configuration que nous avons saisie dans le fichier /usr/local/nagios/etc/objects/hostextinfo.cfg à l'aide de la commande suivante :
+Nous allons tester notre nouvelle configuration que nous avons saisie dans le fichier /usr/local/nagios/etc/objects/hostextinfo.cfg à l'aide de la commande suivante :
 ```
 # --------------------------------------------------------------------------
 # - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG -
@@ -294,8 +294,7 @@ Checking misc settings...
 Total Warnings: 0
 Total Errors:   0
 ```
-#### Si il n'y a pas d'erreur sur cette nouvelle configuration (hostextinfo.cfg), redémarrer Nagios pour la prise en compte de cette nouvelle configuration.
+Si il n'y a pas d'erreur sur cette nouvelle configuration (hostextinfo.cfg), redémarrer Nagios pour la prise en compte de cette nouvelle configuration.
 ```
 systemctl restart nagios.service
 ```
-
