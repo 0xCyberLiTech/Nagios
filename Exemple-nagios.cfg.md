@@ -40,7 +40,7 @@ cfg_file=/usr/local/nagios/etc/objects/localhost.cfg
 # Definitions for monitoring a network printer
 #cfg_file=/usr/local/nagios/etc/objects/printer.cfg
 ```
-#### Nous pouvons constater que les lignes suivantes de base ne sont pas commentées (#) :
+Nous pouvons constater que les lignes suivantes de base ne sont pas commentées (#) :
 ```
 cfg_file=/usr/local/nagios/etc/objects/commands.cfg
 cfg_file=/usr/local/nagios/etc/objects/contacts.cfg
@@ -48,8 +48,8 @@ cfg_file=/usr/local/nagios/etc/objects/timeperiods.cfg
 cfg_file=/usr/local/nagios/etc/objects/templates.cfg
 cfg_file=/usr/local/nagios/etc/objects/localhost.cfg
 ```
-#### Donc ces fichiers existent vers /usr/local/nagios/etc/objects/
-#### Il est donc possible de déclarer arbitrairement de nouveaux fichiers dans /usr/local/nagios/etc/nagios.cfg
+Donc ces fichiers existent vers /usr/local/nagios/etc/objects/
+Il est donc possible de déclarer arbitrairement de nouveaux fichiers dans /usr/local/nagios/etc/nagios.cfg
 ```
 Exemples :
 
@@ -58,29 +58,29 @@ cfg_file=/usr/local/nagios/etc/objects/serveurs-windows.cfg
 cfg_file=/usr/local/nagios/etc/objects/routeurs.cfg
 cfg_file=/usr/local/nagios/etc/objects/imprimantes.cfg
 ```
-#### A partir de cet instant il faudra créer ceux-ci vers /usr/local/nagios/etc/objects/
+A partir de cet instant il faudra créer ceux-ci vers /usr/local/nagios/etc/objects/
 ```
 touch /usr/local/nagios/etc/objects/serveurs-linux.cfg
 touch /usr/local/nagios/etc/objects/serveurs-windows.cfg
 touch /usr/local/nagios/etc/objects/routeurs.cfg
 touch /usr/local/nagios/etc/objects/imprimantes.cfg
 ```
-#### Je vous conseille de mettre en service qu'un fichier à la fois.
+Je vous conseille de mettre en service qu'un fichier à la fois.
 ```
 cfg_file=/usr/local/nagios/etc/objects/serveurs-linux.cfg
 #cfg_file=/usr/local/nagios/etc/objects/serveurs-windows.cfg
 #cfg_file=/usr/local/nagios/etc/objects/routeurs.cfg
 #cfg_file=/usr/local/nagios/etc/objects/imprimantes.cfg
 ```
-#### Ne pas oublier de sauvegarder votre fichier /usr/local/nagios/etc/nagios.cfg
-#### Positionner les droits qui conviennent sur ces fichiers.
+Ne pas oublier de sauvegarder votre fichier /usr/local/nagios/etc/nagios.cfg
+Positionner les droits qui conviennent sur ces fichiers.
 ```
 chown nagios:nagios /usr/local/nagios/etc/objects/serveurs-linux.cfg
 chown nagios:nagios /usr/local/nagios/etc/objects/serveurs-windows.cfg
 chown nagios:nagios /usr/local/nagios/etc/objects/routeurs.cfg
 chown nagios:nagios /usr/local/nagios/etc/objects/imprimantes.cfg
 ```
-#### Exemple, configuration injectée dans le fichier /usr/local/nagios/etc/objects/serveurs-linux.cfg
+Exemple, configuration injectée dans le fichier /usr/local/nagios/etc/objects/serveurs-linux.cfg
 ```
 # --------------------------------------------------------------------------
 # 0xCyberLiTech
@@ -98,9 +98,9 @@ define host {
 
      host_name               srv-linux-01
      alias                   srv-linux-01
-     address                 192.168.50.200
+     address                 192.168.0.200
      hostgroups              grp-server-linux
-     parents                 router-01
+     # parents               router-01
 }
 
 # --------------------------------------------------------------------------
@@ -112,9 +112,9 @@ define host {
 
      host_name               srv-linux-02
      alias                   srv-linux-02
-     address                 192.168.50.201
+     address                 192.168.0.201
      hostgroups              grp-server-linux
-     parents                 router-01
+     # parents               router-01
 }
 
 # --------------------------------------------------------------------------
@@ -344,7 +344,7 @@ define service {
 #    notifications_enabled   0
 # }
 ```
-#### Tester dabord votre nouvelle configuration que vous avez saisie dans le fichier /usr/local/nagios/etc/objects/serveurs-linux.cfg à l'aide de la commande suivante :
+Tester dabord votre nouvelle configuration que vous avez saisie dans le fichier /usr/local/nagios/etc/objects/serveurs-linux.cfg à l'aide de la commande suivante :
 ```
 # --------------------------------------------------------------------------
 # - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG -
@@ -374,7 +374,7 @@ Checking misc settings...
 Total Warnings: 0
 Total Errors:   0
 ```
-#### Si il n'y a pas d'erreur sur cette nouvelle configuration (serveurs-linux.cfg), redémarrer Nagios pour la prise en compte de cette configuration.
+Si il n'y a pas d'erreur sur cette nouvelle configuration (serveurs-linux.cfg), redémarrer Nagios pour la prise en compte de cette configuration.
 ```
 systemctl restart nagios.service
 ```
