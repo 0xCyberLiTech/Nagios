@@ -6,7 +6,7 @@
 # 0xCyberLiTech
 # Date de création : le 21-06-2023
 # Date de modification : le 21-06-2023
-# NAGIOS.CFG - Exemple de fichier de configuration pour Nagios
+# NAGIOS.CFG - Exemple de fichier de configuration pour Nagios.
 # --------------------------------------------------------------------------
 
 # LOG FILE
