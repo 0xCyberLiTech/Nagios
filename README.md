@@ -245,7 +245,7 @@ http://FQDN/nagios
 
 Exemple de la Map Nagios
 
-![Map_Nagios](./images/map_nagios.png)
+![Map_Nagios](./images/nagios_map.png)
 
 #### Démarrer / Daemon Apache2.
 #### Démarrer le serveur Web Apache.
