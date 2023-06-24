@@ -248,7 +248,7 @@ Décommenté la variable 'parents' dans les fichiers de configuration donnés en
 
 ![Map_Nagios](./images/nagios_map.png)
 
-![Nagios_Host_Groups](./nagios_service_Host_Groups.png)
+![Nagios_Host_Groups](./images/nagios_service_Host_Groups.png)
 
 #### Démarrer / Daemon Apache2.
 #### Démarrer le serveur Web Apache.
