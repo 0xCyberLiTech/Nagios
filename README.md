@@ -243,7 +243,8 @@ http://mon-ip/nagios
 http://FQDN/nagios
 ```
 
-Exemple de la Map Nagios
+Avec les différents fichiers de configuration présentés en guise d'exemple, notre map Nagios ressemblera à ça.
+Décommenté la variable 'parents' dans les fichiers de configuration donnés en exemple.
 
 ![Map_Nagios](./images/nagios_map.png)
 
