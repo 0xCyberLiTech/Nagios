@@ -5,9 +5,9 @@
 # --------------------------------------------------------------------------
 # 0xCyberLiTech
 # Date de création : le 21-06-2023
-# Date de modification : le 23-06-2023
+# Date de modification : le 25-06-2023
 # CONTACTS.CFG - Exemple de fichier de configuration pour Nagios.
-# /usr/local/nagios/etc/objects/
+# /usr/local/nagios/etc/objects/contacts.cfg
 # --------------------------------------------------------------------------
 
 # --------------------------------------------------------------------------
@@ -70,7 +70,7 @@ Checking misc settings...
 Total Warnings: 0
 Total Errors:   0
 ```
-#### Si il n'y a pas d'erreur sur cette nouvelle configuration (hostextinfo.cfg), redémarrer Nagios pour la prise en compte de cette nouvelle configuration.
+Si il n'y a pas d'erreur sur cette nouvelle configuration (hostextinfo.cfg), redémarrer Nagios pour la prise en compte de cette nouvelle configuration.
 ```
 systemctl restart nagios.service
 ```
