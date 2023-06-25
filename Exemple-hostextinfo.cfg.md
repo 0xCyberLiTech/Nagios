@@ -221,6 +221,36 @@ define hostextinfo{
     #3d_coords                  100.0,50.0,75.0
 }
 ```
+Nous allons tester notre nouvelle configuration que nous avons saisie dans le fichier /usr/local/nagios/etc/objects/router.cfg à l'aide de la commande suivante :
+```
+# --------------------------------------------------------------------------
+# - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG -
+# --------------------------------------------------------------------------
+/usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/hostextinfo.cfg
+
+Checking objects...
+        Checked 10 services.
+        Checked 3 hosts.
+        Checked 2 host groups.
+        Checked 0 service groups.
+        Checked 1 contacts.
+        Checked 1 contact groups.
+        Checked 24 commands.
+        Checked 5 time periods.
+        Checked 0 host escalations.
+        Checked 0 service escalations.
+Checking for circular paths...
+        Checked 3 hosts
+        Checked 0 service dependencies
+        Checked 0 host dependencies
+        Checked 5 timeperiods
+Checking global event handlers...
+Checking obsessive compulsive processor commands...
+Checking misc settings...
+
+Total Warnings: 0
+Total Errors:   0
+```
 #### Si il n'y a pas d'erreur sur cette nouvelle configuration (hostextinfo.cfg), redémarrer Nagios pour la prise en compte de cette nouvelle configuration.
 ```
 systemctl restart nagios.service
