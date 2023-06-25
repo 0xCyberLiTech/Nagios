@@ -1,4 +1,4 @@
-![Nagios_NRPE](./images/nagios_nrpe.png)
+![Nagios_NRPE](./images/Nagios_NRPE.png)
 
 ## Installation_NRPE_4.1.0 depuis les sources.
 
