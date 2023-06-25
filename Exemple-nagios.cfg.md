@@ -88,7 +88,7 @@ Exemple, configuration injectée dans le fichier /usr/local/nagios/etc/objects/s
 # Date de création : le 21-06-2023
 # Date de modification : le 25-06-2023
 # SERVER-LINUX.CFG -  Exemple de fichier de configuration pour Nagios.
-# /usr/local/nagios/etc/nagios.cfg
+# /usr/local/nagios/etc/server-linux.cfg
 # --------------------------------------------------------------------------
 
 # --------------------------------------------------------------------------
