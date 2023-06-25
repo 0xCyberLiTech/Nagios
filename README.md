@@ -15,9 +15,7 @@ Celle-ci est effectuée depuis les sources.
 | - F. | [Tester à nouveau Nagios.](#test-de-Nagios) |
 | - G. | [Installation automatisée de Nagios-core & Nagios-plugins.](#installation-automatisée-Nagios-core) |
 
-# Introduction aux fichiers de configuration Nagios.
-
-## Exemples concernant les fichiers de configuration :
+## Exemples concernant les fichiers de configuration Nagios :
 
 | Cat | Etapes |
 |------|------| 
@@ -31,7 +29,7 @@ Celle-ci est effectuée depuis les sources.
 
 <a name="préparation-avant-installation-de-nagios"></a>
 
-## A. Préparation avant l'installation de Nagios-core.
+## - A. Préparation avant l'installation de Nagios-core.
 
 Création du sous dossier /opt/nagios/.
 ```
@@ -42,7 +40,7 @@ Mettre à jour les paquets.
 ```
 apt update && apt upgrade -y
 ```
-## Installation de Nagios-core dans sa dernière version stable.
+- Installation de Nagios-core dans sa dernière version stable.
 Conditions préalables.
 Effectuer ces étapes pour installer les packages prérequis.
 ```
@@ -67,7 +65,7 @@ apt install -y \
 
 <a name="téléchargement-de-nagios-core"></a>
 
-## B. Téléchargement des sources de Nagios-core dans sa dernère version stable.
+## - B. Téléchargement des sources de Nagios-core dans sa dernère version stable.
 ```
 NAGIOS_VER=$(curl -s https://api.github.com/repos/NagiosEnterprises/nagioscore/releases/latest|grep tag_name | cut -d '"' -f 4)
 wget https://github.com/NagiosEnterprises/nagioscore/releases/download/$NAGIOS_VER/$NAGIOS_VER.tar.gz
@@ -153,7 +151,9 @@ http://FQDN/nagios
 ```
 Vous serez invité à entrer un nom d'utilisateur et un mot de passe. Le nom d'utilisateur est nagiosadmin (vous l'avez créé lors d'une étape précédente) et le mot de passe est celui que vous avez fourni précédemment.
 Une fois connecté, l'interface de Nagios s'affiche. Félicitations, vous avez installé Nagios Core.
-## Installation de Nagios-plugins dans sa dernière version stable.
+
+- Installation de Nagios-plugins dans sa dernière version stable.
+
 Conditions préalables.
 Effectuer ces étapes pour installer les packages prérequis.
 ```
