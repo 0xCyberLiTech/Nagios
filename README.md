@@ -41,8 +41,8 @@ Mettre à jour les paquets.
 apt update && apt upgrade -y
 ```
 - Installation de Nagios-core dans sa dernière version stable.
-Conditions préalables.
-Effectuer ces étapes pour installer les packages prérequis.
+- Conditions préalables.
+- Effectuer ces étapes pour installer les packages prérequis.
 ```
 apt install -y \
        autoconf \
