@@ -140,4 +140,3 @@ Si il n'y a pas d'erreur sur cette nouvelle configuration (ip-public.cfg), redé
 ```
 systemctl restart nagios.service
 ```
-
