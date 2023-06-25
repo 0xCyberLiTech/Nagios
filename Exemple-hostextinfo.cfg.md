@@ -66,6 +66,7 @@ chown nagios:nagios /usr/local/nagios/etc/objects/hostextinfo.cfg
 # Date de création : le 21-06-2023
 # Date de modification : le 25-06-2023
 # HOSTEXTINFO.CFG - Exemple de fichier de configuration pour Nagios
+# /usr/local/nagios/etc/objects/hostextinfo.cfg
 # --------------------------------------------------------------------------
 
 # --------------------------------------------------------------------------
