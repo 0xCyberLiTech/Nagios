@@ -270,7 +270,7 @@ Nous allons tester notre nouvelle configuration que nous avons saisie dans le fi
 # --------------------------------------------------------------------------
 # - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG -
 # --------------------------------------------------------------------------
-/usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/server-linux.cfg
+/usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
 
 Checking objects...
         Checked 10 services.
