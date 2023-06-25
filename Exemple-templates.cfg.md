@@ -5,9 +5,9 @@
 # --------------------------------------------------------------------------
 # 0xCyberLiTech
 # Date de création : le 21-06-2023
-# Date de modification : le 23-06-2023
+# Date de modification : le 25-06-2023
 # TEMPLATES.CFG - Exemple de fichier de configuration pour Nagios.
-# /usr/local/nagios/etc/objects/
+# /usr/local/nagios/etc/objects/templates.cfg
 # --------------------------------------------------------------------------
 
 # --------------------------------------------------------------------------
@@ -258,12 +258,12 @@ define service {
     retry_interval                  1
     register                        0
 ```
-#### Nous allons tester notre nouvelle configuration que nous avons saisie dans le fichier /usr/local/nagios/etc/objects/templates.cfg à l'aide de la commande suivante :
+Nous allons tester notre nouvelle configuration que nous avons saisie dans le fichier /usr/local/nagios/etc/objects/templates.cfg à l'aide de la commande suivante :
 ```
 # --------------------------------------------------------------------------
 # - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG -
 # --------------------------------------------------------------------------
-/usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
+/usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/templates.cfg
 
 Checking objects...
         Checked 10 services.
@@ -288,7 +288,7 @@ Checking misc settings...
 Total Warnings: 0
 Total Errors:   0
 ```
-#### Si il n'y a pas d'erreur sur cette nouvelle configuration (templates.cfg), redémarrer Nagios pour la prise en compte de cette nouvelle configuration.
+Si il n'y a pas d'erreur sur cette nouvelle configuration (templates.cfg), redémarrer Nagios pour la prise en compte de cette nouvelle configuration.
 ```
 systemctl restart nagios.service
 ```
