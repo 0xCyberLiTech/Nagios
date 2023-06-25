@@ -21,7 +21,7 @@ define host {
      alias                   WAN Free 0.0.0.0    # Renseigner votre adresse ip fixe public
      address                 0.0.0.0             # Renseigner votre adresse ip fixe public
      hostgroups              grp-ip-public
-     parents                 router-02
+     #parents                router-02
 }
 
 # --------------------------------------------------------------------------
@@ -35,7 +35,7 @@ define host {
      alias                   DNS FAI Free 212.27.40.240
      address                 212.27.40.240
      hostgroups              grp-ip-public
-     parents                 router-02
+     #parents                router-02
 }
 
 # --------------------------------------------------------------------------
@@ -49,7 +49,7 @@ define host {
      alias                   DNS FAI Free 212.27.40.241
      address                 212.27.40.241
      hostgroups              grp-ip-public
-     parents                 router-02
+     #parents                router-02
 }
 
 # --------------------------------------------------------------------------
