@@ -4,9 +4,9 @@
 
 #### Introduction :
 
-##### De base, tous les hosts de la cartographie ont pour symbole un point. 
-##### Nagios permet d'afficher une icône différente pour chaque hosts. 
-##### Les images et icônes proposées par défaut se trouve dans /usr/local/nagios/share/images/logos/.
+De base, tous les hosts de la cartographie ont pour symbole un point. 
+Nagios permet d'afficher une icône différente pour chaque hosts. 
+Les images et icônes proposées par défaut se trouve dans /usr/local/nagios/share/images/logos/.
 
 ```
 cd /usr/local/nagios/share/images/logos/
@@ -33,10 +33,10 @@ caldera.gd2    firewall.gif        internet.gif         mandrake.gif   notebook.
 caldera.gif    freebsd40.gd2       ip-pbx.gd2           mandrake.jpg   novell40.gd2     router40.png     storm.jpg      thin-client.gd2  wifi_modem.png
 ```
 
-##### Vous pouvez bien entendu rajouter autant de logos que vous voulez. Certains sites devraient vous permettre de trouver votre bonheur.
-##### Une fois que nous savons ça, il ne reste plus qu’à renseigner le fichier hostextinfo.cfg.
+Vous pouvez bien entendu rajouter autant de logos que vous voulez. Certains sites devraient vous permettre de trouver votre bonheur.
+Une fois que nous savons ça, il ne reste plus qu’à renseigner le fichier hostextinfo.cfg.
 
-#### Il est donc nécessaire de déclarer ce fichier dans /usr/local/nagios/etc/nagios.cfg.
+Il est donc nécessaire de déclarer ce fichier dans /usr/local/nagios/etc/nagios.cfg.
 
 ```
 Exemple :
@@ -49,17 +49,17 @@ cfg_file=/usr/local/nagios/etc/objects/serveurs-linux.cfg
 cfg_file=/usr/local/nagios/etc/objects/hostextinfo.cfg
 # --------------------------------------------------------------------------
 ```
-#### Nous allons pouvoir créer celui-ci dans /usr/local/nagios/etc/objects/
+Nous allons pouvoir créer celui-ci dans /usr/local/nagios/etc/objects/
 
 ```
 touch /usr/local/nagios/etc/objects/hostextinfo.cfg
 ```
-#### Nous allons repositionner les droits qui conviennent sur ce fichier.
+Nous allons repositionner les droits qui conviennent sur ce fichier.
 
 ```
 chown nagios:nagios /usr/local/nagios/etc/objects/hostextinfo.cfg
 ```
-#### Saisir le code ci-dessous en guise d'exemple dans le fichier hostextinfo.cfg.
+Saisir le code ci-dessous en guise d'exemple dans le fichier hostextinfo.cfg.
 ```
 # --------------------------------------------------------------------------
 # 0xCyberLiTech
@@ -227,7 +227,7 @@ Nous allons tester notre nouvelle configuration que nous avons saisie dans le fi
 # --------------------------------------------------------------------------
 # - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG -
 # --------------------------------------------------------------------------
-/usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/hostextinfo.cfg
+/usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
 
 Checking objects...
         Checked 10 services.
@@ -252,7 +252,7 @@ Checking misc settings...
 Total Warnings: 0
 Total Errors:   0
 ```
-#### Si il n'y a pas d'erreur sur cette nouvelle configuration (hostextinfo.cfg), redémarrer Nagios pour la prise en compte de cette nouvelle configuration.
+Si il n'y a pas d'erreur sur cette nouvelle configuration (hostextinfo.cfg), redémarrer Nagios pour la prise en compte de cette nouvelle configuration.
 ```
 systemctl restart nagios.service
 ```
