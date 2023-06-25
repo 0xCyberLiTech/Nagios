@@ -50,12 +50,10 @@ cfg_file=/usr/local/nagios/etc/objects/hostextinfo.cfg
 # --------------------------------------------------------------------------
 ```
 Nous allons pouvoir créer celui-ci dans /usr/local/nagios/etc/objects/
-
 ```
 touch /usr/local/nagios/etc/objects/hostextinfo.cfg
 ```
 Nous allons repositionner les droits qui conviennent sur ce fichier.
-
 ```
 chown nagios:nagios /usr/local/nagios/etc/objects/hostextinfo.cfg
 ```
@@ -222,7 +220,7 @@ define hostextinfo{
     #3d_coords                  100.0,50.0,75.0
 }
 ```
-Nous allons tester notre nouvelle configuration que nous avons saisie dans le fichier /usr/local/nagios/etc/objects/router.cfg à l'aide de la commande suivante :
+Nous allons tester notre nouvelle configuration que nous avons saisie dans le fichier /usr/local/nagios/etc/objects/hostextinfo.cfg à l'aide de la commande suivante :
 ```
 # --------------------------------------------------------------------------
 # - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG -
