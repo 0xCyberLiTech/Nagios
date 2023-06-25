@@ -7,7 +7,7 @@
 # Date de création : le 21-06-2023
 # Date de modification : le 23-06-2023
 # IP-PUBLIC.CFG - Exemple de fichier de configuration pour Nagios.
-# /usr/local/nagios/etc/objects/
+# /usr/local/nagios/etc/objects/ip-public.cfg
 # --------------------------------------------------------------------------
 
 # --------------------------------------------------------------------------
@@ -111,7 +111,7 @@ Nous allons tester notre nouvelle configuration que nous avons saisie dans le fi
 # --------------------------------------------------------------------------
 # - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG -
 # --------------------------------------------------------------------------
-/usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/router.cfg
+/usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/ip-public.cfg
 
 Checking objects...
         Checked 10 services.
