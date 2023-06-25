@@ -42,7 +42,7 @@ apt update && apt upgrade -y
 ```
 - Installation de Nagios-core dans sa dernière version stable.
 - Conditions préalables.
-- Effectuer ces étapes pour installer les packages prérequis.
+- Installer les packages prérequis.
 ```
 apt install -y \
        autoconf \
@@ -70,7 +70,7 @@ apt install -y \
 NAGIOS_VER=$(curl -s https://api.github.com/repos/NagiosEnterprises/nagioscore/releases/latest|grep tag_name | cut -d '"' -f 4)
 wget https://github.com/NagiosEnterprises/nagioscore/releases/download/$NAGIOS_VER/$NAGIOS_VER.tar.gz
 ```
-Extraire l'archive $NAGIOS_VER.tar.gz.
+- Extraire l'archive $NAGIOS_VER.tar.gz.
 ```
 tar -xvzf $NAGIOS_VER.tar.gz
 ```
@@ -82,67 +82,65 @@ cd $NAGIOS_VER
 ./configure --with-httpd-conf=/etc/apache2/sites-enabled
 make all
 ```
-Créer un utilisateur et un groupe.
+- Créer un utilisateur et un groupe.
 Cela crée l'utilisateur et le groupe nagios. L'utilisateur www-data est également ajouté au groupe nagios.
 ```
 make install-groups-users
 usermod -a -G nagios www-data
 ```
-Installer les binaires.
+- Installer les binaires.
 Cette étape installe les fichiers binaires, les CGI et les fichiers HTML.
 ```
 make install
 ```
-Install Service / Daemon
+- Install Service / Daemon.
 Cela installe les fichiers de service ou de deamon et les configure également pour démarrer automatiquement ...
 ```
 make install-daemoninit
 ```
-Installation Command Mode.
+- Installation Command Mode.
 Ceci installe et configure le fichier de commande externe.
 ```
 make install-commandmode
 ```
-Installer les fichiers de configuration.
+- Installer les fichiers de configuration.
 Ceci installe les fichiers de configuration *SAMPLE*. Ceux-ci sont nécessaires car Nagios a besoin de certains fichiers de configuration pour lui permettre de démarrer.
 ```
 make install-config
 ```
-Installer les fichiers de configuration Apache.
+- Installer les fichiers de configuration Apache.
 Cela installe les fichiers de configuration du serveur Web Apache et configure les paramètres Apache.
 ```
 make install-webconf
 a2enmod rewrite
 a2enmod cgi
 ```
-Conditions préalables
-Effectuer ces étapes pour installer les packages prérequis.
-
-Configurer le pare-feu.
+- Configurer le pare-feu.
 Vous devez autoriser le trafic entrant du port 80 sur le pare-feu local afin de pouvoir accéder à l'interface Web de Nagios Core.
 ```
 #iptables -I INPUT -p tcp --destination-port 80 -j ACCEPT
 #apt-get install -y iptables-persistent
 ```
 Répondre oui à l'enregistrement des règles existantes.
-Créer un compte utilisateur nagiosadmin.
+
+- Créer un compte utilisateur nagiosadmin.
 Vous devrez créer un compte utilisateur Apache pour pouvoir vous connecter à Nagios.
 La commande suivante créera un compte d'utilisateur appelé nagiosadmin et vous serez invité à fournir un mot de passe pour le compte.
 ```
 htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
 ```
-Commandes service / deamon
-Démarrer le serveur Web Apache.
-Redirect root URL (/) to /nagios
+- Commandes service / deamon
+Redirect root URL (/$) to /nagios
+Démarrer le serveur Web Apache2.
 ```
 echo 'RedirectMatch ^/$ /nagios' >> /etc/apache2/apache2.conf
-systemctl restart apache2.service
+systemctl start apache2.service
 ```
 Démarrer Service / Daemon Nagios.
 ```
 systemctl start nagios.service
 ```
-Test Nagios.
+- Test d'accès à Nagios.
 Nagios est maintenant en cours d'exécution, pour le confirmer, vous devez vous connecter à l'interface Web de Nagios.
 Faites pointer votre navigateur Web vers l'adresse IP ou le FQDN de votre serveur Nagios Core, par exemple :
 ```
@@ -153,9 +151,8 @@ Vous serez invité à entrer un nom d'utilisateur et un mot de passe. Le nom d'u
 Une fois connecté, l'interface de Nagios s'affiche. Félicitations, vous avez installé Nagios Core.
 
 - Installation de Nagios-plugins dans sa dernière version stable.
-
-Conditions préalables.
-Effectuer ces étapes pour installer les packages prérequis.
+- Conditions préalables.
+- Installer les packages prérequis.
 ```
 cd /opt/nagios/
 ```
@@ -186,7 +183,7 @@ VER=$(curl -s https://api.github.com/repos/nagios-plugins/nagios-plugins/release
 wget https://github.com/nagios-plugins/nagios-plugins/releases/download/release-$VER/nagios-plugins-$VER.tar.gz
 ```
 
-Extraire l'archive nagios-plugins-$VER.tar.gz.
+- Extraire l'archive nagios-plugins-$VER.tar.gz.
 
 ```
 tar xvf nagios-plugins-$VER.tar.gz
@@ -217,24 +214,19 @@ Avec les différents fichiers de configuration présentés en guise d'exemple, n
 Décommenté la variable 'parents' dans les fichiers de configuration donnés en exemple.
 
 ![Map_Nagios](./images/nagios_map.png)
-
 ![Nagios_Host_Groups](./images/nagios_service_Host_Groups.png)
 
-Démarrer / Daemon Apache2.
-Démarrer le serveur Web Apache.
+- Redémarrer / Daemon Apache2.
+- Redémarrer le serveur Web Apache.
 
 ```
 systemctl restart apache2.service
 ```
-
 Redémarrer / Daemon Nagios.
-
 ```
 systemctl restart nagios.service
 ```
-
 Purge.
-
 ```
 rm -rf $TEMP_FOLDER
 ```
@@ -249,5 +241,3 @@ touch install-nagios.sh
 chmod +x install-nagios.sh
 sudo ./install-nagios.sh
 ```
-
-
