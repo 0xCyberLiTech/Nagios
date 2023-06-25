@@ -2,7 +2,7 @@
 
 ## - C. Exemple concernant le fichier /usr/local/nagios/etc/objects/hostextinfo.cfg
 
-#### Introduction :
+Introduction :
 
 De base, tous les hosts de la cartographie ont pour symbole un point. 
 Nagios permet d'afficher une icône différente pour chaque hosts. 
