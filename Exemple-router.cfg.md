@@ -21,7 +21,7 @@ define host {
      alias                   Asus GT AXE-16000
      address                 192.168.0.1
      hostgroups              grp-router
-     parents                 router-02
+     #parents                router-02
 }
 
 # --------------------------------------------------------------------------
@@ -49,7 +49,7 @@ define host {
      alias                   ZEN-Wifi ET-12
      address                 192.168.0.121
      hostgroups              grp-router
-     parents                 router-01
+     #parents                router-01
 }
 
 # --------------------------------------------------------------------------
@@ -63,7 +63,7 @@ define host {
      alias                   ZEN-Wifi ET-12
      address                 192.168.0.110
      hostgroups              grp-router
-     parents                 router-01
+     #parents                router-01
 }
 
 # --------------------------------------------------------------------------
