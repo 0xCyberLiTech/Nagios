@@ -12,20 +12,19 @@ Il est supposé que vous êtes connecté à la machine sur laquelle vous install
 
 Toutes les commandes à partir de ce point seront en tant que root.
 
-- Conditions préalables :
-Assurez-vous que les packages suivants sont installés.
+- Conditions préalables, assurez-vous que les packages suivants sont installés.
 ```
 apt-get update
 apt-get install -y autoconf automake gcc libc6 libmcrypt-dev make libssl-dev wget
 ```
-- Téléchargement de la source nrpe-4.1.0.tar.gz.
+- Téléchargement de l'archive nrpe-4.1.0.tar.gz (source).
 ```
 mkdir -p /opt/nrpe/
 cd /opt/nrpe/
 
 wget --no-check-certificate -O nrpe.tar.gz https://github.com/NagiosEnterprises/nrpe/archive/nrpe-4.1.0.tar.gz
 ```
-- Extraction de l'archive nrpe.tar.gz
+- Extraction de l'archive nrpe.tar.gz.
 ```
 tar -xvzf nrpe.tar.gz
 ```
@@ -43,7 +42,7 @@ Cela crée l'utilisateur et le groupe nagios.
 ```
 make install-groups-users
 ```
-- Installer les binaires
+- Installer les binaires.
 
 Cette étape installe les fichiers binaires, le démon NRPE et le plugin check_nrpe.
 
@@ -53,7 +52,7 @@ Si vous souhaitez uniquement installer le plug-in check_nrpe, reportez-vous à l
 ```
 make install
 ```
-- Installer les fichiers de configuration
+- Installer les fichiers de configuration.
 Cela installe les fichiers de configuration.
 ```
 make install-config
@@ -66,7 +65,7 @@ echo >> /etc/services
 echo '# Nagios services' >> /etc/services
 echo 'nrpe    5666/tcp' >> /etc/services
 ```
-- Installer le service/le démon
+- Installer le service/le démon.
 Cela installe les fichiers de service ou de démon.
 ```
 make install-init
@@ -84,8 +83,8 @@ Answer yes to saving existing rules
 
 iptables-save > /etc/iptables/rule
 ```
-- Mettre à jour le fichier de configuration
-Le fichier nrpe.cfg est l'endroit où les paramètres suivants seront définis. Il est situé:
+- Mettre à jour le fichier de configuration.
+Le fichier nrpe.cfg est l'endroit où les paramètres suivants seront définis. Il est situé :
 ```
 /usr/local/nagios/etc/nrpe.cfg
 
@@ -132,9 +131,10 @@ systemctl stop nrpe.service
 systemctl restart nrpe.service
 systemctl status nrpe.service
 ```
-- Installation des plugins Nagios ...........
+- Installation des plugins Nagios, normalement ceux-ci ont été installés auparavant lors de l'installation de Nagios Core ...........
 
-NRPE a besoin de plugins pour fonctionner correctement.
+Note pour les machines linux distantes à monitorer. 
+NRPE a besoin de Nagios-plugins pour fonctionner correctement.
 
 - Test NRPE + Plugins.
 
@@ -153,7 +153,7 @@ OK - load average per CPU: 0.04, 0.04, 0.04|load1=0.043;0.150;0.300;0; load5=0.0
 ```
 Vous pouvez également tester à partir de votre hôte Nagios en exécutant la même commande ci-dessus, mais au lieu de 127.0.0.1, vous devrez le remplacer par l'adresse IP / le nom DNS de la machine avec NRPE en cours d'exécution.
 
-Configurer nrpe dans le fichier de commandes.cfg du serveur nagios
+Configurer nrpe dans le fichier de commandes.cfg du serveur nagios.
 
 Nous pouvons configurer la commande 'check_nrpe' dans le fichier commands.cfg. Ensuite, d'autres commandes de vérification en tant qu'arguments de cette commande check_nrge à exécuter sur l'hôte distant. Les lignes qui peuvent être ajoutées au fichier command.cfg sur le serveur nagios pour activer la commande 'check_nrpe' sont :
 ```
@@ -212,7 +212,7 @@ Concernant command[check_*] :
 /usr/local/nagios/etc/nrpe.cfg
 ```
 Les exemples suivants utilisent des arguments de commande codés en dur...
-C'est de loin la méthode la plus sûre d'utilisation de NRPE
+C'est de loin la méthode la plus sûre d'utilisation de NRPE.
 ```
 command[check_users]=/usr/local/nagios/libexec/check_users -w 5 -c 10
 command[check_load]=/usr/local/nagios/libexec/check_load -r -w .15,.10,.05 -c .30,.25,.20
