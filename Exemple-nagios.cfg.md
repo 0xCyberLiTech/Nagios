@@ -86,11 +86,13 @@ Exemple, configuration injectée dans le fichier /usr/local/nagios/etc/objects/s
 # --------------------------------------------------------------------------
 # 0xCyberLiTech
 # Date de création : le 21-06-2023
-# Date de modification : le 25-06-2023
-# SERVER-LINUX.CFG -  Exemple de fichier de configuration pour Nagios.
-# /usr/local/nagios/etc/server-linux.cfg
+# Date de modification : le 22-06-2023
+# SERVERS-LINUX.CFG - /usr/local/nagios/etc/objects/
 # --------------------------------------------------------------------------
 
+# --------------------------------------------------------------------------
+# SERVEUR LOCAL : srv-linux-01
+# --------------------------------------------------------------------------
 # --------------------------------------------------------------------------
 # DEFINITION HOST - srv-linux-01
 # --------------------------------------------------------------------------
@@ -100,9 +102,9 @@ define host {
 
      host_name               srv-linux-01
      alias                   srv-linux-01
-     address                 192.168.0.200
+     address                 192.168.50.200
      hostgroups              grp-server-linux
-     #parents                router-01
+     parents                 router-01
 }
 
 # --------------------------------------------------------------------------
@@ -114,9 +116,9 @@ define host {
 
      host_name               srv-linux-02
      alias                   srv-linux-02
-     address                 192.168.0.201
+     address                 192.168.50.201
      hostgroups              grp-server-linux
-     #parents                router-01
+     parents                 router-01
 }
 
 # --------------------------------------------------------------------------
@@ -144,99 +146,105 @@ define service {
 }
 
 # --------------------------------------------------------------------------
-# DEFINITION SERVICE - srv-linux-01 - Current Users
+# DEFINITION SERVICE - srv-linux-01 - check_local_disk
 # --------------------------------------------------------------------------
-# define service {
-#    use                     local-service
-#    host_name               srv-linux-01
-#    service_description     Current Users
-#    check_command           check_nrpe!check_users
-# }
-
-# --------------------------------------------------------------------------
-# DEFINITION SERVICE - srv-linux-01 - Load average
-# --------------------------------------------------------------------------
-# define service {
-#
-#    use                     generic-service
-#    host_name               srv-linux-01
-#    service_description     Load average
-#    check_command           check_nrpe!check_load
-# }
-
-# --------------------------------------------------------------------------
-# DEFINITION SERVICE - srv-linux-01 - Disk partition /
-# --------------------------------------------------------------------------
-# define service{
-#
-#    use                     generic-service
-#    host_name               srv-linux-01
-#    service_description     Disk partition /
-#    check_command           check_nrpe!check_disk
-#    normal_check_interval   30
-#    retry_check_interval    5
-# }
-
-# --------------------------------------------------------------------------
-# DEFINITION SERVICE - srv-linux-01 - Disk partition /swap
-# --------------------------------------------------------------------------
-# define service{
-#
-#    use                     generic-service
-#    host_name               srv-linux-01
-#    service_description     Disk partition /swap
-#    check_command           check_nrpe!check_swap
-# }
-
-# --------------------------------------------------------------------------
-# DEFINITION SERVICE - srv-linux-01 - Total Processes
-# --------------------------------------------------------------------------
-# define service{
-#
-#    use                     generic-service
-#    host_name               srv-linux-01
-#    service_description     Total Processes
-#    check_command           check_nrpe!check_total_procs
-# }
-
-# --------------------------------------------------------------------------
-# DEFINITION SERVICE - srv-linux-01 - Zombies Processes
-# --------------------------------------------------------------------------
-# define service{
-#
-#    use                     generic-service
-#    host_name               srv-linux-01
-#    service_description     Zombies Processes
-#    check_command           check_nrpe!check_zombie_procs
-#    normal_check_interval   60
-#    retry_check_interval    5
-# }
-
-# --------------------------------------------------------------------------
-# DEFINITION SERVICE - srv-linux-01 - ssh port 2234
-# --------------------------------------------------------------------------
+# Define a service to check the disk space of the root partition
+# on the local machine.  Warning if < 20% free, critical if
+# < 10% free space on partition.
 define service {
 
-     use                     generic-service
-     host_name               srv-linux-01
-     service_description     SSH_2234
-     check_command           check_ssh!2234
-#    check_command           check_ssh_altport!2234
-     notifications_enabled   0
+    use                     local-service
+    host_name               srv-linux-01
+    service_description     Root Partition
+    check_command           check_local_disk!20%!10%!/
 }
 
 # --------------------------------------------------------------------------
-# DEFINITION SERVICE - srv-linux-01 - http port 80
+# DEFINITION SERVICE - srv-linux-01 - check_local_users
 # --------------------------------------------------------------------------
+# Define a service to check the number of currently logged in
+# users on the local machine.  Warning if > 20 users, critical
+# if > 50 users.
 define service {
 
-     use                     generic-service
-     host_name               srv-linux-01
-     service_description     HTTP
-     check_command           check_http
-     notifications_enabled   0
+    use                     local-service
+    host_name               srv-linux-01
+    service_description     Current Users
+    check_command           check_local_users!20!50
 }
 
+# --------------------------------------------------------------------------
+# DEFINITION SERVICE - srv-linux-01 - check_local_procs
+# --------------------------------------------------------------------------
+# Define a service to check the number of currently running procs
+# on the local machine.  Warning if > 250 processes, critical if
+# > 400 processes.
+define service {
+
+    use                     local-service
+    host_name               srv-linux-01
+    service_description     Total Processes
+    check_command           check_local_procs!250!400!RSZDT
+}
+
+# --------------------------------------------------------------------------
+# DEFINITION SERVICE - srv-linux-01 - check_local_load
+# --------------------------------------------------------------------------
+# Define a service to check the load on the local machine.
+
+define service {
+
+    use                     local-service
+    host_name               srv-linux-01
+    service_description     Current Load
+    check_command           check_local_load!5.0,4.0,3.0!10.0,6.0,4.0
+}
+
+# --------------------------------------------------------------------------
+# DEFINITION SERVICE - srv-linux-01 - check_local_swap
+# --------------------------------------------------------------------------
+# Define a service to check the swap usage the local machine.
+# Critical if less than 10% of swap is free, warning if less than 20% is free
+define service {
+
+    use                     local-service
+    host_name               srv-linux-01
+    service_description     Swap Usage
+    check_command           check_local_swap!20%!10%
+}
+
+# --------------------------------------------------------------------------
+# DEFINITION SERVICE - srv-linux-01 - check_local_ssh
+# --------------------------------------------------------------------------
+# Define a service to check SSH on the local machine.
+# Disable notifications for this service by default, as not all users may have SSH enabled.
+define service {
+
+    use                     local-service
+    host_name               srv-linux-01
+    service_description     SSH
+    #check_command          check_ssh
+    check_command           check_ssh!2234
+    notifications_enabled   0
+}
+
+# --------------------------------------------------------------------------
+# DEFINITION SERVICE - srv-linux-01 - check_local_http
+# --------------------------------------------------------------------------
+# Define a service to check HTTP on the local machine.
+# Disable notifications for this service by default, as not all users may have HTTP enabled.
+define service {
+
+    use                     local-service
+    host_name               srv-linux-01
+    service_description     HTTP
+    check_command           check_http
+    notifications_enabled   0
+}
+
+# --------------------------------------------------------------------------
+# SERVEUR DISTANT : srv-linux-02
+# --------------------------------------------------------------------------
 # --------------------------------------------------------------------------
 # DEFINITION SERVICE - srv-linux-02 - ping
 # --------------------------------------------------------------------------
@@ -251,100 +259,6 @@ define service {
      check_interval          5
      retry_interval          1
 }
-
-# --------------------------------------------------------------------------
-# DEFINITION SERVICE - srv-linux-02 - Current Users
-# --------------------------------------------------------------------------
-# define service {
-#    use                     generic-service
-#    host_name               srv-linux-02
-#    service_description     Current Users
-#    check_command           check_nrpe!check_users
-# }
-
-# --------------------------------------------------------------------------
-# DEFINITION SERVICE - srv-linux-02 - Load average
-# --------------------------------------------------------------------------
-# define service {
-#
-#    use                     generic-service
-#    host_name               srv-linux-02
-#    service_description     Load average
-#    check_command           check_nrpe!check_load
-# }
-
-# --------------------------------------------------------------------------
-# DEFINITION SERVICE - srv-linux-02 - Disk partition /
-# --------------------------------------------------------------------------
-# define service{
-#
-#    use                     generic-service
-#    host_name               srv-linux-02
-#    service_description     Disk partition /
-#    check_command           check_nrpe!check_disk
-#    normal_check_interval   30
-#    retry_check_interval    5
-# }
-
-# --------------------------------------------------------------------------
-# DEFINITION SERVICE - srv-linux-02 - Disk partition /swap
-# --------------------------------------------------------------------------
-# define service{
-#
-#    use                     generic-service
-#    host_name               srv-linux-02
-#    service_description     Disk partition /swap
-#    check_command           check_nrpe!check_swap
-# }
-
-# --------------------------------------------------------------------------
-# DEFINITION SERVICE - srv-linux-02 - Total Processes
-# --------------------------------------------------------------------------
-# define service{
-#
-#    use                     generic-service
-#    host_name               srv-linux-02
-#    service_description     Total Processes
-#    check_command           check_nrpe!check_total_procs
-# }
-
-# --------------------------------------------------------------------------
-# DEFINITION SERVICE - srv-linux-02 - Zombies Processes
-# --------------------------------------------------------------------------
-# define service{
-#
-#    use                     generic-service
-#    host_name               srv-linux-02
-#    service_description     Zombies Processes
-#    check_command           check_nrpe!check_zombie_procs
-#    normal_check_interval   60
-#    retry_check_interval    5
-# }
-
-# --------------------------------------------------------------------------
-# DEFINITION SERVICE - srv-linux-02 - ssh port 2234
-# --------------------------------------------------------------------------
-# efine service {
-#
-#    use                     generic-service
-#    host_name               srv-linux-02
-#    service_description     SSH_2234
-##   heck_command            check_ssh!2234
-#    check_command           check_ssh_altport!2234
-#    notifications_enabled   0
-# }
-
-# --------------------------------------------------------------------------
-# DEFINITION SERVICE - srv-linux-02 - http port 80
-# --------------------------------------------------------------------------
-# define service {
-#
-#    use                     generic-service
-#    host_name               srv-linux-02
-#    service_description     HTTP
-#    check_command           check_http
-#    notifications_enabled   0
-# }
 ```
 Tester dabord votre nouvelle configuration que vous avez saisie dans le fichier /usr/local/nagios/etc/objects/serveur-linux.cfg à l'aide de la commande suivante :
 ```
