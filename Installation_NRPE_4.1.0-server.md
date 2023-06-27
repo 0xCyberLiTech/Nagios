@@ -1,4 +1,4 @@
-<a name="Installation_NRPE_4.1.0.md"></a>
+<a name="Installation_NRPE_4.1.0-server.md"></a>
 
 ![Nagios](./images/nagios.png)
 
