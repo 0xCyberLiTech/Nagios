@@ -9,8 +9,8 @@ Celle-ci est effectuée depuis les sources.
 
 | Cat | Etapes |
 |------|------| 
-| - A. | [Installation et configuration du plugin NRPE 4.1.0 depuis le serveur qui héberge Nagios Core.](Installation_NRPE_4.1.0.md) |
-| - B. | [Installation et configuration du plugin NRPE 4.1.0 + Nagios-plugins depuis la machine distante.](Installation_NRPE_4.1.0.client.md) |
+| - A. | [Installation du plugin NRPE 4.1.0 depuis le serveur qui héberge Nagios Core.](Installation_NRPE_4.1.0.md) |
+| - B. | [Installation du plugin NRPE 4.1.0 + Nagios-plugins depuis la machine distante.](Installation_NRPE_4.1.0.client.md) |
 
 ## Installation de NRPE 4.1.0 sur notre serveur Nagios Core 4.x.x.
 
