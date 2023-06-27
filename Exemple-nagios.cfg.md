@@ -320,3 +320,6 @@ systemctl status nagios.service
              ├─13295 /usr/local/nagios/libexec/check_ping -H 192.168.50.110 -w 100.0,20% -c 500.0,60% -p 5
              └─13297 /usr/bin/ping -n -U -w 10 -c 5 192.168.50.110
 ```
+Nous pouvons voir, que la machine (srv-linux-01) en local est minitorée.
+
+![Check_command_Nagios](./images/nagios_check_command.png)
