@@ -322,4 +322,4 @@ systemctl status nagios.service
 ```
 Nous pouvons voir, que la machine (srv-linux-01) en local est minitorée.
 
-![Check_command_Nagios](./images/nagios_check_command.png)
+![Check_command_Nagios](./images/Nagios_check_command.png)
