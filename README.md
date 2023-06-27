@@ -232,7 +232,7 @@ rm -rf $TEMP_FOLDER
 ```
 <a name="installation-automatisée-Nagios-core"></a>
 
-## - G. [Installation automatisée de Nagios-core & Nagios-plugins.
+## - G. Installation automatisée de Nagios-core & Nagios-plugins.
 
 Via un fichier bash.
 [Disponible ici](install-nagios.sh)
