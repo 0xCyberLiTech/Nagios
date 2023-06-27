@@ -1,5 +1,17 @@
 <a name="Installation_NRPE_4.1.0.md"></a>
 
+![Nagios](./images/nagios.png)
+
+# Installation de Nagios-core & Nagios-plugins sur DEBIAN 11 & 12.
+Celle-ci est effectuée depuis les sources.
+
+## Les étapes suivantes sont à réaliser :
+
+| Cat | Etapes |
+|------|------| 
+| - A. | [Installation et configuration de NRPE 4.1.0 sur le serveur Nagios Core.](Installation_NRPE_4.1.0.md) |
+| - B. | [Installation et configuration de NRPE 4.1.0 + Nagios-plugins sur une machine distante.](Installation_NRPE_4.1.0.client.md) |
+
 ## Installation de NRPE 4.1.0 sur notre serveur Nagios Core 4.x.x.
 
 Ce document décrit comment installer et configurer NRPE à partir de la source pour une utilisation avec Nagios Core/XI. L'agent linux-nrpe fourni avec Nagios XI n'est pris en charge que sur CentOS, RHEL, OpenSUSE, SLES, Ubuntu et Debian. La plupart des environnements surveillés consistent en de nombreuses distributions différentes, il peut donc être nécessaire de compiler NRPE et ses plugins associés.
