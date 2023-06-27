@@ -2,10 +2,10 @@
 
 ![Nagios](./images/nagios.png)
 
-## Installation le plugin NRPE 4.1.0 depuis le serveur qui héberge Nagios Core 4.x.x.
+## Installation du plugin NRPE 4.1.0 depuis le serveur qui héberge Nagios Core 4.x.x.
 Celle-ci est effectuée depuis les sources.
 
-## Les étapes suivantes sont à réaliser :
+## Menu :
 
 | Cat | Etapes |
 |------|------| 
