@@ -2,15 +2,15 @@
 
 ![Nagios](./images/nagios.png)
 
-# Installation de Nagios-core & Nagios-plugins sur DEBIAN 11 & 12.
+## Installation le plugin NRPE 4.1.0 depuis le serveur qui héberge Nagios Core 4.x.x.
 Celle-ci est effectuée depuis les sources.
 
 ## Les étapes suivantes sont à réaliser :
 
 | Cat | Etapes |
 |------|------| 
-| - A. | [Installation et configuration de NRPE 4.1.0 sur le serveur Nagios Core.](Installation_NRPE_4.1.0.md) |
-| - B. | [Installation et configuration de NRPE 4.1.0 + Nagios-plugins sur une machine distante.](Installation_NRPE_4.1.0.client.md) |
+| - A. | [Installation et configuration du plugin NRPE 4.1.0 depuis le serveur qui héberge Nagios Core.](Installation_NRPE_4.1.0.md) |
+| - B. | [Installation et configuration du plugin NRPE 4.1.0 + Nagios-plugins depuis la machine distante.](Installation_NRPE_4.1.0.client.md) |
 
 ## Installation de NRPE 4.1.0 sur notre serveur Nagios Core 4.x.x.
 
