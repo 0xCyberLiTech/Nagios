@@ -323,3 +323,5 @@ systemctl status nagios.service
 Nous pouvons voir, que la machine (srv-linux-01) en local est monitorée.
 
 ![Check_command_Nagios](./images/Nagios_check_command.png)
+
+La prochaine étape consiste à monitorer la machine distante (srv-linux-02) avec NRPE.
