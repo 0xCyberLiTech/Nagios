@@ -67,9 +67,9 @@ define service {
 # --------------------------------------------------------------------------
 # DEFINITION SERVICE - srv-linux-01 - check_local_disk
 # --------------------------------------------------------------------------
-# Define a service to check the disk space of the root partition
-# on the local machine.  Warning if < 20% free, critical if
-# < 10% free space on partition.
+# Définir un service pour vérifier l'espace disque de la partition racine
+# sur la machine locale. Avertissement si < 20 % libre, critique si
+# < 10 % d'espace libre sur la partition.
 define service {
 
     use                     local-service
@@ -81,9 +81,9 @@ define service {
 # --------------------------------------------------------------------------
 # DEFINITION SERVICE - srv-linux-01 - check_local_users
 # --------------------------------------------------------------------------
-# Define a service to check the number of currently logged in
-# users on the local machine.  Warning if > 20 users, critical
-# if > 50 users.
+# Définissez un service pour vérifier le nombre de personnes actuellement connectées
+# utilisateurs sur la machine locale. Avertissement si > 20 utilisateurs, critique
+# si > 50 utilisateurs.
 define service {
 
     use                     local-service
@@ -95,9 +95,9 @@ define service {
 # --------------------------------------------------------------------------
 # DEFINITION SERVICE - srv-linux-01 - check_local_procs
 # --------------------------------------------------------------------------
-# Define a service to check the number of currently running procs
-# on the local machine.  Warning if > 250 processes, critical if
-# > 400 processes.
+# Définir un service pour vérifier le nombre de procs en cours d'exécution
+# sur la machine locale. Avertissement si > 250 processus, critique si
+# > 400 processus.
 define service {
 
     use                     local-service
@@ -109,8 +109,7 @@ define service {
 # --------------------------------------------------------------------------
 # DEFINITION SERVICE - srv-linux-01 - check_local_load
 # --------------------------------------------------------------------------
-# Define a service to check the load on the local machine.
-
+# Définissez un service pour vérifier la charge sur la machine locale.
 define service {
 
     use                     local-service
@@ -122,8 +121,8 @@ define service {
 # --------------------------------------------------------------------------
 # DEFINITION SERVICE - srv-linux-01 - check_local_swap
 # --------------------------------------------------------------------------
-# Define a service to check the swap usage the local machine.
-# Critical if less than 10% of swap is free, warning if less than 20% is free
+# Définissez un service pour vérifier l'utilisation du swap sur la machine locale.
+# Critique si moins de 10 % du swap est libre, avertissement si moins de 20 % est libre.
 define service {
 
     use                     local-service
@@ -135,8 +134,8 @@ define service {
 # --------------------------------------------------------------------------
 # DEFINITION SERVICE - srv-linux-01 - check_local_ssh
 # --------------------------------------------------------------------------
-# Define a service to check SSH on the local machine.
-# Disable notifications for this service by default, as not all users may have SSH enabled.
+# Définissez un service pour vérifier SSH sur la machine locale.
+# Désactivez les notifications pour ce service par défaut, car tous les utilisateurs n'ont peut-être pas activé SSH.
 define service {
 
     use                     local-service
@@ -150,8 +149,8 @@ define service {
 # --------------------------------------------------------------------------
 # DEFINITION SERVICE - srv-linux-01 - check_local_http
 # --------------------------------------------------------------------------
-# Define a service to check HTTP on the local machine.
-# Disable notifications for this service by default, as not all users may have HTTP enabled.
+# Définissez un service pour vérifier HTTP sur la machine locale.
+# Désactivez les notifications pour ce service par défaut, car HTTP n'est peut-être pas activé pour tous les utilisateurs.
 define service {
 
     use                     local-service
