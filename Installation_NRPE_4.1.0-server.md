@@ -62,7 +62,7 @@ Toutes les commandes à partir de ce point seront en tant que root.
 
 - Conditions préalables, assurez-vous que les packages suivants sont installés.
 ```
-apt-get update
+apt-get update && apt upgrade -y
 apt-get install -y autoconf automake gcc libc6 libmcrypt-dev make libssl-dev wget
 ```
 - Téléchargement de l'archive nrpe-4.1.0.tar.gz (source).
@@ -123,6 +123,7 @@ systemctl enable nrpe.service
 Les informations sur le démarrage et l'arrêt des services seront expliquées plus loin.
 
 - Configurer le pare-feu.
+
 Le port 5666 est utilisé par NRPE et doit être ouvert sur le pare-feu local.
 ```
 iptables -I INPUT -p tcp --destination-port 5666 -j ACCEPT
@@ -133,9 +134,10 @@ Answer yes to saving existing rules
 iptables-save > /etc/iptables/rule
 ```
 - Mettre à jour le fichier de configuration.
+
 Le fichier nrpe.cfg est l'endroit où les paramètres suivants seront définis. Il est situé :
 ```
-/usr/local/nagios/etc/nrpe.cfg
+nano /usr/local/nagios/etc/nrpe.cfg
 
 allowed_hosts=
 ```
@@ -155,11 +157,13 @@ sed -i '/^allowed_hosts=/s/$/,192.168.50.200/' /usr/local/nagios/etc/nrpe.cfg
 sed -i 's/^dont_blame_nrpe=.*/dont_blame_nrpe=1/g' /usr/local/nagios/etc/nrpe.cfg
 ```
 - Démarrer le service/démon.
+
 Différentes distributions Linux ont différentes méthodes de démarrage de NRPE.
 ```
 systemctl start nrpe.service
 ```
-Test NRPE.
+- Test NRPE.
+
 Vérifiez maintenant que NRPE écoute et répond aux demandes.
 ```
 /usr/local/nagios/libexec/check_nrpe -H 127.0.0.1
@@ -173,6 +177,7 @@ Si vous obtenez le numéro de version NRPE (comme indiqué ci-dessus), NRPE est 
 Vous pouvez également tester à partir de votre hôte Nagios en exécutant la même commande ci-dessus, mais au lieu de 127.0.0.1, vous devrez le remplacer par l'adresse IP / le nom DNS de la machine avec NRPE en cours d'exécution.
 
 - Commandes service/démon.
+
 Différentes distributions Linux ont différentes méthodes de démarrage / arrêt / redémarrage / statut NRPE.
 ```
 systemctl start nrpe.service
@@ -200,7 +205,7 @@ OK - load average per CPU: 0.04, 0.04, 0.04|load1=0.043;0.150;0.300;0; load5=0.0
 ```
 Vous pouvez également tester à partir de votre hôte Nagios en exécutant la même commande ci-dessus, mais au lieu de 127.0.0.1, vous devrez le remplacer par l'adresse IP / le nom DNS de la machine avec NRPE en cours d'exécution.
 
-Configurer nrpe dans le fichier de commandes.cfg du serveur nagios.
+- Configurer nrpe dans le fichier de commandes.cfg du serveur nagios.
 
 Nous pouvons configurer la commande 'check_nrpe' dans le fichier commands.cfg. Ensuite, d'autres commandes de vérification en tant qu'arguments de cette commande check_nrge à exécuter sur l'hôte distant. Les lignes qui peuvent être ajoutées au fichier command.cfg sur le serveur nagios pour activer la commande 'check_nrpe' sont :
 ```
