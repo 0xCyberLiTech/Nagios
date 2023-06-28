@@ -1,4 +1,5 @@
 <a name="Exemple-templates.cfg.md"></a>
+![Nagios](./images/nagios.png)
 
 ## - D. Exemple concernant le fichier /usr/local/nagios/etc/objects/templates.cfg
 ```
