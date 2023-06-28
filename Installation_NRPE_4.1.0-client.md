@@ -339,13 +339,9 @@ command[check_swap]=/usr/local/nagios/libexec/check_swap -w 50% -c 30%
 ```
 Créer un nouveau service : exemple check_mrpe!check_ssh_2234
 
-GENERIC SERVICE
+GENERIC SERVICE EXEMPLE :
 ```
 command[check_services]=/usr/local/nagios/libexec/check_services -p $ARG1$
-```
-Ligne à rajouter dans /usr/local/nagios/etc/nrpe.cfg
-```
-command[check_ssh_2234]=/usr/local/nagios/libexec/check_ssh -p 2234
 ```
 Test depuis le serveur 192.168.50.200 :
 /usr/local/nagios/libexec/check_ssh -p2234 192.168.50.201
