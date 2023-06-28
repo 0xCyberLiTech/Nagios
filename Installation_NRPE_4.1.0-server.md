@@ -14,6 +14,36 @@ Celle-ci est effectuée depuis les sources.
 
 ## Installation de NRPE 4.1.0 sur notre serveur Nagios Core 4.x.x.
 
+Aperçu du plugin NRPE :
+
+L'addon NRPE est conçu pour vous permettre d'exécuter des plugins Nagios sur des machines Linux/Unix distantes. La principale raison de faire cela est de permettre à Nagios de surveiller les ressources "locales" (comme la charge CPU, l'utilisation de la mémoire, etc.) sur des machines distantes. Étant donné que ces ressources publiques ne sont généralement pas exposées à des machines externes, un agent comme NRPE doit être installé sur les machines Linux/Unix distantes.
+
+Remarque : Il est possible d'exécuter des plugins Nagios sur des machines Linux/Unix distantes via SSH. Il existe un plugin check_by_ssh qui vous permet de le faire. L'utilisation de SSH est plus sécurisée que l'agent NRPE, mais elle impose également une surcharge (CPU) plus importante sur les machines de surveillance et distantes. Cela peut devenir un problème lorsque vous commencez à surveiller des centaines ou des milliers de machines. De nombreux administrateurs Nagios optent pour l'utilisation de l'addon NRPE en raison de la charge inférieure qu'il impose.
+
+L'addon NRPE se compose de deux éléments :
+
+- Le plug-in check_nrpe, qui réside sur la machine de surveillance locale.
+- Le démon NRPE, qui s'exécute sur la machine Linux/Unix distante.
+Lorsque Nagios a besoin de surveiller une ressource de service depuis une machine Linux/Unix distante :
+
+Nagios exécutera le plugin check_nrpe et lui indiquera quel service doit être vérifié.
+- Le plug-in check_nrpe contacte le démon NRPE sur l'hôte distant via une connexion (éventuellement) protégée par SSL.
+- Le démon NRPE exécute le plugin Nagios approprié pour vérifier le service ou la ressource.
+- Les résultats de la vérification du service sont transmis du démon NRPE au plug-in check_nrpe, qui renvoie ensuite les résultats de la vérification au processus Nagios.
+  
+Remarque : Le démon NRPE nécessite que les plugins Nagios soient installés sur l'hôte Linux/Unix distant. Sans cela, le démon ne serait pas en mesure de surveiller quoi que ce soit.
+
+Contrôles directs :
+
+L'utilisation la plus simple de l'addon NRPE est de surveiller les ressources "locales" ou "privées" sur une machine Linux/Unix distante. Cela inclut des éléments tels que la charge du processeur, l'utilisation de la mémoire, l'utilisation de l'échange, les utilisateurs actuels, l'utilisation du disque, les états des processus, etc.
+
+![NRPE_check_1](./images/nrpe_check_1.png)
+
+
+
+
+
+
 Ce document décrit comment installer et configurer NRPE à partir de la source pour une utilisation avec Nagios Core/XI. L'agent linux-nrpe fourni avec Nagios XI n'est pris en charge que sur CentOS, RHEL, OpenSUSE, SLES, Ubuntu et Debian. La plupart des environnements surveillés consistent en de nombreuses distributions différentes, il peut donc être nécessaire de compiler NRPE et ses plugins associés.
 
 Cette procédure est destinée aux administrateurs de Nagios Core / XI qui découvrent NRPE ou Nagios core & XI et doivent utiliser une méthode d'installation basée sur la source pour NRPE, généralement en raison de distributions Linux non prises en charge ou de restrictions de sécurité dans les environnements d'entreprise.
