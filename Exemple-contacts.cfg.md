@@ -1,4 +1,5 @@
 <a name="Exemple-contacts.cfg.md"></a>
+![Nagios](./images/nagios.png)
 
 ## - A. Exemple concernant le fichier /usr/local/nagios/etc/contacts.cfg
 ```
