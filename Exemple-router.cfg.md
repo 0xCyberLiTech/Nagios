@@ -1,5 +1,6 @@
 <a name="Exemple-router.cfg.md"></a>
- 
+![Nagios](./images/nagios.png)
+
 ## - F. Exemple concernant le fichier /usr/local/nagios/etc/objects/router.cfg
 ```
 # --------------------------------------------------------------------------
