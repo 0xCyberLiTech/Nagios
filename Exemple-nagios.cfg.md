@@ -1,4 +1,5 @@
 <a name="Exemple-nagios.cfg.md"></a>
+![Nagios](./images/nagios.png)
 
 ## - B. Exemple concernant le fichier /usr/local/nagios/etc/nagios.cfg
 ```
