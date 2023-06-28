@@ -51,7 +51,7 @@ Vous pouvez également utiliser l'addon NRPE pour vérifier indirectement les se
 
 ## C'est parti.
 
-Ce document décrit comment installer et configurer NRPE à partir de la source pour une utilisation avec Nagios Coreou Nagios XI. L'agent linux-nrpe fourni avec Nagios XI n'est pris en charge que sur CentOS, RHEL, OpenSUSE, SLES, Ubuntu et Debian. La plupart des environnements surveillés consistent en de nombreuses distributions différentes, il peut donc être nécessaire de compiler NRPE et ses plugins associés.
+Ce document décrit comment installer et configurer NRPE à partir de la source pour une utilisation avec Nagios Coreou ou Nagios XI. L'agent linux-nrpe fourni avec Nagios XI n'est pris en charge que sur CentOS, RHEL, OpenSUSE, SLES, Ubuntu et Debian. La plupart des environnements surveillés consistent en de nombreuses distributions différentes, il peut donc être nécessaire de compiler NRPE et ses plugins associés.
 
 Cette procédure est destinée aux administrateurs de Nagios Core ou Nagios XI qui découvrent NRPE et doivent utiliser une méthode d'installation basée sur la source pour NRPE, généralement en raison de distributions Linux non prises en charge ou de restrictions de sécurité dans les environnements d'entreprise.
 
