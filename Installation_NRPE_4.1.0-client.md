@@ -341,8 +341,10 @@ GENERIC SERVICE EXEMPLE :
 ```
 command[check_services]=/usr/local/nagios/libexec/check_services -p $ARG1$
 ```
-Test d'un service distant. 
+Test d'un service distant.
+
 Exemple : (check_ssh -p2234).
+
 Test effectué depuis le serveur (srv-linux-01) Nagios Core, vers le serveur (srv-linux-02) :
 ```
 /usr/local/nagios/libexec/check_ssh -p2234 192.168.50.201
