@@ -76,7 +76,8 @@ wget --no-check-certificate -O nrpe.tar.gz https://github.com/NagiosEnterprises/
 ```
 tar -xvzf nrpe.tar.gz
 ```
-- Compilation :
+- Compilation depuis les sources du plugin NRPE.
+
 Notez que si vous souhaitez transmettre des arguments via NRPE, vous devez le spécifier dans l'option de configuration, comme indiqué ci-dessous. Si vous préférez, vous pouvez omettre le drapeau --enable-command-args. La suppression de cet indicateur nécessitera que tous les arguments soient explicitement définis dans le fichier nrpe.cfg sur chaque serveur surveillé.
 ```
 cd nrpe-nrpe-4.1.0/
