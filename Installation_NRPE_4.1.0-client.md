@@ -230,6 +230,9 @@ NRPE v4.1.0
 Configuration des vérifications à distance à l'aide de nrpe dans le fichier de configuration des hôtes nagios
 
 Si le serveur nagios peut se connecter au client à l'aide de 'check_nrpe', nous pouvons configurer le fichier de définition d'hôte sur le serveur pour surveiller des paramètres tels que l'espace disque et les processus, etc. Exemple de définition qui utilise nrpe pour vérifier la charge sur la machine de destination est :
+
+Exemple : Extrait en provenance du serveur (srv-linux-01) Nagios Core --> /usr/local/nagios/etc/objects/server-linux.cfg
+
 ```
 # --------------------------------------------------------------------------
 # DEFINITION SERVICE - srv-linux-02 - Current Load
@@ -242,9 +245,6 @@ define service {
      check_command           check_nrpe!check_load
 }
 ```
-Notez que pour fonctionner, la commande check_nrpe doit être configurée dans le fichier de commandes.cfg du serveur nagios et check_load doit être configurée dans le fichier /etc/nagios/nrpe.cfg de l'hôte de destination.
-
-Autres exemples de configurations de contrôle à distance.
 ```
 # --------------------------------------------------------------------------
 # DEFINITION SERVICE - srv-linux-02 - Current Users
@@ -305,6 +305,18 @@ define service {
      check_command           check_nrpe!check_swap
 }
 ```
+```
+# --------------------------------------------------------------------------
+# DEFINITION SERVICE - srv-linux-02 - SSH port 2234
+# --------------------------------------------------------------------------
+define service {
+
+     use                     generic-service
+     host_name               srv-linux-02
+     service_description     SSH port 2234
+     check_command           check_ssh!--port=2234
+}
+```
 Modification des paramètres d'avertissement.
 
 Notez que vous pouvez vérifier les valeurs de seuil pour l'avertissement et la critique dans le fichier de configuration /etc/nagios/nrpe.conf sur l'hôte de destination où les commandes sont définies. Par exemple, pour avertir si les processus sont supérieurs à 200 (par défaut) 150, nous pouvons modifier les valeurs 150, 200 à 200, 250 avec la ligne de configuration résultante comme :
@@ -325,6 +337,19 @@ command[check_zombie_procs]=/usr/local/nagios/libexec/check_procs -w 5 -c 10 -s 
 command[check_total_procs]=/usr/local/nagios/libexec/check_procs -w 150 -c 400
 command[check_swap]=/usr/local/nagios/libexec/check_swap -w 50% -c 30%
 ```
+Créer un nouveau service : exemple check_mrpe!check_ssh_2234
+
+GENERIC SERVICE
+```
+command[check_services]=/usr/local/nagios/libexec/check_services -p $ARG1$
+```
+Ligne à rajouter dans /usr/local/nagios/etc/nrpe.cfg
+```
+command[check_ssh_2234]=/usr/local/nagios/libexec/check_ssh -p 2234
+```
+Test depuis le serveur 192.168.50.200 :
+/usr/local/nagios/libexec/check_ssh -p2234 192.168.50.201
+
 On obtient le résultat suivant concernant la supervision des services du serveur distant (srv-linux-02).
 
 ![Nagios_check_command_1.png](./images/Nagios_check_command_1.png)
