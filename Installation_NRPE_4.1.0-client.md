@@ -319,7 +319,7 @@ define service {
 ```
 Modification des paramètres d'avertissement.
 
-Notez que vous pouvez vérifier les valeurs de seuil pour l'avertissement et la critique dans le fichier de configuration /etc/nagios/nrpe.conf sur l'hôte de destination où les commandes sont définies. Par exemple, pour avertir si les processus sont supérieurs à 200 (par défaut) 150, nous pouvons modifier les valeurs 150, 200 à 200, 250 avec la ligne de configuration résultante comme :
+Notez que vous pouvez vérifier les valeurs de seuil pour l'avertissement et la critique dans le fichier de configuration /usr/local/nagios/etc/nrpe.conf sur l'hôte de destination où les commandes sont définies. Par exemple, pour avertir si les processus sont supérieurs à 200 (par défaut) 150, nous pouvons modifier les valeurs 150, 200 à 200, 250 avec la ligne de configuration résultante comme :
 ```
 command[check_total_procs]=/usr/lib64/nagios/plugins/check_procs -w 200 -c 250
 ```
@@ -334,7 +334,7 @@ command[check_users]=/usr/local/nagios/libexec/check_users -w 5 -c 10
 command[check_load]=/usr/local/nagios/libexec/check_load -r -w .15,.10,.05 -c .30,.25,.20
 command[check_sda1]=/usr/local/nagios/libexec/check_disk -w 20% -c 10% -p /dev/sda1
 command[check_zombie_procs]=/usr/local/nagios/libexec/check_procs -w 5 -c 10 -s Z
-command[check_total_procs]=/usr/local/nagios/libexec/check_procs -w 150 -c 400
+command[check_total_procs]=/usr/local/nagios/libexec/check_procs -w 250 -c 400
 command[check_swap]=/usr/local/nagios/libexec/check_swap -w 50% -c 30%
 ```
 GENERIC SERVICE EXEMPLE :
