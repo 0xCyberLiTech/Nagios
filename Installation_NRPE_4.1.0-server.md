@@ -12,9 +12,7 @@ Celle-ci est effectuée depuis les sources.
 | - H. | [Installation du plugin NRPE 4.1.0 depuis le serveur qui héberge Nagios Core.](Installation_NRPE_4.1.0-server.md) |
 | - I. | [Installation du plugin NRPE 4.1.0 + Nagios-plugins depuis la machine distante Linux à monitorer.](Installation_NRPE_4.1.0-client.md) |
 
-## Installation de NRPE 4.1.0 sur notre serveur Nagios Core 4.x.x.
-
-Aperçu du plugin NRPE :
+## Aperçu du plugin NRPE :
 
 L'addon NRPE est conçu pour vous permettre d'exécuter des plugins Nagios sur des machines Linux/Unix distantes. La principale raison de faire cela est de permettre à Nagios de surveiller les ressources "locales" (comme la charge CPU, l'utilisation de la mémoire, etc.) sur des machines distantes. Étant donné que ces ressources publiques ne sont généralement pas exposées à des machines externes, un agent comme NRPE doit être installé sur les machines Linux/Unix distantes.
 
@@ -51,7 +49,7 @@ Vous pouvez également utiliser l'addon NRPE pour vérifier indirectement les se
 
 ![NRPE_check_2](./images/nrpe_check_2.png)
 
-C'est parti.
+## C'est parti.
 
 Ce document décrit comment installer et configurer NRPE à partir de la source pour une utilisation avec Nagios Core/XI. L'agent linux-nrpe fourni avec Nagios XI n'est pris en charge que sur CentOS, RHEL, OpenSUSE, SLES, Ubuntu et Debian. La plupart des environnements surveillés consistent en de nombreuses distributions différentes, il peut donc être nécessaire de compiler NRPE et ses plugins associés.
 
