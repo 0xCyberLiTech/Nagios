@@ -1,4 +1,5 @@
 <a name="Exemple-ip-public.cfg.md"></a>
+![Nagios](./images/nagios.png)
  
 ## - G. Exemple concernant le fichier /usr/local/nagios/etc/objects/ip-public.cfg
 ```
