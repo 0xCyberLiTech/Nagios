@@ -315,6 +315,6 @@ command[check_swap]=/usr/local/nagios/libexec/check_swap -w 50% -c 30%
 ```
 On obtient le résultat suivant concernant la supervision des services en local depuis le serveur (srv-linux-01) Nagios Core.
 
-![Nagios](./images/nagios.png)
+![Nagios_check_command.png](./images/Nagios_check_command.png)
 
 Il faudra également installer NRPE 4.1.0 + Nagios-plugins sur la machine distante (srv-linux-02). Cela prendra tout son sens afin de monitorer celle-ci.
