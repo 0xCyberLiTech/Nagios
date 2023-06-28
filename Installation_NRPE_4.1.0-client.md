@@ -337,14 +337,18 @@ command[check_zombie_procs]=/usr/local/nagios/libexec/check_procs -w 5 -c 10 -s 
 command[check_total_procs]=/usr/local/nagios/libexec/check_procs -w 150 -c 400
 command[check_swap]=/usr/local/nagios/libexec/check_swap -w 50% -c 30%
 ```
-Créer un nouveau service : exemple check_mrpe!check_ssh_2234
-
 GENERIC SERVICE EXEMPLE :
 ```
 command[check_services]=/usr/local/nagios/libexec/check_services -p $ARG1$
 ```
-Test depuis le serveur 192.168.50.200 :
+Test d'un service distant. 
+Exemple : (check_ssh -p2234).
+Test effectué depuis le serveur (srv-linux-01) Nagios Core, vers le serveur (srv-linux-02) :
+```
 /usr/local/nagios/libexec/check_ssh -p2234 192.168.50.201
+SSH OK - OpenSSH_9.2p1 Debian-2 (protocol 2.0) | time=0,014415s;;;0,000000;10,000000
+```
+Le port SSH 2234 est bien ouvert sur le serveur (srv-linux-02).
 
 On obtient le résultat suivant concernant la supervision des services du serveur distant (srv-linux-02).
 
