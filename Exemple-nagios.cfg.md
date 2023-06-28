@@ -290,7 +290,7 @@ Checking misc settings...
 Total Warnings: 0
 Total Errors:   0
 ```
-Si il n'y a pas d'erreur sur cette nouvelle configuration (serveur-linux.cfg), redémarrer Nagios pour la prise en compte de cette configuration.
+Si il n'y a pas d'erreur sur cette nouvelle configuration (server-linux.cfg), redémarrer Nagios pour la prise en compte de cette configuration.
 ```
 systemctl restart nagios.service
 ```
