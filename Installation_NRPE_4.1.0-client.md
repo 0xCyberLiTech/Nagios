@@ -231,39 +231,79 @@ Configuration des vérifications à distance à l'aide de nrpe dans le fichier d
 
 Si le serveur nagios peut se connecter au client à l'aide de 'check_nrpe', nous pouvons configurer le fichier de définition d'hôte sur le serveur pour surveiller des paramètres tels que l'espace disque et les processus, etc. Exemple de définition qui utilise nrpe pour vérifier la charge sur la machine de destination est :
 ```
-define service{
-          use                 generic-service
-          host_name           labpc
-          service_description CPU Load
-          check_command       check_nrpe!check_load
-          }
+# --------------------------------------------------------------------------
+# DEFINITION SERVICE - srv-linux-02 - Current Load
+# --------------------------------------------------------------------------
+define service {
+
+     use                     generic-service
+     host_name               srv-linux-02
+     service_description     Current Load
+     check_command           check_nrpe!check_load
+}
 ```
 Notez que pour fonctionner, la commande check_nrpe doit être configurée dans le fichier de commandes.cfg du serveur nagios et check_load doit être configurée dans le fichier /etc/nagios/nrpe.cfg de l'hôte de destination.
 
 Autres exemples de configurations de contrôle à distance.
 ```
-define service{
-          use                 generic-service
-          host_name           labpc
-          service_description Current Users
-          check_command       check_nrpe!check_users
-          }
+# --------------------------------------------------------------------------
+# DEFINITION SERVICE - srv-linux-02 - Current Users
+# --------------------------------------------------------------------------
+define service {
+
+     use                     generic-service
+     host_name               srv-linux-02
+     service_description     Current Users
+     check_command           check_nrpe!check_users
+}
 ```
 ```
-define service{
-          use                 generic-service
-          host_name           labpc
-          service_description /dev/md0 Free Space
-          check_command       check_nrpe!check_md0
-          }
+# --------------------------------------------------------------------------
+# DEFINITION SERVICE - srv-linux-02 - Root Partition
+# --------------------------------------------------------------------------
+define service {
+
+     use                     generic-service
+     host_name               srv-linux-02
+     service_description     /dev/sda1 Free Space
+     check_command           check_nrpe!check_sda1
+}
 ```
 ```
-define service{
-          use                 generic-service
-          host_name           labpc
-          service_description Total Processes
-          check_command       check_nrpe!check_total_procs!
-          }
+# --------------------------------------------------------------------------
+# DEFINITION SERVICE - srv-linux-02 - Zombie Processes
+# --------------------------------------------------------------------------
+define service {
+
+     use                     generic-service
+     host_name               srv-linux-02
+     service_description     Zombie Processes
+     check_command           check_nrpe!check_zombie_procs
+}
+```
+```
+# --------------------------------------------------------------------------
+# DEFINITION SERVICE - srv-linux-02 - Total Processes
+# --------------------------------------------------------------------------
+define service {
+
+     use                     generic-service
+     host_name               srv-linux-02
+     service_description     Total Processes
+     check_command           check_nrpe!check_total_procs
+}
+```
+```
+# --------------------------------------------------------------------------
+# DEFINITION SERVICE - srv-linux-02 - Swap Usage
+# --------------------------------------------------------------------------
+define service {
+
+     use                     generic-service
+     host_name               srv-linux-02
+     service_description     Swap Usage
+     check_command           check_nrpe!check_swap
+}
 ```
 Modification des paramètres d'avertissement.
 
@@ -288,4 +328,7 @@ command[check_swap]=/usr/local/nagios/libexec/check_swap -w 50% -c 30%
 On obtient le résultat suivant concernant la supervision des services du serveur distant (srv-linux-02).
 
 ![Nagios_check_command_1.png](./images/Nagios_check_command_1.png)
+![nagios_service_Host_Groups_1.png](./images/nagios_service_Host_Groups_1.png)
+
+nagios_service_Host_Groups_1.png
 Il faudra également installer NRPE 4.1.0 + Nagios-plugins sur la machine distante (srv-linux-02). Cela prendra tout son sens afin de monitorer celle-ci.
