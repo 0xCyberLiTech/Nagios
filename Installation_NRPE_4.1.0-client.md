@@ -348,7 +348,7 @@ Test depuis le serveur 192.168.50.200 :
 
 On obtient le résultat suivant concernant la supervision des services du serveur distant (srv-linux-02).
 
-![Nagios_check_command_1.png](./images/Nagios_check_command_1.png)
+![Nagios_check_command_0.png](./images/Nagios_check_command_0.png)
 ![nagios_service_Host_Groups_1.png](./images/nagios_service_Host_Groups_1.png)
 
 nagios_service_Host_Groups_1.png
