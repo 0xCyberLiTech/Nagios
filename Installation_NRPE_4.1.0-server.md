@@ -179,11 +179,54 @@ systemctl stop nrpe.service
 systemctl restart nrpe.service
 systemctl status nrpe.service
 ```
-- Installation des plugins Nagios, normalement ceux-ci ont été installés auparavant lors de l'installation de Nagios Core ...........
+## Installation des plugins Nagios, normalement ceux-ci ont été installés auparavant lors de l'installation de Nagios Core.
+En revanche il sera nécessaire d'installer ceux-ci sur la machine Linux distante à superviser. NRPE a besoin de Nagios-plugins pour fonctionner correctement.
 
-Note pour les machines linux distantes à monitorer. 
-NRPE a besoin de Nagios-plugins pour fonctionner correctement.
+- Installation de Nagios-plugins dans sa dernière version stable.
+- Conditions préalables.
+- Installer les packages prérequis.
+```
+mkdir -p /opt/nagios/
+cd /opt/nagios/
+```
+```
+apt install -y \
+       autoconf \
+       gcc \
+       libc6 \
+       libmcrypt-dev \
+       make \
+       libssl-dev \
+       wget \
+       bc \
+       gawk \
+       dc \
+       build-essential \
+       snmp \
+       libnet-snmp-perl \
+       gettext
+```
 
+- Téléchargement des sources de Nagios-plugins dans sa dernère version stable.
+
+```
+VER=$(curl -s https://api.github.com/repos/nagios-plugins/nagios-plugins/releases/latest|grep tag_name | cut -d '"' -f 4|sed 's/release-//')
+wget https://github.com/nagios-plugins/nagios-plugins/releases/download/release-$VER/nagios-plugins-$VER.tar.gz
+```
+
+- Extraire l'archive nagios-plugins-$VER.tar.gz.
+
+```
+tar xvf nagios-plugins-$VER.tar.gz
+```
+- E. Compilation depuis les sources de Nagios-plugins.
+```
+cd nagios-plugins-$VER
+./tools/setup
+./configure
+make
+make install
+```
 - Test NRPE + Plugins.
 
 Vous pouvez maintenant vérifier que NRPE exécute correctement les plugins. 
