@@ -51,13 +51,13 @@ Vous pouvez également utiliser l'addon NRPE pour vérifier indirectement les se
 
 ## C'est parti.
 
-Ce document décrit comment installer et configurer NRPE à partir de la source pour une utilisation avec Nagios Core/XI. L'agent linux-nrpe fourni avec Nagios XI n'est pris en charge que sur CentOS, RHEL, OpenSUSE, SLES, Ubuntu et Debian. La plupart des environnements surveillés consistent en de nombreuses distributions différentes, il peut donc être nécessaire de compiler NRPE et ses plugins associés.
+Ce document décrit comment installer et configurer NRPE à partir de la source pour une utilisation avec Nagios Coreou Nagios XI. L'agent linux-nrpe fourni avec Nagios XI n'est pris en charge que sur CentOS, RHEL, OpenSUSE, SLES, Ubuntu et Debian. La plupart des environnements surveillés consistent en de nombreuses distributions différentes, il peut donc être nécessaire de compiler NRPE et ses plugins associés.
 
-Cette procédure est destinée aux administrateurs de Nagios Core / XI qui découvrent NRPE ou Nagios core & XI et doivent utiliser une méthode d'installation basée sur la source pour NRPE, généralement en raison de distributions Linux non prises en charge ou de restrictions de sécurité dans les environnements d'entreprise.
+Cette procédure est destinée aux administrateurs de Nagios Core ou Nagios XI qui découvrent NRPE et doivent utiliser une méthode d'installation basée sur la source pour NRPE, généralement en raison de distributions Linux non prises en charge ou de restrictions de sécurité dans les environnements d'entreprise.
 
 Ce guide vous demande d'installer NRPE 4.1.0 et Nagios-Plugins, mais les futures versions devraient également fonctionner correctement avec ces étapes.
 
-Il est supposé que vous êtes connecté à la machine sur laquelle vous installez NRPE en tant qu'utilisateur racine ou en tant qu'utilisateur disposant de privilèges suffisants. Toutes les étapes ci-dessous ont été testées sur les systèmes d'exploitation (OS) répertoriés après une nouvelle installation du système d'exploitation. Certains systèmes d'exploitation comme Ubuntu et SUSE ont des autorisations utilisateur plus strictes, dans ces cas, les commandes répertoriées ont sudo devant elles pour vous assurer que vous êtes en mesure de suivre les étapes. Tous les efforts ont été faits pour s'assurer que si vous suivez toutes les étapes pertinentes, vous obtiendrez une installation fonctionnelle de NRPE.
+Il est supposé que vous êtes connecté à la machine sur laquelle vous installez NRPE en tant qu'utilisateur racine ou en tant qu'utilisateur disposant de privilèges suffisants. Toutes les étapes ci-dessous ont été testées sur Debian 11 & DBIAN 12. Certains systèmes d'exploitation comme Ubuntu et SUSE ont des autorisations utilisateur plus strictes, dans ces cas, les commandes répertoriées ont sudo devant elles pour vous assurer que vous êtes en mesure de suivre les étapes. Tous les efforts ont été faits pour s'assurer que si vous suivez toutes les étapes pertinentes, vous obtiendrez une installation fonctionnelle de NRPE.
 
 Toutes les commandes à partir de ce point seront en tant que root.
 
