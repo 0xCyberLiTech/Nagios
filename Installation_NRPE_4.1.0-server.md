@@ -265,7 +265,7 @@ command[check_users]=/usr/local/nagios/libexec/check_users -w 5 -c 10
 command[check_load]=/usr/local/nagios/libexec/check_load -r -w .15,.10,.05 -c .30,.25,.20
 command[check_sda1]=/usr/local/nagios/libexec/check_disk -w 20% -c 10% -p /dev/sda1
 command[check_zombie_procs]=/usr/local/nagios/libexec/check_procs -w 5 -c 10 -s Z
-command[check_total_procs]=/usr/local/nagios/libexec/check_procs -w 150 -c 400
+command[check_total_procs]=/usr/local/nagios/libexec/check_procs -w 250 -c 400
 command[check_swap]=/usr/local/nagios/libexec/check_swap -w 50% -c 30%
 ```
 On obtient le résultat suivant concernant la supervision des services en local depuis le serveur (srv-linux-01) Nagios Core.
