@@ -39,7 +39,11 @@ L'utilisation la plus simple de l'addon NRPE est de surveiller les ressources "l
 
 ![NRPE_check_1](./images/nrpe_check_1.png)
 
+Contrôles indirects :
 
+Vous pouvez également utiliser l'addon NRPE pour vérifier indirectement les services et ressources "publics" des serveurs distants qui pourraient ne pas être accessibles directement depuis l'hôte de surveillance. Par exemple, si l'hôte distant sur lequel le démon NRPE et les plug-ins sont installés peut communiquer avec un serveur Web distant (mais pas l'hôte de surveillance), vous pouvez configurer le démon NRPE pour vous permettre de surveiller indirectement le serveur Web distant. Le démon NRPE agit essentiellement comme proxy dans ce cas.
+
+![NRPE_check_2](./images/nrpe_check_2.png)
 
 
 
