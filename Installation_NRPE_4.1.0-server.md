@@ -37,6 +37,12 @@ Contrôles directs :
 
 L'utilisation la plus simple de l'addon NRPE est de surveiller les ressources "locales" ou "privées" sur une machine Linux/Unix distante. Cela inclut des éléments tels que la charge du processeur, l'utilisation de la mémoire, l'utilisation de l'échange, les utilisateurs actuels, l'utilisation du disque, les états des processus, etc.
 
+![NRPE_check_0](./images/nrpe_check_0.png)
+
+Contrôles indirects :
+
+Vous pouvez également utiliser l'addon NRPE pour vérifier indirectement les services et ressources "publics" des serveurs distants qui pourraient ne pas être accessibles directement depuis l'hôte de surveillance. Par exemple, si l'hôte distant sur lequel le démon NRPE et les plug-ins sont installés peut communiquer avec un serveur Web distant (mais pas l'hôte de surveillance), vous pouvez configurer le démon NRPE pour vous permettre de surveiller indirectement le serveur Web distant. Le démon NRPE agit essentiellement comme proxy dans ce cas.
+
 ![NRPE_check_1](./images/nrpe_check_1.png)
 
 Contrôles indirects :
@@ -45,8 +51,7 @@ Vous pouvez également utiliser l'addon NRPE pour vérifier indirectement les se
 
 ![NRPE_check_2](./images/nrpe_check_2.png)
 
-
-
+C'est parti.
 
 Ce document décrit comment installer et configurer NRPE à partir de la source pour une utilisation avec Nagios Core/XI. L'agent linux-nrpe fourni avec Nagios XI n'est pris en charge que sur CentOS, RHEL, OpenSUSE, SLES, Ubuntu et Debian. La plupart des environnements surveillés consistent en de nombreuses distributions différentes, il peut donc être nécessaire de compiler NRPE et ses plugins associés.
 
