@@ -217,42 +217,95 @@ define command{
 ```
 Configuration des vérifications à distance à l'aide de nrpe dans le fichier de configuration des hôtes nagios
 
-Si le serveur nagios peut se connecter au client à l'aide de 'check_nrpe', nous pouvons configurer le fichier de définition d'hôte sur le serveur pour surveiller des paramètres tels que l'espace disque et les processus, etc. Exemple de définition qui utilise nrpe pour vérifier la charge sur la machine de destination est :
-```
-define service{
-          use                 generic-service
-          host_name           labpc
-          service_description CPU Load
-          check_command       check_nrpe!check_load
-          }
-```
-Notez que pour fonctionner, la commande check_nrpe doit être configurée dans le fichier de commandes.cfg du serveur nagios et check_load doit être configurée dans le fichier /etc/nagios/nrpe.cfg de l'hôte de destination.
+Si le serveur nagios peut se connecter au client à l'aide de 'check_nrpe', nous pouvons configurer le fichier de définition d'hôte sur le serveur Nagios Core pour surveiller des paramètres tels que l'espace disque et les processus, etc.
 
-Autres exemples de configurations de contrôle à distance.
+Exemples de configurations de contrôle à distance, extrait du fichier server-linux.cfg du serveur (srv-linux-01) Nagios-Core.
+
 ```
-define service{
-          use                 generic-service
-          host_name           labpc
-          service_description Current Users
-          check_command       check_nrpe!check_users
-          }
-```
-```
-define service{
-          use                 generic-service
-          host_name           labpc
-          service_description /dev/md0 Free Space
-          check_command       check_nrpe!check_md0
-          }
+# --------------------------------------------------------------------------
+# DEFINITION SERVICE - srv-linux-02 - Current Load
+# --------------------------------------------------------------------------
+define service {
+
+     use                     generic-service
+     host_name               srv-linux-02
+     service_description     Current Load
+     check_command           check_nrpe!check_load
+}
 ```
 ```
-define service{
-          use                 generic-service
-          host_name           labpc
-          service_description Total Processes
-          check_command       check_nrpe!check_total_procs!
-          }
+# --------------------------------------------------------------------------
+# DEFINITION SERVICE - srv-linux-02 - Current Users
+# --------------------------------------------------------------------------
+define service {
+
+     use                     generic-service
+     host_name               srv-linux-02
+     service_description     Current Users
+     check_command           check_nrpe!check_users
+}
 ```
+```
+# --------------------------------------------------------------------------
+# DEFINITION SERVICE - srv-linux-02 - Root Partition
+# --------------------------------------------------------------------------
+define service {
+
+     use                     generic-service
+     host_name               srv-linux-02
+     service_description     /dev/sda1 Free Space
+     check_command           check_nrpe!check_sda1
+}
+```
+```
+# --------------------------------------------------------------------------
+# DEFINITION SERVICE - srv-linux-02 - Zombie Processes
+# --------------------------------------------------------------------------
+define service {
+
+     use                     generic-service
+     host_name               srv-linux-02
+     service_description     Zombie Processes
+     check_command           check_nrpe!check_zombie_procs
+}
+```
+```
+# --------------------------------------------------------------------------
+# DEFINITION SERVICE - srv-linux-02 - Total Processes
+# --------------------------------------------------------------------------
+define service {
+
+     use                     generic-service
+     host_name               srv-linux-02
+     service_description     Total Processes
+     check_command           check_nrpe!check_total_procs
+}
+```
+```
+# --------------------------------------------------------------------------
+# DEFINITION SERVICE - srv-linux-02 - Swap Usage
+# --------------------------------------------------------------------------
+define service {
+
+     use                     generic-service
+     host_name               srv-linux-02
+     service_description     Swap Usage
+     check_command           check_nrpe!check_swap
+}
+```
+```
+# --------------------------------------------------------------------------
+# DEFINITION SERVICE - srv-linux-02 - SSH port 2234
+# --------------------------------------------------------------------------
+define service {
+
+     use                     generic-service
+     host_name               srv-linux-02
+     service_description     SSH port 2234
+     check_command           check_ssh!--port=2234
+}
+```
+
 Modification des paramètres d'avertissement.
 
 Notez que vous pouvez vérifier les valeurs de seuil pour l'avertissement et la critique dans le fichier de configuration /etc/nagios/nrpe.conf sur l'hôte de destination où les commandes sont définies. Par exemple, pour avertir si les processus sont supérieurs à 200 (par défaut) 150, nous pouvons modifier les valeurs 150, 200 à 200, 250 avec la ligne de configuration résultante comme :
