@@ -285,6 +285,7 @@ command[check_zombie_procs]=/usr/local/nagios/libexec/check_procs -w 5 -c 10 -s 
 command[check_total_procs]=/usr/local/nagios/libexec/check_procs -w 150 -c 400
 command[check_swap]=/usr/local/nagios/libexec/check_swap -w 50% -c 30%
 ```
+On obtient le résultat suivant concernant la supervision des services du serveur distant (srv-linux-02).
 
 ![Nagios_check_command_1.png](./images/Nagios_check_command_1.png)
 Il faudra également installer NRPE 4.1.0 + Nagios-plugins sur la machine distante (srv-linux-02). Cela prendra tout son sens afin de monitorer celle-ci.
