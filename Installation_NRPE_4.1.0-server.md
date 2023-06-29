@@ -180,7 +180,6 @@ Vérifiez maintenant que NRPE écoute et répond aux demandes vers le serveur di
 ```
 /usr/local/nagios/libexec/check_nrpe -H 192.168.50.201
 ```
-
 - Commandes service/démon.
 
 Différentes distributions Linux ont différentes méthodes de démarrage / arrêt / redémarrage / statut NRPE.
@@ -192,23 +191,6 @@ systemctl status nrpe.service
 ```
 ## Installation des plugins Nagios, normalement ceux-ci ont été installés auparavant lors de l'installation de Nagios Core.
 En revanche il sera nécessaire d'installer ceux-ci sur la machine Linux distante à superviser. NRPE a besoin de Nagios-plugins pour fonctionner correctement.
-
-- Test NRPE + Plugins.
-
-Vous pouvez maintenant vérifier que NRPE exécute correctement les plugins. 
-Le fichier de configuration par défaut /usr/local/nagios/etc/nrpe.cfg contient la commande suivante :
-```
-command[check_load]=/usr/local/nagios/libexec/check_load -w 15,10,5 -c 30,25,20
-```
-Utilisation de la commande check_load pour tester NRPE :
-```
-/usr/local/nagios/libexec/check_nrpe -H 127.0.0.1 -c check_load
-```
-Vous devriez voir une sortie semblable à celle-ci :
-```
-OK - load average per CPU: 0.04, 0.04, 0.04|load1=0.043;0.150;0.300;0; load5=0.043;0.100;0.250;0; load15=0.037;0.050;0.200;0;
-```
-Vous pouvez également tester à partir de votre hôte Nagios en exécutant la même commande ci-dessus, mais au lieu de 127.0.0.1, vous devrez le remplacer par l'adresse IP / le nom DNS de la machine avec NRPE en cours d'exécution.
 
 - Configurer nrpe dans le fichier de commandes.cfg du serveur nagios.
 
