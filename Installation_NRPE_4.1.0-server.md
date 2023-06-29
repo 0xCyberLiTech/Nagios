@@ -102,11 +102,10 @@ Si vous souhaitez uniquement installer le plug-in check_nrpe, reportez-vous à l
 make install
 ```
 - Installer les fichiers de configuration.
-Cela installe les fichiers de configuration.
 ```
 make install-config
 ```
-- Mettre à jour le fichier des services.
+- Mettre à jour le fichier /etc/services.
 
 Le fichier /etc/services est utilisé par les applications pour traduire les noms de service lisibles par l'homme en numéros de port lors de la connexion à une machine sur un réseau.
 ```
@@ -114,8 +113,8 @@ echo >> /etc/services
 echo '# Nagios services' >> /etc/services
 echo 'nrpe    5666/tcp' >> /etc/services
 ```
-- Installer le service/le démon.
-Cela installe les fichiers de service ou de démon.
+- Installer le service / le démon.
+
 ```
 make install-init
 systemctl enable nrpe.service
@@ -133,21 +132,24 @@ Answer yes to saving existing rules
 
 iptables-save > /etc/iptables/rule
 ```
-- Mettre à jour le fichier de configuration.
+- Mettre à jour le fichier de configuration (nrpe.cfg) vers /usr/local/nagios/etc/nrpe.cfg.
 
-Le fichier nrpe.cfg est l'endroit où les paramètres suivants seront définis. Il est situé :
 ```
 nano /usr/local/nagios/etc/nrpe.cfg
 
 allowed_hosts=
 ```
-À ce stade, NRPE n'écoutera que les demandes provenant de lui-même (127.0.0.1). Si vous vouliez que votre serveur nagios puisse se connecter, ajoutez son adresse IP après une virgule (dans cet exemple c'est 10.25.5.2) :
+À ce stade, NRPE n'écoutera que les demandes provenant de lui-même (127.0.0.1). 
+
+Si vous vouliez que votre serveur nagios puisse se connecter, ajoutez son adresse IP après une virgule (dans cet exemple c'est 10.25.5.2) :
 ```
 allowed_hosts=127.0.0.1,192.168.50.200
 
 dont_blame_nrpe=
 ```
-Cette option détermine si le démon NRPE autorise ou non les clients à spécifier des arguments pour les commandes qui sont exécutées. Nous allons autoriser cela, car cela permet des configurations NPRE plus avancées.
+Cette option détermine si le démon NRPE autorise ou non les clients à spécifier des arguments pour les commandes qui sont exécutées.
+
+Nous allons autoriser cela, car cela permet des configurations NPRE plus avancées.
 ```
 dont_blame_nrpe=1
 ```
@@ -156,7 +158,7 @@ Les commandes suivantes effectuent les modifications de configuration décrites 
 sed -i '/^allowed_hosts=/s/$/,192.168.50.200/' /usr/local/nagios/etc/nrpe.cfg
 sed -i 's/^dont_blame_nrpe=.*/dont_blame_nrpe=1/g' /usr/local/nagios/etc/nrpe.cfg
 ```
-- Démarrer le service/démon.
+- Démarrer le service / démon.
 
 Différentes distributions Linux ont différentes méthodes de démarrage de NRPE.
 ```
@@ -164,7 +166,7 @@ systemctl start nrpe.service
 ```
 - Test NRPE.
 
-Vérifiez maintenant que NRPE écoute et répond aux demandes.
+Vérifiez maintenant que NRPE écoute et répond aux demandes sur le serveur (srv-linux-01) Nagios Core.
 ```
 /usr/local/nagios/libexec/check_nrpe -H 127.0.0.1
 ```
@@ -172,24 +174,17 @@ Vous devriez voir une sortie semblable à celle-ci :
 ```
 NRPE v4.1.0
 ```
-Si vous obtenez le numéro de version NRPE (comme indiqué ci-dessus), NRPE est installé et configuré correctement.
-
-Vous pouvez également tester à partir de votre hôte Nagios en exécutant la même commande ci-dessus, mais au lieu de 127.0.0.1, vous devrez le remplacer par l'adresse IP / le nom DNS de la machine avec NRPE en cours d'exécution.
-
-Vérifiez maintenant que NRPE écoute et répond aux demandes vers le serveur distant (srv-linux-02).
-```
-/usr/local/nagios/libexec/check_nrpe -H 192.168.50.201
 ```
 - Commandes service/démon.
 
-Différentes distributions Linux ont différentes méthodes de démarrage / arrêt / redémarrage / statut NRPE.
+Commande service NRPE : démarrage / arrêt / redémarrage / statut.
 ```
 systemctl start nrpe.service
 systemctl stop nrpe.service
 systemctl restart nrpe.service
 systemctl status nrpe.service
 ```
-## Installation des plugins Nagios, normalement ceux-ci ont été installés auparavant lors de l'installation de Nagios Core.
+## Installation des plugins Nagios, normalement ceux-ci ont été installés auparavant lors de l'installation de Nagios Core sur le serveur ou vous êtes actuelement (srv-linux-01).
 En revanche il sera nécessaire d'installer ceux-ci sur la machine Linux distante à superviser. NRPE a besoin de Nagios-plugins pour fonctionner correctement.
 
 - Configurer nrpe dans le fichier de commandes.cfg du serveur nagios.
@@ -205,13 +200,13 @@ define command{
 
 Modification des paramètres d'avertissement.
 
-Notez que vous pouvez vérifier les valeurs de seuil pour l'avertissement et la critique dans le fichier de configuration /etc/nagios/nrpe.conf sur l'hôte de destination où les commandes sont définies. Par exemple, pour avertir si les processus sont supérieurs à 200 (par défaut) 150, nous pouvons modifier les valeurs 150, 200 à 200, 250 avec la ligne de configuration résultante comme :
+Notez que vous pourez vérifier les valeurs de seuil pour l'avertissement et la critique dans le fichier de configuration /usr/local/nagios/etc/nrpe.conf sur l'hôte de destination (srv-linux-02) où les commandes sont définies. Par exemple, pour avertir si les processus sont supérieurs à 200 (par défaut) 150, nous pouvons modifier les valeurs 150, 200 à 200, 250 avec la ligne de configuration résultante comme :
 ```
 command[check_total_procs]=/usr/lib64/nagios/plugins/check_procs -w 200 -c 250
+
+Concernant la command[check_*] :
 ```
-Concernant command[check_*] :
-```
-/usr/local/nagios/etc/nrpe.cfg
+nano /usr/local/nagios/etc/nrpe.cfg
 ```
 Les exemples suivants utilisent des arguments de commande codés en dur...
 C'est de loin la méthode la plus sûre d'utilisation de NRPE.
@@ -223,7 +218,7 @@ command[check_zombie_procs]=/usr/local/nagios/libexec/check_procs -w 5 -c 10 -s 
 command[check_total_procs]=/usr/local/nagios/libexec/check_procs -w 250 -c 400
 command[check_swap]=/usr/local/nagios/libexec/check_swap -w 50% -c 30%
 ```
-On obtient le résultat suivant concernant la supervision des services en local depuis le serveur (srv-linux-01) Nagios Core.
+On obtient le résultat suivant concernant la supervision des services en locaux depuis le serveur (srv-linux-01) Nagios Core.
 
 ![Nagios_check_command.png](./images/Nagios_check_command.png)
 
