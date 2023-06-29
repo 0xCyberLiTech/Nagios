@@ -182,6 +182,7 @@ systemctl restart nrpe.service
 systemctl status nrpe.service
 ```
 ## Installation des plugins Nagios, normalement ceux-ci ont été installés auparavant lors de l'installation de Nagios Core sur le serveur ou vous êtes actuelement (srv-linux-01).
+
 En revanche il sera nécessaire d'installer ceux-ci sur la machine distante (srv-linux-02) à superviser. NRPE a besoin de Nagios-plugins pour fonctionner correctement.
 
 - Mettre en place la commande nrpe dans le fichier de commandes.cfg du serveur (srv-linux-01) Nagios Core.
@@ -201,12 +202,13 @@ Modification des paramètres d'avertissement.
 Notez que vous pourez vérifier les valeurs de seuil pour l'avertissement et la critique dans le fichier de configuration /usr/local/nagios/etc/nrpe.conf sur l'hôte de destination (srv-linux-02) où les commandes sont définies. Par exemple, pour avertir si les processus sont supérieurs à 200 (par défaut) 150, nous pouvons modifier les valeurs 150, 200 à 200, 250 avec la ligne de configuration résultante comme :
 ```
 command[check_total_procs]=/usr/lib64/nagios/plugins/check_procs -w 200 -c 250
-
+```
 Concernant la command[check_*] :
 ```
 nano /usr/local/nagios/etc/nrpe.cfg
 ```
 Les exemples suivants utilisent des arguments de commande codés en dur...
+
 C'est de loin la méthode la plus sûre d'utilisation de NRPE.
 ```
 command[check_users]=/usr/local/nagios/libexec/check_users -w 5 -c 10
@@ -216,7 +218,7 @@ command[check_zombie_procs]=/usr/local/nagios/libexec/check_procs -w 5 -c 10 -s 
 command[check_total_procs]=/usr/local/nagios/libexec/check_procs -w 250 -c 400
 command[check_swap]=/usr/local/nagios/libexec/check_swap -w 50% -c 30%
 ```
-On obtient le résultat suivant concernant la supervision des services en locaux depuis le serveur (srv-linux-01) Nagios Core.
+On obtient le résultat suivant concernant la supervision des services locaux depuis le serveur (srv-linux-01) Nagios Core.
 
 ![Nagios_check_command.png](./images/Nagios_check_command.png)
 
