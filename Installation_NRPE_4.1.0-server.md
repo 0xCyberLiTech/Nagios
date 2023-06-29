@@ -20,15 +20,16 @@ Remarque : Il est possible d'exécuter des plugins Nagios sur des machines Linux
 L'addon NRPE se compose de deux éléments :
 
 - Le plug-in check_nrpe, qui réside sur la machine de surveillance locale.
-- Le démon NRPE, qui s'exécute sur la machine Linux/Unix distante.
+- Le deamon NRPE, qui s'exécute sur la machine Linux/Unix distante.
+
 Lorsque Nagios a besoin de surveiller une ressource de service depuis une machine Linux/Unix distante :
 
 Nagios exécutera le plugin check_nrpe et lui indiquera quel service doit être vérifié.
-- Le plug-in check_nrpe contacte le démon NRPE sur l'hôte distant via une connexion (éventuellement) protégée par SSL.
-- Le démon NRPE exécute le plugin Nagios approprié pour vérifier le service ou la ressource.
-- Les résultats de la vérification du service sont transmis du démon NRPE au plug-in check_nrpe, qui renvoie ensuite les résultats de la vérification au processus Nagios.
+- Le plug-in check_nrpe contacte le deamon NRPE sur l'hôte distant via une connexion (éventuellement) protégée par SSL.
+- Le deamon NRPE exécute le plugin Nagios approprié pour vérifier le service ou la ressource.
+- Les résultats de la vérification du service sont transmis du deamon NRPE au plug-in check_nrpe, qui renvoie ensuite les résultats de la vérification au processus Nagios.
   
-Remarque : Le démon NRPE nécessite que les plugins Nagios soient installés sur l'hôte Linux/Unix distant. Sans cela, le démon ne serait pas en mesure de surveiller quoi que ce soit.
+Remarque : Le deamon NRPE nécessite que les plugins Nagios soient installés sur l'hôte Linux/Unix distant. Sans cela, le deamon ne serait pas en mesure de surveiller quoi que ce soit.
 
 Contrôles directs :
 
@@ -38,13 +39,13 @@ L'utilisation la plus simple de l'addon NRPE est de surveiller les ressources "l
 
 Contrôles indirects :
 
-Vous pouvez également utiliser l'addon NRPE pour vérifier indirectement les services et ressources "publics" des serveurs distants qui pourraient ne pas être accessibles directement depuis l'hôte de surveillance. Par exemple, si l'hôte distant sur lequel le démon NRPE et les plug-ins sont installés peut communiquer avec un serveur Web distant (mais pas l'hôte de surveillance), vous pouvez configurer le démon NRPE pour vous permettre de surveiller indirectement le serveur Web distant. Le démon NRPE agit essentiellement comme proxy dans ce cas.
+Vous pouvez également utiliser l'addon NRPE pour vérifier indirectement les services et ressources "publics" des serveurs distants qui pourraient ne pas être accessibles directement depuis l'hôte de surveillance. Par exemple, si l'hôte distant sur lequel le deamon NRPE et les plug-ins sont installés peut communiquer avec un serveur Web distant (mais pas l'hôte de surveillance), vous pouvez configurer le deamon NRPE pour vous permettre de surveiller indirectement le serveur Web distant. Le deamon NRPE agit essentiellement comme proxy dans ce cas.
 
 ![NRPE_check_1](./images/nrpe_check_1.png)
 
 Contrôles indirects :
 
-Vous pouvez également utiliser l'addon NRPE pour vérifier indirectement les services et ressources "publics" des serveurs distants qui pourraient ne pas être accessibles directement depuis l'hôte de surveillance. Par exemple, si l'hôte distant sur lequel le démon NRPE et les plug-ins sont installés peut communiquer avec un serveur Web distant (mais pas l'hôte de surveillance), vous pouvez configurer le démon NRPE pour vous permettre de surveiller indirectement le serveur Web distant. Le démon NRPE agit essentiellement comme proxy dans ce cas.
+Vous pouvez également utiliser l'addon NRPE pour vérifier indirectement les services et ressources "publics" des serveurs distants qui pourraient ne pas être accessibles directement depuis l'hôte de surveillance. Par exemple, si l'hôte distant sur lequel le deamon NRPE et les plug-ins sont installés peut communiquer avec un serveur Web distant (mais pas l'hôte de surveillance), vous pouvez configurer le deamon NRPE pour vous permettre de surveiller indirectement le serveur Web distant. Le deamon NRPE agit essentiellement comme proxy dans ce cas.
 
 ![NRPE_check_2](./images/nrpe_check_2.png)
 
@@ -93,9 +94,9 @@ make install-groups-users
 ```
 - Installer les binaires.
 
-Cette étape installe les fichiers binaires, le démon NRPE et le plugin check_nrpe.
+Cette étape installe les fichiers binaires, le deamon NRPE et le plugin check_nrpe.
 
-Si vous souhaitez uniquement installer le démon, exécutez la commande make install-daemon au lieu de la commande ci-dessous. Cependant, il est utile d'avoir installé le plugin check_nrpe à des fins de test.
+Si vous souhaitez uniquement installer le deamon, exécutez la commande make install-daemon au lieu de la commande ci-dessous. Cependant, il est utile d'avoir installé le plugin check_nrpe à des fins de test.
 
 Si vous souhaitez uniquement installer le plug-in check_nrpe, reportez-vous à la section au bas de cet article de la base de connaissances, car de nombreuses étapes peuvent être ignorées. L'installation du plugin uniquement se fait généralement sur votre serveur et vos workers Nagios.
 ```
@@ -113,7 +114,7 @@ echo >> /etc/services
 echo '# Nagios services' >> /etc/services
 echo 'nrpe    5666/tcp' >> /etc/services
 ```
-- Installer le service / le démon.
+- Installer le service / le deamon.
 
 ```
 make install-init
@@ -147,7 +148,7 @@ allowed_hosts=127.0.0.1,192.168.50.200
 
 dont_blame_nrpe=
 ```
-Cette option détermine si le démon NRPE autorise ou non les clients à spécifier des arguments pour les commandes qui sont exécutées.
+Cette option détermine si le deamon NRPE autorise ou non les clients à spécifier des arguments pour les commandes qui sont exécutées.
 
 Nous allons autoriser cela, car cela permet des configurations NPRE plus avancées.
 ```
@@ -158,7 +159,7 @@ Les commandes suivantes effectuent les modifications de configuration décrites 
 sed -i '/^allowed_hosts=/s/$/,192.168.50.200/' /usr/local/nagios/etc/nrpe.cfg
 sed -i 's/^dont_blame_nrpe=.*/dont_blame_nrpe=1/g' /usr/local/nagios/etc/nrpe.cfg
 ```
-- Démarrer le service NRPE / démon.
+- Démarrer le service NRPE / deamon.
 ```
 systemctl start nrpe.service
 ```
@@ -181,7 +182,7 @@ systemctl stop nrpe.service
 systemctl restart nrpe.service
 systemctl status nrpe.service
 ```
-## Installation des plugins Nagios, normalement ceux-ci ont été installés auparavant lors de l'installation de Nagios Core sur le serveur ou vous êtes actuelement (srv-linux-01).
+## Installation des plugins Nagios, normalement ceux-ci ont été installés auparavant lors de l'installation de Nagios Core sur le serveur ou vous êtes actuellement (srv-linux-01).
 
 En revanche il sera nécessaire d'installer ceux-ci sur la machine distante (srv-linux-02) à superviser. NRPE a besoin de Nagios-plugins pour fonctionner correctement.
 
