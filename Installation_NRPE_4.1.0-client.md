@@ -84,7 +84,8 @@ Answer yes to saving existing rules
 
 iptables-save > /etc/iptables/rule
 ```
-- Mettre à jour le fichier de configuration.
+- Mettre à jour le fichier de configuration nrpe.cfg.
+
 Le fichier nrpe.cfg est l'endroit où les paramètres suivants seront définis. Il est situé :
 ```
 nano /usr/local/nagios/etc/nrpe.cfg
