@@ -219,7 +219,7 @@ Configuration des vérifications à distance à l'aide de nrpe dans le fichier d
 
 Si le serveur nagios peut se connecter au client à l'aide de 'check_nrpe', nous pouvons configurer le fichier de définition d'hôte sur le serveur Nagios Core pour surveiller des paramètres tels que l'espace disque et les processus, etc.
 
-Exemples de configurations de contrôle à distance, extrait du fichier server-linux.cfg du serveur (srv-linux-01) Nagios-Core.
+Exemples de configurations de contrôle à distance, extrait du fichier server-linux.cfg en provenance du serveur (srv-linux-01) Nagios-Core.
 
 ```
 # --------------------------------------------------------------------------
