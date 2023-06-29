@@ -226,7 +226,6 @@ Depuis mon serveur Nagios core (srv-linux-01) en 192.168.50.201 vers ma machine 
 /usr/local/nagios/etc/objects# /usr/local/nagios/libexec/check_nrpe -H 192.168.50.201
 NRPE v4.1.0
 ```
-
 Configuration des vérifications à distance à l'aide de nrpe dans le fichier de configuration des hôtes nagios
 
 Si le serveur nagios peut se connecter au client à l'aide de 'check_nrpe', nous pouvons configurer le fichier de définition d'hôte sur le serveur pour surveiller des paramètres tels que l'espace disque et les processus, etc. Exemple de définition qui utilise nrpe pour vérifier la charge sur la machine de destination est :
