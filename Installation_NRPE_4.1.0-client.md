@@ -1,7 +1,7 @@
 <a name="Installation_NRPE_4.1.0-client.md"></a>
 ![Nagios](./images/nagios.png)
 
-## Installation du plugin NRPE 4.1.0 + Nagios-plugins depuis la machine distante (srv-linux-02).
+## Installation du plugin NRPE 4.1.0 + Nagios-plugins depuis la machine hôte distante (srv-linux-02) 192.168.50.201.
 Celle-ci est effectuée depuis les sources.
 
 Toutes les commandes à partir de ce point seront en tant que root.
@@ -90,13 +90,17 @@ nano /usr/local/nagios/etc/nrpe.cfg
 
 allowed_hosts=
 ```
-À ce stade, NRPE n'écoutera que les demandes provenant de lui-même (127.0.0.1). Si vous vouliez que votre serveur Nagios Core puisse se connecter, ajoutez son adresse IP après une virgule (dans cet exemple c'est 192.168.50.200) :
+À ce stade, NRPE n'écoutera que les demandes provenant de lui-même (127.0.0.1).
+
+Si vous vouliez que votre serveur Nagios Core puisse se connecter, ajoutez son adresse IP après une virgule (dans cet exemple c'est 192.168.50.200) :
 ```
 allowed_hosts=127.0.0.1,192.168.50.200
 
 dont_blame_nrpe=
 ```
-Cette option détermine si le deamon NRPE autorise ou non les clients à spécifier des arguments pour les commandes qui sont exécutées. Nous allons autoriser cela, car cela permet des configurations NPRE plus avancées.
+Cette option détermine si le deamon NRPE autorise ou non les clients à spécifier des arguments pour les commandes qui sont exécutées. 
+
+Nous allons autoriser cela, car cela permet des configurations NPRE plus avancées.
 ```
 dont_blame_nrpe=1
 ```
@@ -153,7 +157,7 @@ NRPE v4.1.0
 ```
 - Commandes service/deamon.
 
-Commandes services NRPE, démarrage / arrêt / redémarrage / statut.
+Commandes services NRPE, (démarrage / arrêt / redémarrage / statut).
 ```
 systemctl start nrpe.service
 systemctl stop nrpe.service
@@ -196,7 +200,7 @@ wget https://github.com/nagios-plugins/nagios-plugins/releases/download/release-
 ```
 tar xvf nagios-plugins-$VER.tar.gz
 ```
-- E. Compilation depuis les sources de Nagios-plugins.
+- Compilation depuis les sources de Nagios-plugins.
 ```
 cd nagios-plugins-$VER
 ./tools/setup
@@ -229,11 +233,9 @@ Vous devriez voir une sortie semblable à celle-ci :
 ```
 OK - load average per CPU: 0.04, 0.04, 0.04|load1=0.043;0.150;0.300;0; load5=0.043;0.100;0.250;0; load15=0.037;0.050;0.200;0;
 ```
-Configuration des vérifications à distance à l'aide de nrpe dans le fichier de configuration des hôtes nagios
+Si la machine hôte (srv-linux-01) Nagios Core peut se connecter au client à l'aide de 'check_nrpe', nous pouvons configurer le fichier de définition d'hôte sur le serveur pour surveiller des paramètres tels que l'espace disque et les processus, etc.
 
-Si le serveur nagios peut se connecter au client à l'aide de 'check_nrpe', nous pouvons configurer le fichier de définition d'hôte sur le serveur pour surveiller des paramètres tels que l'espace disque et les processus, etc. Exemple de définition qui utilise nrpe pour vérifier la charge sur la machine de destination est :
-
-Exemple : Extrait en provenance du serveur (srv-linux-01) Nagios Core --> /usr/local/nagios/etc/objects/server-linux.cfg
+Exemple : Extrait en provenance de la machine hôte (srv-linux-01) Nagios Core --> /usr/local/nagios/etc/objects/server-linux.cfg
 
 ```
 # --------------------------------------------------------------------------
@@ -330,6 +332,7 @@ Concernant command[check_*] :
 /usr/local/nagios/etc/nrpe.cfg
 ```
 Les exemples suivants utilisent des arguments de commande codés en dur...
+
 C'est de loin la méthode la plus sûre d'utilisation de NRPE.
 ```
 command[check_users]=/usr/local/nagios/libexec/check_users -w 5 -c 10
@@ -347,7 +350,7 @@ Test d'un service distant.
 
 Exemple : (check_ssh -p2234).
 
-Test effectué depuis le serveur (srv-linux-01) Nagios Core, vers le serveur (srv-linux-02) :
+Test effectué depuis la machine hôte (srv-linux-01) Nagios Core, vers la machine hôte (srv-linux-02) à surveiller :
 ```
 /usr/local/nagios/libexec/check_ssh -p2234 192.168.50.201
 SSH OK - OpenSSH_9.2p1 Debian-2 (protocol 2.0) | time=0,014415s;;;0,000000;10,000000
@@ -359,5 +362,4 @@ On obtient le résultat suivant concernant la supervision des services du serveu
 ![Nagios_check_command_0.png](./images/Nagios_check_command_0.png)
 ![nagios_service_Host_Groups_1.png](./images/nagios_service_Host_Groups_1.png)
 
-nagios_service_Host_Groups_1.png
 Il faudra également installer NRPE 4.1.0 + Nagios-plugins sur la machine distante (srv-linux-02). Cela prendra tout son sens afin de monitorer celle-ci.
