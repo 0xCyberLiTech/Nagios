@@ -223,8 +223,11 @@ Vous pouvez également tester à partir de votre hôte Nagios en exécutant la m
 
 Depuis mon serveur Nagios core (srv-linux-01) en 192.168.50.201 vers ma machine Linux (srv-linu-02) hôte distante 192.168.50.201
 ```
-/usr/local/nagios/etc/objects# /usr/local/nagios/libexec/check_nrpe -H 192.168.50.201
-NRPE v4.1.0
+/usr/local/nagios/libexec/check_nrpe -H 192.168.50.201 -c check_load
+```
+Vous devriez voir une sortie semblable à celle-ci :
+```
+OK - load average per CPU: 0.04, 0.04, 0.04|load1=0.043;0.150;0.300;0; load5=0.043;0.100;0.250;0; load15=0.037;0.050;0.200;0;
 ```
 Configuration des vérifications à distance à l'aide de nrpe dans le fichier de configuration des hôtes nagios
 
