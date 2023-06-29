@@ -176,9 +176,8 @@ Si vous obtenez le numéro de version NRPE (comme indiqué ci-dessus), NRPE est 
 
 Vous pouvez également tester à partir de votre hôte Nagios en exécutant la même commande ci-dessus, mais au lieu de 127.0.0.1, vous devrez le remplacer par l'adresse IP / le nom DNS de la machine avec NRPE en cours d'exécution.
 
+Vérifiez maintenant que NRPE écoute et répond aux demandes vers le serveur distant (srv-linux-02).
 ```
-Vérifiez maintenant que NRPE écoute et répond aux demandes vers le serveur (srv-linux-02).
-
 /usr/local/nagios/libexec/check_nrpe -H 192.168.50.201
 ```
 
