@@ -39,9 +39,9 @@ make install-groups-users
 ```
 - Installer les binaires.
 
-Cette étape installe les fichiers binaires, le démon NRPE et le plugin check_nrpe.
+Cette étape installe les fichiers binaires, le deamon NRPE et le plugin check_nrpe.
 
-Si vous souhaitez uniquement installer le démon, exécutez la commande make install-daemon au lieu de la commande ci-dessous. Cependant, il est utile d'avoir installé le plugin check_nrpe à des fins de test.
+Si vous souhaitez uniquement installer le deamon, exécutez la commande make install-daemon au lieu de la commande ci-dessous. Cependant, il est utile d'avoir installé le plugin check_nrpe à des fins de test.
 ```
 make install
 ```
@@ -66,8 +66,8 @@ nano /etc/services
 nrpe    5666/tcp
 
 ```
-- Installer le service/le démon.
-Cela installe les fichiers de service ou de démon.
+- Installer le service/le deamon.
+Cela installe les fichiers de service ou de deamon.
 ```
 make install-init
 systemctl enable nrpe.service
@@ -96,7 +96,7 @@ allowed_hosts=127.0.0.1,192.168.50.200
 
 dont_blame_nrpe=
 ```
-Cette option détermine si le démon NRPE autorise ou non les clients à spécifier des arguments pour les commandes qui sont exécutées. Nous allons autoriser cela, car cela permet des configurations NPRE plus avancées.
+Cette option détermine si le deamon NRPE autorise ou non les clients à spécifier des arguments pour les commandes qui sont exécutées. Nous allons autoriser cela, car cela permet des configurations NPRE plus avancées.
 ```
 dont_blame_nrpe=1
 ```
@@ -105,7 +105,7 @@ Les commandes suivantes effectuent les modifications de configuration décrites 
 sed -i '/^allowed_hosts=/s/$/,192.168.50.200/' /usr/local/nagios/etc/nrpe.cfg
 sed -i 's/^dont_blame_nrpe=.*/dont_blame_nrpe=1/g' /usr/local/nagios/etc/nrpe.cfg
 ```
-- Démarrer le service/démon.
+- Démarrer le service/deamon.
 ```
 systemctl start nrpe.service
 ```
@@ -151,7 +151,7 @@ Vous devriez voir une sortie semblable à celle-ci :
 ```
 NRPE v4.1.0
 ```
-- Commandes service/démon.
+- Commandes service/deamon.
 
 Commandes services NRPE, démarrage / arrêt / redémarrage / statut.
 ```
