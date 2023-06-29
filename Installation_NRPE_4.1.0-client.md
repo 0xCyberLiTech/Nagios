@@ -85,14 +85,12 @@ Answer yes to saving existing rules
 iptables-save > /etc/iptables/rule
 ```
 - Mettre à jour le fichier de configuration nrpe.cfg.
-
-Le fichier nrpe.cfg est l'endroit où les paramètres suivants seront définis. Il est situé :
 ```
 nano /usr/local/nagios/etc/nrpe.cfg
 
 allowed_hosts=
 ```
-À ce stade, NRPE n'écoutera que les demandes provenant de lui-même (127.0.0.1). Si vous vouliez que votre serveur nagios puisse se connecter, ajoutez son adresse IP après une virgule (dans cet exemple c'est 10.25.5.2) :
+À ce stade, NRPE n'écoutera que les demandes provenant de lui-même (127.0.0.1). Si vous vouliez que votre serveur Nagios Core puisse se connecter, ajoutez son adresse IP après une virgule (dans cet exemple c'est 192.168.50.200) :
 ```
 allowed_hosts=127.0.0.1,192.168.50.200
 
@@ -133,7 +131,8 @@ juin 28 14:07:37 srv-linux-02 nrpe[4047]: Warning: Daemon is configured to accep
 juin 28 14:07:37 srv-linux-02 nrpe[4047]: Listening for connections on port 5666
 juin 28 14:07:37 srv-linux-02 nrpe[4047]: Allowing connections from: 127.0.0.1,192.168.50.201
 ```
-Test NRPE.
+- Test NRPE.
+
 Vérifiez maintenant que NRPE écoute et répond aux demandes.
 ```
 /usr/local/nagios/libexec/check_nrpe -H 127.0.0.1
@@ -144,7 +143,7 @@ NRPE v4.1.0
 ```
 Si vous obtenez le numéro de version NRPE (comme indiqué ci-dessus), NRPE est installé et configuré correctement.
 
-Vous pouvez également tester à partir de votre hôte Nagios en exécutant la même commande ci-dessus, mais au lieu de 127.0.0.1, vous devrez le remplacer par l'adresse IP / le nom DNS de la machine avec NRPE en cours d'exécution.
+Vous pouvez également tester à partir de votre hôte Nagios Core (srv-linux-01) en exécutant la même commande ci-dessus, mais au lieu de 127.0.0.1, vous devrez remplacer l'adresse IP par celle de votre machine hôte (srv-linux-02)
 ```
 /usr/local/nagios/libexec/check_nrpe -H 192.168.50.201
 ```
@@ -153,7 +152,8 @@ Vous devriez voir une sortie semblable à celle-ci :
 NRPE v4.1.0
 ```
 - Commandes service/démon.
-Différentes distributions Linux ont différentes méthodes de démarrage / arrêt / redémarrage / statut NRPE.
+
+Commandes services NRPE, démarrage / arrêt / redémarrage / statut.
 ```
 systemctl start nrpe.service
 systemctl stop nrpe.service
