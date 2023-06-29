@@ -1,3 +1,6 @@
+<a name="Installation_NRPE_4.1.0-server.md"></a>
+![Nagios](./images/nagios.png)
+
 ## Configurez le paramètre SSL/TLS pour utiliser une connexion HTTPS chiffrée sécurisée.
 
 ```
