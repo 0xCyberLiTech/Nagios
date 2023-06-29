@@ -156,8 +156,8 @@ systemctl stop nrpe.service
 systemctl restart nrpe.service
 systemctl status nrpe.service
 ```
-## Installation des plugins Nagios, normalement ceux-ci ont été installés auparavant lors de l'installation de Nagios Core.
-En revanche il sera nécessaire d'installer ceux-ci sur la machine Linux distante à superviser. NRPE a besoin de Nagios-plugins pour fonctionner correctement.
+## Installation des plugins Nagios, sur notre machine hôte (srv-linux-02 - 192.168.50.201).
+NRPE a besoin de Nagios-plugins pour fonctionner correctement.
 
 - Installation de Nagios-plugins dans sa dernière version stable.
 - Conditions préalables.
