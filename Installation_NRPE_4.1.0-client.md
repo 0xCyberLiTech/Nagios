@@ -42,8 +42,6 @@ make install-groups-users
 Cette étape installe les fichiers binaires, le démon NRPE et le plugin check_nrpe.
 
 Si vous souhaitez uniquement installer le démon, exécutez la commande make install-daemon au lieu de la commande ci-dessous. Cependant, il est utile d'avoir installé le plugin check_nrpe à des fins de test.
-
-Si vous souhaitez uniquement installer le plug-in check_nrpe, reportez-vous à la section au bas de cet article de la base de connaissances, car de nombreuses étapes peuvent être ignorées. L'installation du plugin uniquement se fait généralement sur votre serveur et vos workers Nagios.
 ```
 make install
 ```
@@ -109,7 +107,6 @@ sed -i '/^allowed_hosts=/s/$/,192.168.50.200/' /usr/local/nagios/etc/nrpe.cfg
 sed -i 's/^dont_blame_nrpe=.*/dont_blame_nrpe=1/g' /usr/local/nagios/etc/nrpe.cfg
 ```
 - Démarrer le service/démon.
-Différentes distributions Linux ont différentes méthodes de démarrage de NRPE.
 ```
 systemctl start nrpe.service
 ```
@@ -147,7 +144,13 @@ NRPE v4.1.0
 Si vous obtenez le numéro de version NRPE (comme indiqué ci-dessus), NRPE est installé et configuré correctement.
 
 Vous pouvez également tester à partir de votre hôte Nagios en exécutant la même commande ci-dessus, mais au lieu de 127.0.0.1, vous devrez le remplacer par l'adresse IP / le nom DNS de la machine avec NRPE en cours d'exécution.
-
+```
+/usr/local/nagios/libexec/check_nrpe -H 192.168.50.201
+```
+Vous devriez voir une sortie semblable à celle-ci :
+```
+NRPE v4.1.0
+```
 - Commandes service/démon.
 Différentes distributions Linux ont différentes méthodes de démarrage / arrêt / redémarrage / statut NRPE.
 ```
@@ -183,16 +186,12 @@ apt install -y \
        libnet-snmp-perl \
        gettext
 ```
-
 - Téléchargement des sources de Nagios-plugins dans sa dernère version stable.
-
 ```
 VER=$(curl -s https://api.github.com/repos/nagios-plugins/nagios-plugins/releases/latest|grep tag_name | cut -d '"' -f 4|sed 's/release-//')
 wget https://github.com/nagios-plugins/nagios-plugins/releases/download/release-$VER/nagios-plugins-$VER.tar.gz
 ```
-
 - Extraire l'archive nagios-plugins-$VER.tar.gz.
-
 ```
 tar xvf nagios-plugins-$VER.tar.gz
 ```
