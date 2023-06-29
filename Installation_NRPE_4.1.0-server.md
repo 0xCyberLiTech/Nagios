@@ -158,9 +158,7 @@ Les commandes suivantes effectuent les modifications de configuration décrites 
 sed -i '/^allowed_hosts=/s/$/,192.168.50.200/' /usr/local/nagios/etc/nrpe.cfg
 sed -i 's/^dont_blame_nrpe=.*/dont_blame_nrpe=1/g' /usr/local/nagios/etc/nrpe.cfg
 ```
-- Démarrer le service / démon.
-
-Différentes distributions Linux ont différentes méthodes de démarrage de NRPE.
+- Démarrer le service NRPE / démon.
 ```
 systemctl start nrpe.service
 ```
@@ -174,10 +172,9 @@ Vous devriez voir une sortie semblable à celle-ci :
 ```
 NRPE v4.1.0
 ```
-```
-- Commandes service/démon.
+- Commandes du service NRPE.
 
-Commande service NRPE : démarrage / arrêt / redémarrage / statut.
+démarrage / arrêt / redémarrage / statut.
 ```
 systemctl start nrpe.service
 systemctl stop nrpe.service
@@ -185,19 +182,20 @@ systemctl restart nrpe.service
 systemctl status nrpe.service
 ```
 ## Installation des plugins Nagios, normalement ceux-ci ont été installés auparavant lors de l'installation de Nagios Core sur le serveur ou vous êtes actuelement (srv-linux-01).
-En revanche il sera nécessaire d'installer ceux-ci sur la machine Linux distante à superviser. NRPE a besoin de Nagios-plugins pour fonctionner correctement.
+En revanche il sera nécessaire d'installer ceux-ci sur la machine distante (srv-linux-02) à superviser. NRPE a besoin de Nagios-plugins pour fonctionner correctement.
 
-- Configurer nrpe dans le fichier de commandes.cfg du serveur nagios.
+- Mettre en place la commande nrpe dans le fichier de commandes.cfg du serveur (srv-linux-01) Nagios Core.
 
-Nous pouvons configurer la commande 'check_nrpe' dans le fichier commands.cfg. Ensuite, d'autres commandes de vérification en tant qu'arguments de cette commande check_nrge à exécuter sur l'hôte distant. Les lignes qui peuvent être ajoutées au fichier command.cfg sur le serveur nagios pour activer la commande 'check_nrpe' sont :
+Copier les lignes suivantes dans le fichier /usr/local/nagios/etc/command.cfg.
 ```
+nano /usr/local/nagios/etc/command.cfg
+
 # notify-service for nrpe' command definition
 define command{
         command_name check_nrpe
         command_line $USER1$/check_nrpe -H $HOSTADDRESS$ -c $ARG1$
         }
 ```
-
 Modification des paramètres d'avertissement.
 
 Notez que vous pourez vérifier les valeurs de seuil pour l'avertissement et la critique dans le fichier de configuration /usr/local/nagios/etc/nrpe.conf sur l'hôte de destination (srv-linux-02) où les commandes sont définies. Par exemple, pour avertir si les processus sont supérieurs à 200 (par défaut) 150, nous pouvons modifier les valeurs 150, 200 à 200, 250 avec la ligne de configuration résultante comme :
