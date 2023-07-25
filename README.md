@@ -16,6 +16,7 @@ Celle-ci est effectuée depuis les sources.
 | - G. | [Installation automatisée de Nagios-core & Nagios-plugins.](#installation-automatisée-Nagios-core) |
 | - H. | [Installation du plugin NRPE 4.1.0 depuis le serveur qui héberge Nagios Core.](Installation_NRPE_4.1.0-server.md) |
 | - I. | [Installation du plugin NRPE 4.1.0 + Nagios-plugins depuis la machine distante Linux à monitorer.](Installation_NRPE_4.1.0-client.md) |
+| - J. | [Installer et configurer (NTPsec).](https://github.com/0xCyberLiTech/Smokeping/blob/main/install-ntpsec.md) |
 
 ## Exemples concernant les fichiers de configuration Nagios :
 
