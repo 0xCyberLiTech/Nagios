@@ -56,13 +56,18 @@ Toutes les commandes à partir de ce point seront en tant que root.
 - Conditions préalables, assurez-vous que les packages suivants sont installés.
 ```
 apt-get update && apt upgrade -y
+```
+```
 apt-get install -y autoconf automake gcc libc6 libmcrypt-dev make libssl-dev wget
 ```
 - Téléchargement de l'archive nrpe-4.1.0.tar.gz (source).
 ```
 mkdir -p /opt/nrpe/
+```
+```
 cd /opt/nrpe/
-
+```
+```
 wget --no-check-certificate -O nrpe.tar.gz https://github.com/NagiosEnterprises/nrpe/archive/nrpe-4.1.0.tar.gz
 ```
 - Extraction de l'archive nrpe.tar.gz.
@@ -74,8 +79,11 @@ tar -xvzf nrpe.tar.gz
 Notez que si vous souhaitez transmettre des arguments via NRPE, vous devez le spécifier dans l'option de configuration, comme indiqué ci-dessous. Si vous préférez, vous pouvez omettre le drapeau --enable-command-args. La suppression de cet indicateur nécessitera que tous les arguments soient explicitement définis dans le fichier nrpe.cfg sur chaque serveur surveillé.
 ```
 cd nrpe-nrpe-4.1.0/
+```
+```
 ./configure --enable-command-args
-
+```
+```
 make all
 ```
 - Créer un utilisateur et un groupe.
@@ -103,13 +111,19 @@ make install-config
 Le fichier /etc/services est utilisé par les applications pour traduire les noms de service lisibles par l'homme en numéros de port lors de la connexion à une machine sur un réseau.
 ```
 echo >> /etc/services
+```
+```
 echo '# Nagios services' >> /etc/services
+```
+```
 echo 'nrpe    5666/tcp' >> /etc/services
 ```
 - Installer le service / le deamon.
 
 ```
 make install-init
+```
+```
 systemctl enable nrpe.service
 ```
 Les informations sur le démarrage et l'arrêt des services seront expliquées plus loin.
@@ -119,17 +133,20 @@ Les informations sur le démarrage et l'arrêt des services seront expliquées p
 Le port 5666 est utilisé par NRPE et doit être ouvert sur le pare-feu local.
 ```
 iptables -I INPUT -p tcp --destination-port 5666 -j ACCEPT
+```
+```
 apt-get install -y iptables-persistent
-
+```
 Answer yes to saving existing rules
-
+```
 iptables-save > /etc/iptables/rule
 ```
 - Mettre à jour le fichier de configuration (nrpe.cfg) vers /usr/local/nagios/etc/nrpe.cfg.
 
 ```
 nano /usr/local/nagios/etc/nrpe.cfg
-
+```
+```
 allowed_hosts=
 ```
 À ce stade, NRPE n'écoutera que les demandes provenant de lui-même (127.0.0.1). 
@@ -137,7 +154,8 @@ allowed_hosts=
 Si vous vouliez que votre serveur nagios puisse se connecter, ajoutez son adresse IP après une virgule (dans cet exemple c'est 10.25.5.2) :
 ```
 allowed_hosts=127.0.0.1,192.168.50.200
-
+```
+```
 dont_blame_nrpe=
 ```
 Cette option détermine si le deamon NRPE autorise ou non les clients à spécifier des arguments pour les commandes qui sont exécutées.
@@ -149,6 +167,8 @@ dont_blame_nrpe=1
 Les commandes suivantes effectuent les modifications de configuration décrites ci-dessus.
 ```
 sed -i '/^allowed_hosts=/s/$/,192.168.50.200/' /usr/local/nagios/etc/nrpe.cfg
+```
+```
 sed -i 's/^dont_blame_nrpe=.*/dont_blame_nrpe=1/g' /usr/local/nagios/etc/nrpe.cfg
 ```
 - Démarrer le service NRPE / deamon.
@@ -170,8 +190,14 @@ NRPE v4.1.0
 démarrage / arrêt / redémarrage / statut.
 ```
 systemctl start nrpe.service
+```
+```
 systemctl stop nrpe.service
+```
+```
 systemctl restart nrpe.service
+```
+```
 systemctl status nrpe.service
 ```
 ## Installation des plugins Nagios, normalement ceux-ci ont été installés auparavant lors de l'installation de Nagios Core sur le serveur ou vous êtes actuellement (srv-linux-01).
@@ -183,7 +209,8 @@ En revanche il sera nécessaire d'installer ceux-ci sur la machine distante (srv
 Copier les lignes suivantes dans le fichier /usr/local/nagios/etc/command.cfg.
 ```
 nano /usr/local/nagios/etc/command.cfg
-
+```
+```
 # notify-service for nrpe' command definition
 define command{
         command_name check_nrpe
