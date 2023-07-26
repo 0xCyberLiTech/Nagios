@@ -5,6 +5,8 @@
 Création du sous dossier /opt/nagios/.
 ```
 mkdir -p /opt/nagios/
+```
+```
 cd /opt/nagios
 ```
 Mettre à jour les paquets.
@@ -36,6 +38,8 @@ apt install -y \
 ## - Téléchargement des sources de Nagios-core dans sa dernère version stable.
 ```
 NAGIOS_VER=$(curl -s https://api.github.com/repos/NagiosEnterprises/nagioscore/releases/latest|grep tag_name | cut -d '"' -f 4)
+```
+```
 wget https://github.com/NagiosEnterprises/nagioscore/releases/download/$NAGIOS_VER/$NAGIOS_VER.tar.gz
 ```
 - Extraire l'archive $NAGIOS_VER.tar.gz.
@@ -45,13 +49,19 @@ tar -xvzf $NAGIOS_VER.tar.gz
 ## - Compilation depuis les sources de Nagios-core.
 ```
 cd $NAGIOS_VER
+```
+```
 ./configure --with-httpd-conf=/etc/apache2/sites-enabled
+```
+```
 make all
 ```
 - Créer un utilisateur et un groupe.
 Cela crée l'utilisateur et le groupe nagios. L'utilisateur www-data est également ajouté au groupe nagios.
 ```
 make install-groups-users
+```
+```
 usermod -a -G nagios www-data
 ```
 - Installer les binaires.
@@ -78,7 +88,11 @@ make install-config
 Cela installe les fichiers de configuration du serveur Web Apache et configure les paramètres Apache.
 ```
 make install-webconf
+```
+```
 a2enmod rewrite
+```
+```
 a2enmod cgi
 ```
 - Configurer le pare-feu.
@@ -100,6 +114,8 @@ Redirect root URL (/$) to /nagios
 Démarrer le serveur Web Apache2.
 ```
 echo 'RedirectMatch ^/$ /nagios' >> /etc/apache2/apache2.conf
+```
+```
 systemctl start apache2.service
 ```
 Démarrer Service / Daemon Nagios.
@@ -143,9 +159,10 @@ apt install -y \
 
 ```
 VER=$(curl -s https://api.github.com/repos/nagios-plugins/nagios-plugins/releases/latest|grep tag_name | cut -d '"' -f 4|sed 's/release-//')
+```
+```
 wget https://github.com/nagios-plugins/nagios-plugins/releases/download/release-$VER/nagios-plugins-$VER.tar.gz
 ```
-
 - Extraire l'archive nagios-plugins-$VER.tar.gz.
 
 ```
@@ -154,9 +171,17 @@ tar xvf nagios-plugins-$VER.tar.gz
 ## - Compilation depuis les sources de Nagios-plugins.
 ```
 cd nagios-plugins-$VER
+```
+```
 ./tools/setup
+```
+```
 ./configure
+```
+```
 make
+```
+```
 make install
 ```
 ## - Tester à nouveau Nagios.
