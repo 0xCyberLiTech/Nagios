@@ -1,4 +1,3 @@
-<a name="Installation_NRPE_4.1.0-server.md"></a>
 ![Nagios](./images/nagios.png)
 
 ## Installation du plugin NRPE 4.1.0 depuis le serveur qui héberge Nagios Core 4.x.x.
