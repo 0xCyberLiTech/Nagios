@@ -1,6 +1,6 @@
 ![Nagios](./images/nagios.png)
 
-# - NAGIOS Core installation avec les sources.
+# - NAGIOS Core installation depuis les sources.
 
 Création du sous dossier /opt/nagios/.
 ```
