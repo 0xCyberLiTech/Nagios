@@ -1,7 +1,7 @@
 <a name="Exemple-ip-public.cfg.md"></a>
 ![Nagios](./images/nagios.png)
  
-# Exemple concernant le fichier /usr/local/nagios/etc/objects/ip-public.cfg
+## Exemple concernant le fichier /usr/local/nagios/etc/objects/ip-public.cfg
 ```
 # --------------------------------------------------------------------------
 # 0xCyberLiTech
