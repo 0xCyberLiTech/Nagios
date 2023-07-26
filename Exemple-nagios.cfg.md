@@ -1,7 +1,7 @@
 <a name="Exemple-nagios.cfg.md"></a>
 ![Nagios](./images/nagios.png)
 
-# Exemple concernant le fichier /usr/local/nagios/etc/nagios.cfg
+## Exemple concernant le fichier /usr/local/nagios/etc/nagios.cfg
 ```
 # --------------------------------------------------------------------------
 # 0xCyberLiTech
