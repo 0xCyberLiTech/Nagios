@@ -2,6 +2,7 @@
 ![Nagios](./images/nagios.png)
 
 ## Installation du plugin NRPE 4.1.0 + Nagios-plugins depuis la machine hôte distante (srv-linux-02) 192.168.50.201.
+
 Celle-ci est effectuée depuis les sources.
 
 Toutes les commandes à partir de ce point seront en tant que root.
