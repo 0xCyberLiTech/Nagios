@@ -190,6 +190,10 @@ Via un fichier bash.
 [Disponible ici](install-nagios.sh)
 ```
 touch install-nagios.sh
+```
+```
 chmod +x install-nagios.sh
+```
+```
 sudo ./install-nagios.sh
 ```
