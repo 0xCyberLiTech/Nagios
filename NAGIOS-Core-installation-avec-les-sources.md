@@ -1,4 +1,6 @@
-## - A. Préparation avant l'installation de Nagios-core.
+![Nagios](./images/nagios.png)
+
+# - NAGIOS Core installation.
 
 Création du sous dossier /opt/nagios/.
 ```
