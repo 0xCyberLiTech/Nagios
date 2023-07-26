@@ -1,7 +1,7 @@
 <a name="Exemple-hostextinfo.cfg.md"></a>
 ![Nagios](./images/nagios.png)
 
-## - C. Exemple concernant le fichier /usr/local/nagios/etc/objects/hostextinfo.cfg
+# Exemple concernant le fichier /usr/local/nagios/etc/objects/hostextinfo.cfg
 
 Introduction :
 
