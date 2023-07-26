@@ -4,7 +4,7 @@
 
 Création du sous dossier /opt/nagios/.
 ```
-mkdir -p /opt/nagios
+mkdir -p /opt/nagios/
 cd /opt/nagios
 ```
 Mettre à jour les paquets.
