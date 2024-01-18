@@ -157,7 +157,7 @@ apt install -y \
 ```
 ## - Téléchargement des sources de Nagios-plugins dans sa dernère version stable.
 
-## - Identifier la dernière version stable accessible depuis l'url suivante :
+- Identifier la dernière version stable accessible depuis l'url suivante :
 
 https://nagios-plugins.org/download/
 
