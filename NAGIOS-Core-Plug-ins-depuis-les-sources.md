@@ -20,7 +20,7 @@ tar -xvzf $NAGIOS_VER.tar.gz
 ```
 Compile :
 ```
-cd /tmp/nagioscore-nagios-4.4.1/
+cd /tmp/nagioscore-nagios-4.5.0/
 ```
 ```
 ./configure --with-httpd-conf=/etc/apache2/sites-enabled
