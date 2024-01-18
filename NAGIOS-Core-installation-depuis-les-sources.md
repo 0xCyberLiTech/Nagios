@@ -157,21 +157,25 @@ apt install -y \
 ```
 ## - Téléchargement des sources de Nagios-plugins dans sa dernère version stable.
 
-```
-VER=$(curl -s https://api.github.com/repos/nagios-plugins/nagios-plugins/releases/latest|grep tag_name | cut -d '"' -f 4|sed 's/release-//')
-```
-```
-wget https://github.com/nagios-plugins/nagios-plugins/releases/download/release-$VER/nagios-plugins-$VER.tar.gz
-```
-- Extraire l'archive nagios-plugins-$VER.tar.gz.
+## - Identifier la dernière version stable accessible depuis l'url suivante :
 
+https://nagios-plugins.org/download/
+
+En l'occurrence la 2.4.8 à ce jour (11-01-2024).
 ```
-tar xvf nagios-plugins-$VER.tar.gz
+VER=2.4.8
+```
+```
+wget https://nagios-plugins.org/download/nagios-plugins-$VER.tar.gz
+```
+```
+tar xzf nagios-plugins-${VER}.tar.gz
 ```
 ## - Compilation depuis les sources de Nagios-plugins.
 ```
 cd nagios-plugins-$VER
 ```
+Facultatif concernant la commande suivante :
 ```
 ./tools/setup
 ```
