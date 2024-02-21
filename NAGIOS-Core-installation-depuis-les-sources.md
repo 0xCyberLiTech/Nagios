@@ -180,7 +180,7 @@ wget https://nagios-plugins.org/download/nagios-plugins-$VER.tar.gz
 ```
 Une fois l'archive récupérée décompreser celle-ci :
 ```
-tar xzf nagios-plugins-${VER}.tar.gz
+tar -xvzf nagios-plugins-${VER}.tar.gz
 ```
 ## - Compilation depuis les sources de nagios-plugins.
 ```
