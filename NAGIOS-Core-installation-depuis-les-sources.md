@@ -1,6 +1,6 @@
 ![Nagios](./images/nagios.png)
 
-## NAGIOS Core installation depuis les sources.
+## NAGIOS CORE installation depuis les sources dans sa dernière version :
 
 Création du sous dossier /opt/nagios/.
 ```
@@ -132,7 +132,9 @@ http://FQDN/nagios
 Vous serez invité à entrer un nom d'utilisateur et un mot de passe. Le nom d'utilisateur est nagiosadmin (vous l'avez créé lors d'une étape précédente) et le mot de passe est celui que vous avez fourni précédemment.
 Une fois connecté, l'interface de Nagios s'affiche. Félicitations, vous avez installé Nagios Core.
 
-- Installation de Nagios-plugins dans sa dernière version stable.
+
+## PLUGINS-NAGIOS installation depuis les sources dans sa dernière version :
+
 - Conditions préalables.
 - Installer les packages prérequis.
 ```
