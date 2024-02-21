@@ -155,19 +155,28 @@ apt install -y \
        libnet-snmp-perl \
        gettext
 ```
-## - Téléchargement des sources de Nagios-plugins dans sa dernère version stable.
+## - Téléchargement des sources de plugins-nagios dans sa dernère version stable.
+
+```
+VER=$(curl -s https://api.github.com/repos/nagios-plugins/nagios-plugins/releases/latest|grep tag_name | cut -d '"' -f 4|sed 's/release-//')
+```
+```
+wget https://github.com/nagios-plugins/nagios-plugins/releases/download/release-$VER/nagios-plugins-$VER.tar.gz
+```
+Ci les liens ci-dessus ne fonctionnent pas utiliser la méthode suivante pour récupérer la dernièere version de plugins-nagios :
 
 - Identifier la dernière version stable accessible depuis l'url suivante :
 
 https://nagios-plugins.org/download/
 
-En l'occurrence la 2.4.8 à ce jour (11-01-2024).
+En l'occurrence la 2.4.8 à ce jour (21-02-2024).
 ```
 VER=2.4.8
 ```
 ```
 wget https://nagios-plugins.org/download/nagios-plugins-$VER.tar.gz
 ```
+Une fois l'archive récupérée décompreser celle-ci :
 ```
 tar xzf nagios-plugins-${VER}.tar.gz
 ```
