@@ -3,7 +3,7 @@
 ## NAGIOS Mise à jour depuis les sources.
 - Téléchargement des sources de Nagios-core dans sa dernère version stable.
 ```
-cd /tmp
+cd /opt/nagios/
 ```
 ```
 rm -rf nagioscore*
@@ -20,7 +20,7 @@ tar -xvzf $NAGIOS_VER.tar.gz
 ```
 Compile :
 ```
-cd /tmp/nagioscore-nagios-4.5.0/
+cd nagioscore-nagios-4.5.0/
 ```
 ```
 ./configure --with-httpd-conf=/etc/apache2/sites-enabled
@@ -42,7 +42,9 @@ make install-daemoninit
 ```
 Update nagios.cfg
 
-If you are upgrading from Nagios Core 4.3.2 and earlier you will need to update the nagios.cfg file to point to /var/run/nagios.lock using the following command:
+IMPORTANT :
+
+Si vous effectuez une mise à niveau depuis Nagios Core 4.3.2 et versions antérieures, vous devrez mettre à jour le fichier nagios.cfg pour qu'il pointe vers /var/run/nagios.lock à l'aide de la commande suivante :
 ```
 sed -i 's/^lock_file=.*/lock_file=\/var\/run\/nagios.lock/g' /usr/local/nagios/etc/nagios.cfg
 ```
