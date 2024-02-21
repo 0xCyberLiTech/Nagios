@@ -133,7 +133,7 @@ Vous serez invité à entrer un nom d'utilisateur et un mot de passe. Le nom d'u
 Une fois connecté, l'interface de Nagios s'affiche. Félicitations, vous avez installé Nagios Core.
 
 
-## PLUGINS-NAGIOS installation depuis les sources dans sa dernière version :
+## NAGIOS-PLUGINS installation depuis les sources dans sa dernière version :
 
 - Conditions préalables.
 - Installer les packages prérequis.
@@ -157,7 +157,7 @@ apt install -y \
        libnet-snmp-perl \
        gettext
 ```
-## - Téléchargement des sources de plugins-nagios dans sa dernère version stable.
+## - Téléchargement des sources de nagios-plugins dans sa dernère version stable.
 
 ```
 VER=$(curl -s https://api.github.com/repos/nagios-plugins/nagios-plugins/releases/latest|grep tag_name | cut -d '"' -f 4|sed 's/release-//')
@@ -165,7 +165,7 @@ VER=$(curl -s https://api.github.com/repos/nagios-plugins/nagios-plugins/release
 ```
 wget https://github.com/nagios-plugins/nagios-plugins/releases/download/release-$VER/nagios-plugins-$VER.tar.gz
 ```
-Ci les liens ci-dessus ne fonctionnent pas utiliser la méthode suivante pour récupérer la dernièere version de plugins-nagios :
+Ci les liens ci-dessus ne fonctionnent pas utiliser la méthode suivante pour récupérer la dernièere version de nagios-plugins :
 
 - Identifier la dernière version stable accessible depuis l'url suivante :
 
@@ -182,7 +182,7 @@ Une fois l'archive récupérée décompreser celle-ci :
 ```
 tar xzf nagios-plugins-${VER}.tar.gz
 ```
-## - Compilation depuis les sources de Nagios-plugins.
+## - Compilation depuis les sources de nagios-plugins.
 ```
 cd nagios-plugins-$VER
 ```
@@ -224,7 +224,7 @@ Purge.
 ```
 rm -rf $TEMP_FOLDER
 ```
-## - Installation automatisée de Nagios-core & Nagios-plugins.
+## - Installation automatisée de Nagios-core & plugins-nagios.
 
 Via un fichier bash.
 [Disponible ici](install-nagios.sh)
