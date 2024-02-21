@@ -40,9 +40,9 @@ Cela installe les fichiers de service ou de démon. Bien que ceux-ci existent d�
 ```
 make install-daemoninit
 ```
-Update nagios.cfg
 
-IMPORTANT :
+
+IMPORTANT (Update nagios.cfg) :
 
 Si vous effectuez une mise à niveau depuis Nagios Core 4.3.2 et versions antérieures, vous devrez mettre à jour le fichier nagios.cfg pour qu'il pointe vers /var/run/nagios.lock à l'aide de la commande suivante :
 ```
