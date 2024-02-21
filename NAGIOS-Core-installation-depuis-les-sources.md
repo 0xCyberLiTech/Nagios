@@ -186,7 +186,7 @@ tar xzf nagios-plugins-${VER}.tar.gz
 ```
 cd nagios-plugins-$VER
 ```
-Facultatif concernant la commande suivante :
+Facultatif concernant la commande suivante (./tools/setup):
 ```
 ./tools/setup
 ```
