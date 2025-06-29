@@ -19,3 +19,14 @@
 - 05 - [Exemple-server-linux.cfg.](Exemple-server-linux.cfg.md)
 - 06 - [Exemple-router.cfg.](Exemple-router.cfg.md)
 - 07 - [Exemple-ip-public.cfg.](Exemple-ip-public.cfg.md)
+
+---
+
+Merci pour ta visite — et bon déploiement Debian ! 💻🚀
+
+---
+
+<p align="center">
+  🔒 Un guide proposé par <a href="https://github.com/0xCyberLiTech">0xCyberLiTech</a> • Pour des tutoriels accessible à tous.
+</p>
+
