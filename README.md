@@ -19,18 +19,18 @@
 
 | Catégorie | Sujet | Accès Rapide |
 |:---:|:---|:---:|
-| **Tutoriels** | Installation de Nagios Core depuis les sources | [<img src="https://img.shields.io/badge/LIRE-brightgreen?style=for-the-badge&logo=markdown&logoColor=white">](NAGIOS-Core-installation-depuis-les-sources.md) |
-| **Tutoriels** | Script d'installation automatisé | [<img src="https://img.shields.io/badge/VOIR-blue?style=for-the-badge&logo=gnu-bash&logoColor=white">](install-nagios.sh) |
-| **Tutoriels** | Installation du serveur NRPE 4.1.0 | [<img src="https://img.shields.io/badge/LIRE-brightgreen?style=for-the-badge&logo=markdown&logoColor=white">](NRPE-4.1.0-server-installation.md) |
-| **Tutoriels** | Installation du client NRPE 4.1.0 | [<img src="https://img.shields.io/badge/LIRE-brightgreen?style=for-the-badge&logo=markdown&logoColor=white">](NRPE-4.1.0-client-installation.md) |
-| **Tutoriels** | Mise à jour de Nagios Core depuis les sources | [<img src="https://img.shields.io/badge/LIRE-brightgreen?style=for-the-badge&logo=markdown&logoColor=white">](NAGIOS-Core-mise-a-jour-depuis-les-sources.md) |
-| **Configurations** | Exemple : `contacts.cfg` | [<img src="https://img.shields.io/badge/EXEMPLE-9cf?style=for-the-badge&logo=files&logoColor=white">](Exemple-contacts.cfg.md) |
-| **Configurations** | Exemple : `nagios.cfg` | [<img src="https.img.shields.io/badge/EXEMPLE-9cf?style=for-the-badge&logo=files&logoColor=white">](Exemple-nagios.cfg.md) |
-| **Configurations** | Exemple : `templates.cfg` | [<img src="https://img.shields.io/badge/EXEMPLE-9cf?style=for-the-badge&logo=files&logoColor=white">](Exemple-templates.cfg.md) |
-| **Configurations** | Exemple : `hostextinfo.cfg` | [<img src="https://img.shields.io/badge/EXEMPLE-9cf?style=for-the-badge&logo=files&logoColor=white">](Exemple-hostextinfo.cfg.md) |
-| **Configurations** | Exemple : `server-linux.cfg` | [<img src="https://img.shields.io/badge/EXEMPLE-9cf?style=for-the-badge&logo=files&logoColor=white">](Exemple-server-linux.cfg.md) |
-| **Configurations** | Exemple : `router.cfg` | [<img src="https://img.shields.io/badge/EXEMPLE-9cf?style=for-the-badge&logo=files&logoColor=white">](Exemple-router.cfg.md) |
-| **Configurations** | Exemple : `ip-public.cfg` | [<img src="https://img.shields.io/badge/EXEMPLE-9cf?style=for-the-badge&logo=files&logoColor=white">](Exemple-ip-public.cfg.md) |
+| **Tutoriels** | Installation de Nagios Core depuis les sources | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](NAGIOS-Core-installation-depuis-les-sources.md) |
+| **Tutoriels** | Script d'installation automatisé | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](install-nagios.sh) |
+| **Tutoriels** | Installation du serveur NRPE 4.1.0 | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](NRPE-4.1.0-server-installation.md) |
+| **Tutoriels** | Installation du client NRPE 4.1.0 | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](NRPE-4.1.0-client-installation.md) |
+| **Tutoriels** | Mise à jour de Nagios Core depuis les sources | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](NAGIOS-Core-mise-a-jour-depuis-les-sources.md) |
+| **Configurations** | Exemple : `contacts.cfg` | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](Exemple-contacts.cfg.md) |
+| **Configurations** | Exemple : `nagios.cfg` | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](Exemple-nagios.cfg.md) |
+| **Configurations** | Exemple : `templates.cfg` | [<img src="https.img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](Exemple-templates.cfg.md) |
+| **Configurations** | Exemple : `hostextinfo.cfg` | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](Exemple-hostextinfo.cfg.md) |
+| **Configurations** | Exemple : `server-linux.cfg` | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](Exemple-server-linux.cfg.md) |
+| **Configurations** | Exemple : `router.cfg` | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](Exemple-router.cfg.md) |
+| **Configurations** | Exemple : `ip-public.cfg` | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](Exemple-ip-public.cfg.md) |
 
 </div>
 
