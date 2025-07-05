@@ -26,7 +26,7 @@
 | **Tutoriels** | Mise à jour de Nagios Core depuis les sources | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](NAGIOS-Core-mise-a-jour-depuis-les-sources.md) |
 | **Configurations** | Exemple : `contacts.cfg` | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](Exemple-contacts.cfg.md) |
 | **Configurations** | Exemple : `nagios.cfg` | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](Exemple-nagios.cfg.md) |
-| **Configurations** | Exemple : `templates.cfg` | [<img src="https.img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](Exemple-templates.cfg.md) |
+| **Configurations** | Exemple : `templates.cfg` | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](Exemple-templates.cfg.md) |
 | **Configurations** | Exemple : `hostextinfo.cfg` | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](Exemple-hostextinfo.cfg.md) |
 | **Configurations** | Exemple : `server-linux.cfg` | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](Exemple-server-linux.cfg.md) |
 | **Configurations** | Exemple : `router.cfg` | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](Exemple-router.cfg.md) |
