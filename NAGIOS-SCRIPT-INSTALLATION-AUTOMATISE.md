@@ -1,7 +1,7 @@
 <div align="center">
 
 <a href="https://github.com/0xCyberLiTech">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=32&pause=1000&color=D14A4A&center=true&vCenter=true&width=650&lines=SUPERVISION+AVEC+NAGIOS;Installation+%26+Configuration;Tutoriels+%26+Fichiers+d'Exemple;Installation+automatisée+via+script" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=28&pause=1000&color=D14A4A&center=true&vCenter=true&width=900&height=80&lines=SUPERVISION+AVEC+NAGIOS;Installation+et+Configuration;Tutoriels+et+Fichiers+d'Exemple;Installation+automatisée+via+script" alt="Typing SVG" />
 </a>
 
 <p align="center">
