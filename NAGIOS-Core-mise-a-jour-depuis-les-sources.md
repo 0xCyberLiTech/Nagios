@@ -29,7 +29,7 @@
 
 ---
 
-### 🧭 **Script : Mise à jour de Nagios depuis les sources :**
+### 🧭 **Script (update_nagios.sh) : Mise à jour de Nagios depuis les sources :**
 
 Créer un fichier nommé update_nagios.sh vers /usr/local/
 
