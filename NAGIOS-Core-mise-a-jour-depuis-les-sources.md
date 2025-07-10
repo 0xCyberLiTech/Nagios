@@ -122,10 +122,7 @@ sudo make install
 
 ---
 
-**Auteur :** Marc  
 **Mise à jour :** Juillet 2025
-
-
 
 ---
 
