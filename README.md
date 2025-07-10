@@ -39,7 +39,7 @@
 | **Tutoriels** | Script d'installation automatisé | [<img src="https://img.shields.io/badge/EXPLORER-red?style=for-the-badge&logo=github&logoColor=white">]() |
 | **Tutoriels** | Installation du serveur NRPE 4.1.0 | [<img src="https://img.shields.io/badge/EXPLORER-red?style=for-the-badge&logo=github&logoColor=white">]() |
 | **Tutoriels** | Installation du client NRPE 4.1.0 | [<img src="https://img.shields.io/badge/EXPLORER-red?style=for-the-badge&logo=github&logoColor=white">]() |
-| **Tutoriels** | Mise à jour complète de Nagios Core & Nagios plugins depuis les sources. | [<img src="https://img.shields.io/badge/EXPLORER-red?style=for-the-badge&logo=github&logoColor=white">]() |
+| **Tutoriels** | Mise à jour complète de Nagios Core & Nagios plugins depuis les sources. | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](https://github.com/0xCyberLiTech/Nagios/blob/main/NAGIOS-Core-mise-a-jour-depuis-les-sources.md) |
 | **Configurations** | Exemple : `contacts.cfg` | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](Exemple-contacts.cfg.md) |
 | **Configurations** | Exemple : `nagios.cfg` | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](Exemple-nagios.cfg.md) |
 | **Configurations** | Exemple : `templates.cfg` | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](Exemple-templates.cfg.md) |
