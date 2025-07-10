@@ -121,7 +121,9 @@ sudo make install
 > 💡 Ce guide est prévu pour Debian 12+ / Ubuntu 22.04+. Pour CentOS/RHEL, adaptez les chemins et services (ex. httpd au lieu d’apache2).
 
 ---
+
 **Mise à jour :** Juillet 2025
+
 ---
 
 <p align="center">
