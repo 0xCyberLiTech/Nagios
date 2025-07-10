@@ -214,7 +214,7 @@ Nagios Core et ses plugins sont maintenant installés et fonctionnels 🎊
 
 ---
 
-**Mise à jour :** Juillet 2025
+**Mise à jour :** Juillet 2025.
 
 ---
 
