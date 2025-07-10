@@ -1,7 +1,6 @@
+![Nagios](./images/nagios.png)
 
 # 📡 Installation de Nagios Core & Plugins depuis les sources
-
-![Nagios](./images/nagios.png)
 
 ## 🔧 Prérequis
 
