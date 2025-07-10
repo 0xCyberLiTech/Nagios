@@ -29,71 +29,66 @@
 
 ---
 
-### 🧭 **Script (update_nagios.sh) : Mise à jour de Nagios depuis les sources :**
+### 🧭 **Mise à jour de Nagios depuis les sources dans ça dernière version :**
 
-Créer un fichier nommé update_nagios.sh vers /usr/local/
+## NAGIOS Mise à jour depuis les sources.
 
-```bash
-nano /usr/local/update_nagios.sh
+- Téléchargement des sources de Nagios-core dans sa dernère version stable.
 ```
-
-- Copie le code ci-dessous dans ce fichier créé précédemment /usr/local/update_nagios.sh.
-
-```bash
-#!/bin/bash
-
-# ============================================================================
-# 🔄 Script de mise à jour de Nagios Core depuis les sources (version stable)
-# ============================================================================
-
-set -e
-
-echo "📦 Mise à jour de Nagios Core..."
-
-# Dossier de travail
-cd /opt/nagios/ || {
-  echo "❌ Erreur : /opt/nagios/ n'existe pas"
-  exit 1
-}
-
-# Nettoyage des anciennes sources
-echo "🧹 Suppression des anciennes sources..."
+cd /opt/nagios/
+```
+```
 rm -rf nagioscore*
-
-# Récupération de la dernière version disponible
-echo "🌐 Téléchargement de la dernière version de Nagios Core..."
-NAGIOS_VER=$(curl -s https://api.github.com/repos/NagiosEnterprises/nagioscore/releases/latest | grep tag_name | cut -d '"' -f 4)
+```
+```
+NAGIOS_VER=$(curl -s https://api.github.com/repos/NagiosEnterprises/nagioscore/releases/latest|grep tag_name | cut -d '"' -f 4)
+```
+```
 wget https://github.com/NagiosEnterprises/nagioscore/releases/download/$NAGIOS_VER/$NAGIOS_VER.tar.gz
-
-# Extraction
-echo "📦 Extraction de l'archive..."
+```
+- Extraire l'archive $NAGIOS_VER.tar.gz.
+```
 tar -xvzf $NAGIOS_VER.tar.gz
-
-# Compilation
-echo "🛠 Compilation de Nagios Core..."
-cd nagioscore-* || {
-  echo "❌ Erreur : impossible d'accéder au dossier extrait"
-  exit 1
-}
-
+```
+Compile :
+```
+cd nagioscore-nagios-4.5.0/
+```
+```
 ./configure --with-httpd-conf=/etc/apache2/sites-enabled
+```
+```
 make all
+```
+Install Binaries
 
-# Installation
-echo "📥 Installation des binaires, CGI et HTML..."
+Cette étape installe les fichiers binaires, les CGI et les fichiers HTML.
+```
 make install
+```
+Install Service / Daemon
 
-echo "⚙️ Mise à jour du service Nagios..."
+Cela installe les fichiers de service ou de démon. Bien que ceux-ci existent déjà, ils sont mis à jour de temps en temps et doivent donc être remplacés.
+```
 make install-daemoninit
-
-# Mise à jour du fichier de configuration (si besoin)
-echo "📝 Vérification et mise à jour de nagios.cfg..."
-sed -i 's/^lock_file=.*/lock_file=\/var\/run\/nagios.lock/g' /usr/local/nagios/etc/nagios.cfg
-
-echo "✅ Mise à jour de Nagios Core terminée avec succès."
 ```
 
-- Positionner les droits qui conviennent a son exécution. :
+
+IMPORTANT (Update nagios.cfg) :
+
+Si vous effectuez une mise à niveau depuis Nagios Core 4.3.2 et versions antérieures, vous devrez mettre à jour le fichier nagios.cfg pour qu'il pointe vers /var/run/nagios.lock à l'aide de la commande suivante :
+```
+sed -i 's/^lock_file=.*/lock_file=\/var\/run\/nagios.lock/g' /usr/local/nagios/etc/nagios.cfg
+```
+
+
+
+
+
+
+
+
+
 
 ```bash
 chmod +x /usr/local/update_nagios.sh
