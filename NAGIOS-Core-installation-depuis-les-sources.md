@@ -209,10 +209,17 @@ chmod +x install-nagios.sh
 sudo ./install-nagios.sh
 ```
 
----
-**Mise à jour :** Juillet 2025
----
-
 ## 🎉 Félicitations !
 
 Nagios Core et ses plugins sont maintenant installés et fonctionnels 🎊
+
+---
+
+**Mise à jour :** Juillet 2025
+
+---
+
+<p align="center">
+  <b>🔒 Un guide proposé par <a href="https://github.com/0xCyberLiTech">0xCyberLiTech</a> • Pour des tutoriels accessibles à tous. 🔒</b>
+</p>
+
