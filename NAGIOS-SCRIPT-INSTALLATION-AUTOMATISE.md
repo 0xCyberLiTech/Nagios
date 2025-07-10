@@ -38,9 +38,7 @@
 
 ---
 
-### 🧭 **Script :  :**
-
-## Ce script :
+### 🧭 **Script :**
 
 ## Compile la dernière version de Nagios Core et de ses plugins.
 
