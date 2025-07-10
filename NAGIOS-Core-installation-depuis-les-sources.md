@@ -209,8 +209,8 @@ chmod +x install-nagios.sh
 sudo ./install-nagios.sh
 ```
 
+---
 **Mise à jour :** Juillet 2025
-
 ---
 
 ## 🎉 Félicitations !
