@@ -38,24 +38,42 @@
 
 ---
 
-### 🧭 **Script :**
+### 🧭 Installation automatisée de Nagios Core (Debian 12).
 
-## Compile la dernière version de Nagios Core et de ses plugins.
+### 🔧 Présentation
 
-- Configure Apache et l’utilisateur nagiosadmin.
-- Est entièrement interactif (avec confirmation en début de script).
-- Génère automatiquement un mot de passe pour nagiosadmin.
+- Ce script Bash permet une installation complète, interactive et automatisée de Nagios Core ainsi que de ses plugins, avec :
+- Téléchargement des dernières versions depuis GitHub
+- Compilation et configuration automatique
+- Configuration Apache
+- Création de l’utilisateur nagiosadmin avec mot de passe aléatoire affiché
+- Compatible Debian 12
 
-## Contenu du script : install-nagios.sh
+### 📜 Pré-requis
+
+- Système : Debian 12
+- Exécution : en tant que root
+
+### 🛠️ Lancer le script.
+
+#### 1) - Créer un fichier :
 
 ```bash
 nano /usr/local/install-nagios.sh
 ```
 
+#### 2) - Coller le contenu suivant :
+
 ```bash
 #!/bin/bash
 
 set -e
+
+# Vérification des privilèges root
+if [[ "$EUID" -ne 0 ]]; then
+  echo "❌ Ce script doit être exécuté en tant que root."
+  exit 1
+fi
 
 clear
 echo "#############################################"
@@ -99,7 +117,6 @@ apt install -y \
   openssl \
   libssl-dev \
   curl \
-  libmcrypt-dev \
   bc \
   gawk \
   dc \
@@ -128,12 +145,14 @@ echo "[6/10] ➤ Activation des modules Apache"
 a2enmod rewrite
 a2enmod cgi
 
-echo "[7/10] ➤ Création du compte nagiosadmin"
-htpasswd -cb /usr/local/nagios/etc/htpasswd.users $HTPASSWD_USER "$(openssl rand -base64 12)"
-echo "➤ Mot de passe généré automatiquement. Pensez à le modifier plus tard si besoin."
+echo "[7/10] ➤ Création du compte nagiosadmin avec mot de passe généré"
+NAGIOS_PASS=$(openssl rand -base64 12)
+htpasswd -cb /usr/local/nagios/etc/htpasswd.users $HTPASSWD_USER "$NAGIOS_PASS"
+echo "➤ Mot de passe généré automatiquement : $NAGIOS_PASS"
 
-echo "[8/10] ➤ Configuration Apache"
-echo 'RedirectMatch ^/$ /nagios' >> /etc/apache2/apache2.conf
+echo "[8/10] ➤ Configuration Apache : redirection vers /nagios"
+echo 'RedirectMatch ^/$ /nagios' > /etc/apache2/conf-available/nagios-redirect.conf
+a2enconf nagios-redirect
 
 echo "[9/10] ➤ Téléchargement & installation des plugins Nagios"
 cd "$WORKDIR"
@@ -153,15 +172,40 @@ echo
 echo "✅ Nagios est installé avec succès !"
 echo "Accédez à l'interface via : http://<IP_SERVEUR>/nagios"
 echo "Identifiant : $HTPASSWD_USER"
-echo "Mot de passe : (celui généré automatiquement dans le fichier htpasswd)"
+echo "Mot de passe : $NAGIOS_PASS"
 ```
 
-Autoriser le script à s'exécuter :
+#### 3) - Rendre le script exécutable :
 
 ```bash
 chmod +x install-nagios.sh
+```
+```bash
 sudo ./install-nagios.sh
 ```
+
+#### 4) - Lancer le script :
+
+```bash
+./install_nagios.sh
+```
+
+#### 🧪 Exemple de sortie finale :
+
+```bash
+✅ Nagios est installé avec succès !
+Accédez à l'interface via : http://192.168.1.100/nagios
+Identifiant : nagiosadmin
+Mot de passe : Gs8JkLzQ29Pz
+```
+
+#### 🧯 Dépannage :
+
+- Si Apache ne démarre pas : vérifier /etc/apache2/apache2.conf, les permissions, et la syntaxe des fichiers conf.
+- Si l’interface web ne répond pas :
+- Vérifier que le pare-feu autorise le port 80 (ufw allow 80)
+- Vérifier que le module CGI est bien activé (a2enmod cgi)
+- Logs utiles : /var/log/apache2/error.log et /usr/local/nagios/var/nagios.log
 
 ---
 
