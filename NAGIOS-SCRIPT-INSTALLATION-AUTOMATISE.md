@@ -192,7 +192,7 @@ sudo ./install-nagios.sh
 
 #### 🧪 Exemple de sortie finale :
 
-```bash
+```
 ✅ Nagios est installé avec succès !
 Accédez à l'interface via : http://192.168.1.100/nagios
 Identifiant : nagiosadmin
