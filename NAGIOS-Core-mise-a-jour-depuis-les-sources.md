@@ -38,7 +38,7 @@
 
 ---
 
-# 🧭 Mise à jour complète de Nagios Core et des plugins (2025)
+# 🧭 Mise à jour complète de Nagios Core et des plugins (2025).
 
 Ce guide permet de mettre à jour **Nagios Core** et les **Nagios Plugins** vers leur dernière version stable, en utilisant les sources officielles.
 
@@ -46,7 +46,7 @@ Ce guide permet de mettre à jour **Nagios Core** et les **Nagios Plugins** vers
 
 ---
 
-## 📦 1. Téléchargement et préparation de Nagios Core
+## 📦 1. Téléchargement et préparation de Nagios Core.
 
 ```bash
 cd /opt/nagios/
@@ -62,7 +62,7 @@ cd nagioscore-*/
 
 ---
 
-## ⚙️ 2. Compilation et installation de Nagios Core
+## ⚙️ 2. Compilation et installation de Nagios Core.
 
 ```bash
 ./configure --with-httpd-conf=/etc/apache2/sites-enabled
@@ -77,7 +77,7 @@ sudo make install-daemoninit
 
 ---
 
-## 🔧 3. Mise à jour du fichier de configuration `nagios.cfg`
+## 🔧 3. Mise à jour du fichier de configuration `nagios.cfg`.
 
 > Si vous venez d'une version <= 4.3.2, mettez à jour le fichier `nagios.cfg` pour que la directive `lock_file` pointe vers `/var/run/nagios.lock` :
 
@@ -87,7 +87,7 @@ sudo sed -i 's|^lock_file=.*|lock_file=/var/run/nagios.lock|' /usr/local/nagios/
 
 ---
 
-## 🔄 4. Redémarrage du service Nagios
+## 🔄 4. Redémarrage du service Nagios.
 
 ```bash
 sudo systemctl daemon-reexec
@@ -97,7 +97,7 @@ sudo systemctl status nagios
 
 ---
 
-## 🧰 5. Mise à jour des plugins Nagios (nagios-plugins)
+## 🧰 5. Mise à jour des plugins Nagios (nagios-plugins).
 
 ```bash
 cd /opt/nagios/
@@ -117,7 +117,7 @@ sudo make install
 
 ---
 
-## ✅ Récapitulatif final
+## ✅ Récapitulatif final.
 
 | Étape | Description |
 |-------|-------------|
@@ -131,7 +131,7 @@ sudo make install
 
 ---
 
-**Mise à jour :** Juillet 2025
+**Mise à jour :** Juillet 2025.
 
 ---
 
