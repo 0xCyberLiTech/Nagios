@@ -29,70 +29,103 @@
 
 ---
 
-### 🧭 **Mise à jour de Nagios depuis les sources dans ça dernière version :**
+# 🧭 Mise à jour complète de Nagios Core et des plugins (2025)
 
-## NAGIOS Mise à jour depuis les sources.
+Ce guide permet de mettre à jour **Nagios Core** et les **Nagios Plugins** vers leur dernière version stable, en utilisant les sources officielles.
 
-- Téléchargement des sources de Nagios-core dans sa dernère version stable.
-```
-cd /opt/nagios/
-```
-```
-rm -rf nagioscore*
-```
-```
-NAGIOS_VER=$(curl -s https://api.github.com/repos/NagiosEnterprises/nagioscore/releases/latest|grep tag_name | cut -d '"' -f 4)
-```
-```
-wget https://github.com/NagiosEnterprises/nagioscore/releases/download/$NAGIOS_VER/$NAGIOS_VER.tar.gz
-```
-- Extraire l'archive $NAGIOS_VER.tar.gz.
-```
-tar -xvzf $NAGIOS_VER.tar.gz
-```
-Compile :
-```
-cd nagioscore-nagios-4.5.0/
-```
-```
-./configure --with-httpd-conf=/etc/apache2/sites-enabled
-```
-```
-make all
-```
-Install Binaries
+> ✅ Compatible avec **Nagios Core 4.5.0** et **nagios-plugins 2.4.7** (juillet 2025).
 
-Cette étape installe les fichiers binaires, les CGI et les fichiers HTML.
-```
-make install
-```
-Install Service / Daemon
+---
 
-Cela installe les fichiers de service ou de démon. Bien que ceux-ci existent déjà, ils sont mis à jour de temps en temps et doivent donc être remplacés.
-```
-make install-daemoninit
-```
-
-
-IMPORTANT (Update nagios.cfg) :
-
-Si vous effectuez une mise à niveau depuis Nagios Core 4.3.2 et versions antérieures, vous devrez mettre à jour le fichier nagios.cfg pour qu'il pointe vers /var/run/nagios.lock à l'aide de la commande suivante :
-```
-sed -i 's/^lock_file=.*/lock_file=\/var\/run\/nagios.lock/g' /usr/local/nagios/etc/nagios.cfg
-```
-
-
-
-
-
-
-
-
-
+## 📦 1. Téléchargement et préparation de Nagios Core
 
 ```bash
-chmod +x /usr/local/update_nagios.sh
+cd /opt/nagios/
+sudo rm -rf nagioscore*
+
+# Récupération de la dernière version stable depuis GitHub
+NAGIOS_VER=$(curl -s https://api.github.com/repos/NagiosEnterprises/nagioscore/releases/latest | grep tag_name | cut -d '"' -f 4)
+
+wget https://github.com/NagiosEnterprises/nagioscore/releases/download/$NAGIOS_VER/$NAGIOS_VER.tar.gz
+tar -xvzf $NAGIOS_VER.tar.gz
+cd nagioscore-*/
 ```
+
+---
+
+## ⚙️ 2. Compilation et installation de Nagios Core
+
+```bash
+./configure --with-httpd-conf=/etc/apache2/sites-enabled
+make all
+
+# Installation des binaires, CGI et fichiers HTML
+sudo make install
+
+# Installation du service Nagios
+sudo make install-daemoninit
+```
+
+---
+
+## 🔧 3. Mise à jour du fichier de configuration `nagios.cfg`
+
+> Si vous venez d'une version <= 4.3.2, mettez à jour le fichier `nagios.cfg` pour que la directive `lock_file` pointe vers `/var/run/nagios.lock` :
+
+```bash
+sudo sed -i 's|^lock_file=.*|lock_file=/var/run/nagios.lock|' /usr/local/nagios/etc/nagios.cfg
+```
+
+---
+
+## 🔄 4. Redémarrage du service Nagios
+
+```bash
+sudo systemctl daemon-reexec
+sudo systemctl restart nagios
+sudo systemctl status nagios
+```
+
+---
+
+## 🧰 5. Mise à jour des plugins Nagios (nagios-plugins)
+
+```bash
+cd /opt/nagios/
+sudo rm -rf nagios-plugins*
+
+# Récupération de la dernière version stable depuis GitHub
+PLUGIN_VER=$(curl -s https://api.github.com/repos/nagios-plugins/nagios-plugins/releases/latest | grep tag_name | cut -d '"' -f 4)
+
+wget https://github.com/nagios-plugins/nagios-plugins/releases/download/$PLUGIN_VER/$PLUGIN_VER.tar.gz
+tar -xvzf $PLUGIN_VER.tar.gz
+cd nagios-plugins-*/
+
+./configure
+make
+sudo make install
+```
+
+---
+
+## ✅ Récapitulatif final
+
+| Étape | Description |
+|-------|-------------|
+| Téléchargement | Utilisation des dernières versions via API GitHub |
+| Compilation | `configure`, `make`, `make install` comme recommandé |
+| Service | Redémarrage via `systemctl` |
+| Plugins | Ajout de la mise à jour de `nagios-plugins` |
+| Robustesse | Utilisation de `cd nagioscore-*/` et chemins dynamiques |
+
+> 💡 Ce guide est prévu pour Debian 12+ / Ubuntu 22.04+. Pour CentOS/RHEL, adaptez les chemins et services (ex. httpd au lieu d’apache2).
+
+---
+
+**Auteur :** Marc  
+**Mise à jour :** Juillet 2025
+
+
 
 ---
 
