@@ -5,8 +5,8 @@
 ```
 # --------------------------------------------------------------------------
 # 0xCyberLiTech
-# Date de création : le 21-06-2023
-# Date de modification : le 25-06-2023
+# Date de création : le 10-07-2025
+# Date de modification : le 10-07-2025
 # CONTACTS.CFG - Exemple de fichier de configuration pour Nagios.
 # /usr/local/nagios/etc/objects/contacts.cfg
 # --------------------------------------------------------------------------
