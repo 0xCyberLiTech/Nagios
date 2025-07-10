@@ -40,7 +40,7 @@
 
 ### 🧭 Installation automatisée de Nagios Core (Debian 12).
 
-### 🔧 Présentation
+### 🔧 Présentation :
 
 - Ce script Bash permet une installation complète, interactive et automatisée de Nagios Core ainsi que de ses plugins, avec :
 - Téléchargement des dernières versions depuis GitHub
@@ -49,20 +49,20 @@
 - Création de l’utilisateur nagiosadmin avec mot de passe aléatoire affiché
 - Compatible Debian 12
 
-### 📜 Pré-requis
+### 📜 Pré-requis :
 
 - Système : Debian 12
 - Exécution : en tant que root
 
 ### 🛠️ Lancer le script.
 
-#### 1) - Créer un fichier :
+#### ✅ 1) - Créer un fichier :
 
 ```bash
 nano /usr/local/install-nagios.sh
 ```
 
-#### 2) - Coller le contenu suivant :
+#### ✅ 2) - Coller le contenu suivant :
 
 ```bash
 #!/bin/bash
@@ -175,7 +175,7 @@ echo "Identifiant : $HTPASSWD_USER"
 echo "Mot de passe : $NAGIOS_PASS"
 ```
 
-#### 3) - Rendre le script exécutable :
+#### ✅ 3) - Rendre le script exécutable :
 
 ```bash
 chmod +x install-nagios.sh
@@ -184,7 +184,7 @@ chmod +x install-nagios.sh
 sudo ./install-nagios.sh
 ```
 
-#### 4) - Lancer le script :
+#### ✅ 4) - Lancer le script :
 
 ```bash
 ./install_nagios.sh
