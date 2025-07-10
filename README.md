@@ -35,7 +35,7 @@
 
 | Catégorie | Sujet | Accès Rapide |
 |:---:|:---|:---:|
-| **Tutoriels** | Installation de Nagios Core depuis les sources | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](NAGIOS-Core-installation-depuis-les-sources.md) |
+| **Tutoriels** | Installation de Nagios Core & Nagios Plugins depuis les sources. | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](NAGIOS-Core-installation-depuis-les-sources.md) |
 | **Tutoriels** | Script d'installation automatisé | [<img src="https://img.shields.io/badge/EXPLORER-red?style=for-the-badge&logo=github&logoColor=white">]() |
 | **Tutoriels** | Installation du serveur NRPE 4.1.0 | [<img src="https://img.shields.io/badge/EXPLORER-red?style=for-the-badge&logo=github&logoColor=white">]() |
 | **Tutoriels** | Installation du client NRPE 4.1.0 | [<img src="https://img.shields.io/badge/EXPLORER-red?style=for-the-badge&logo=github&logoColor=white">]() |
