@@ -1,25 +1,25 @@
 ![Nagios](./images/nagios.png)
 
-# 📡 Installation de Nagios Core & Plugins depuis les sources
+# 📡 Installation de Nagios Core & Plugins depuis les sources (2025).
 
-## 🔧 Prérequis
+## 🔧 Prérequis :
 
 Assurez-vous d’avoir un système Debian/Ubuntu à jour.
 
-## 📁 1. Préparation du répertoire de travail
+## 📁 1. Préparation du répertoire de travail.
 
 ```bash
 mkdir -p /opt/nagios/
 cd /opt/nagios/
 ```
 
-## 🔄 2. Mise à jour du système
+## 🔄 2. Mise à jour du système.
 
 ```bash
 apt update && apt upgrade -y
 ```
 
-## 📦 3. Installation des dépendances nécessaires
+## 📦 3. Installation des dépendances nécessaires.
 
 ```bash
 apt install -y \
@@ -41,7 +41,7 @@ apt install -y \
   curl
 ```
 
-## 📥 4. Téléchargement et extraction de la dernière version de Nagios Core
+## 📥 4. Téléchargement et extraction de la dernière version de Nagios Core.
 
 ```bash
 NAGIOS_VER=$(curl -s https://api.github.com/repos/NagiosEnterprises/nagioscore/releases/latest | grep tag_name | cut -d '"' -f 4)
@@ -50,7 +50,7 @@ tar -xvzf $NAGIOS_VER.tar.gz
 cd $NAGIOS_VER
 ```
 
-## 🛠️ 5. Compilation et installation de Nagios Core
+## 🛠️ 5. Compilation et installation de Nagios Core.
 
 ```bash
 ./configure --with-httpd-conf=/etc/apache2/sites-enabled
@@ -64,14 +64,14 @@ make install-config
 make install-webconf
 ```
 
-## 🌐 6. Activation des modules Apache
+## 🌐 6. Activation des modules Apache.
 
 ```bash
 a2enmod rewrite
 a2enmod cgi
 ```
 
-## 🔥 7. (Optionnel) Ouverture du port 80 via iptables
+## 🔥 7. (Optionnel) Ouverture du port 80 via iptables.
 
 ```bash
 # iptables -I INPUT -p tcp --destination-port 80 -j ACCEPT
@@ -86,13 +86,13 @@ a2enmod cgi
 htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
 ```
 
-## 🌐 9. Redirection vers l’interface web Nagios
+## 🌐 9. Redirection vers l’interface web Nagios.
 
 ```bash
 echo 'RedirectMatch ^/$ /nagios' >> /etc/apache2/apache2.conf
 ```
 
-## ▶️ 10. Démarrage des services
+## ▶️ 10. Démarrage des services.
 
 ```bash
 systemctl start apache2.service
@@ -101,7 +101,7 @@ systemctl start nagios.service
 
 ---
 
-## ✅ Accès à l’interface Web
+## ✅ Accès à l’interface Web.
 
 Rendez-vous à l’adresse suivante dans un navigateur :
 
@@ -114,9 +114,9 @@ Utilisez l’identifiant `nagiosadmin` et le mot de passe défini précédemment
 
 ---
 
-# 🔌 Installation des Plugins Nagios
+# 🔌 Installation des Plugins Nagios.
 
-## 📦 1. Installation des dépendances
+## 📦 1. Installation des dépendances.
 
 ```bash
 cd /opt/nagios/
@@ -137,7 +137,7 @@ apt install -y \
   gettext
 ```
 
-## 📥 2. Téléchargement de la dernière version des plugins
+## 📥 2. Téléchargement de la dernière version des plugins.
 
 ```bash
 VER=$(curl -s https://api.github.com/repos/nagios-plugins/nagios-plugins/releases/latest | grep tag_name | cut -d '"' -f 4 | sed 's/release-//')
@@ -153,7 +153,7 @@ VER=2.4.8
 wget https://nagios-plugins.org/download/nagios-plugins-$VER.tar.gz
 ```
 
-## 🗜️ 3. Extraction et compilation
+## 🗜️ 3. Extraction et compilation.
 
 ```bash
 tar -xvzf nagios-plugins-${VER}.tar.gz
@@ -166,7 +166,7 @@ make install
 
 ---
 
-## 🧪 Vérification dans l’interface Web
+## 🧪 Vérification dans l’interface Web.
 
 ```
 http://<IP_SERVEUR>/nagios
@@ -183,14 +183,14 @@ http://<FQDN_SERVEUR>/nagios
 
 ---
 
-## ♻️ Redémarrage des services
+## ♻️ Redémarrage des services.
 
 ```bash
 systemctl restart apache2.service
 systemctl restart nagios.service
 ```
 
-## 🧹 Nettoyage (si applicable)
+## 🧹 Nettoyage (si applicable).
 
 ```bash
 rm -rf $TEMP_FOLDER
@@ -198,7 +198,7 @@ rm -rf $TEMP_FOLDER
 
 ---
 
-## 🤖 Installation automatisée
+## 🤖 Installation automatisée.
 
 Un script est disponible :
 
