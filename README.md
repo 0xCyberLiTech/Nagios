@@ -58,7 +58,7 @@ Légende des couleurs des boutons :
 
 | Catégorie | Sujet | Accès Rapide |
 |:---:|:---|:---:|
-| **Tutoriels** | Installation complète de Nagios (sources). | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](NAGIOS-Core-installation-depuis-les-sources.md) |
+| **Tuto** | Installation complète de Nagios (sources). | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](NAGIOS-Core-installation-depuis-les-sources.md) |
 | **Tuto** | Script d'installation automatisé | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](NAGIOS-SCRIPT-INSTALLATION-AUTOMATISE.md) |
 | **Tuto** | Installation du serveur NRPE 4.1.0 | [<img src="https://img.shields.io/badge/EXPLORER-red?style=for-the-badge&logo=github&logoColor=white">]() |
 | **Tuto** | Installation du client NRPE 4.1.0 | [<img src="https://img.shields.io/badge/EXPLORER-red?style=for-the-badge&logo=github&logoColor=white">]() |
