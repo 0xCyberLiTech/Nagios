@@ -43,7 +43,7 @@
 
 ## 🔧 Prérequis :
 
-Assurez-vous d’avoir un système Debian/Ubuntu à jour.
+Assurez-vous d’avoir un système Debian à jour.
 
 ## 📁 1. Préparation du répertoire de travail.
 
