@@ -128,8 +128,6 @@ sudo make install
 | Plugins | Ajout de la mise à jour de `nagios-plugins` |
 | Robustesse | Utilisation de `cd nagioscore-*/` et chemins dynamiques |
 
-> 💡 Ce guide est prévu pour Debian 12+ / Ubuntu 22.04+. Pour CentOS/RHEL, adaptez les chemins et services (ex. httpd au lieu d’apache2).
-
 ---
 
 **Mise à jour :** Juillet 2025.
