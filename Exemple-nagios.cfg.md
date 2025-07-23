@@ -1,7 +1,48 @@
-<a name="Exemple-nagios.cfg.md"></a>
 ![Nagios](./images/nagios.png)
 
+<div align="center">
+
+<a href="https://github.com/0xCyberLiTech">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=32&pause=1000&color=D14A4A&center=true&vCenter=true&width=650&lines=SUPERVISION+AVEC+NAGIOS;Installation+%26+Configuration;Tutoriels+%26+Fichiers+d'Exemple" alt="Typing SVG" />
+</a>
+
+<p align="center">
+  <em>Tutoriels et configurations pour la supervision avec Nagios Core.</em><br>
+  <b>📊 Monitoring – 📈 Performance – ⚙️ Fiabilité</b>
+</p>
+
+</div>
+
+---
+
+### 👨‍💻 **À propos de moi.**
+
+> Bienvenue dans mon **laboratoire numérique personnel** dédié à l’apprentissage et à la vulgarisation de la cybersécurité.  
+> Passionné par **Linux**, la **cryptographie** et les **systèmes sécurisés**, je partage ici mes notes, expérimentations et fiches pratiques.  
+>  
+> 🎯 **Objectif :** proposer un contenu clair, structuré et accessible pour étudiants, curieux et professionnels de l’IT.  
+> 🔗 [Mon GitHub principal](https://github.com/0xCyberLiTech)
+
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=linux,debian,bash,docker,nginx,git,vim" alt="Skills" />
+  </a>
+</p>
+
+---
+
+### 🎯 **Objectif de ce dépôt.**
+
+> Ce dépôt a pour vocation de centraliser un ensemble de notions clés en supervision informatique. Il s’adresse aux passionnés, étudiants et professionnels souhaitant mieux comprendre les enjeux de la
+> surveillance des systèmes d'information, apprendre à mettre en place des outils de monitoring efficaces et se familiariser avec les concepts et bonnes pratiques pour maintenir la performance et la stabilité de
+> leurs environnements IT.
+
+---
+
+<a name="Exemple-nagios.cfg.md"></a>
+
 ## Exemple concernant le fichier /usr/local/nagios/etc/nagios.cfg
+
 ```
 # --------------------------------------------------------------------------
 # 0xCyberLiTech
