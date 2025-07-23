@@ -367,3 +367,13 @@ Nous pouvons voir, que la machine (srv-linux-01) en local est monitorée.
 ![Check_command_Nagios](./images/Nagios_check_command.png)
 
 La prochaine étape consiste à monitorer la machine distante (srv-linux-02) avec le plugin NRPE. [Installation_NRPE_4.1.0-server](Installation_NRPE_4.1.0-server.md)
+
+---
+
+**📅 Mise à jour :** Juillet 2025
+
+---
+
+<p align="center">
+  <b>🔒 Un guide proposé par <a href="https://github.com/0xCyberLiTech">0xCyberLiTech</a> • Pour une supervision accessible et efficace 🔒</b>
+</p>
