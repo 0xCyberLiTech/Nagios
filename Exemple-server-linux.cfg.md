@@ -290,10 +290,6 @@ systemctl status nagios.service
 
 ---
 
-**📅 Mise à jour :** Juillet 2025
-
----
-
 <p align="center">
-  <b>🔒 Un guide proposé par <a href="https://github.com/0xCyberLiTech">0xCyberLiTech</a> • Pour une supervision accessible et efficace 🔒</b>
+  <b>🔐 Un guide proposé par <a href="https://github.com/0xCyberLiTech">0xCyberLiTech</a> • Pour une cybersécurité compréhensible et efficace. 🔐</b>
 </p>
