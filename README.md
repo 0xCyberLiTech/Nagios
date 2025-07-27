@@ -66,15 +66,15 @@ Légende des couleurs des boutons :
 | Catégorie | Sujet | Accès Rapide |
 |:---:|:---|:---:|
 | **Tuto** | Installation complète de Nagios (sources). | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](NAGIOS-Core-installation-depuis-les-sources.md) |
-| **Tuto** | Script d'installation automatisé | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](NAGIOS-SCRIPT-INSTALLATION-AUTOMATISE.md) |
+| **Tuto** | Script d'installation automatisé | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](NAGIOS-Script-installation-automatise.md) |
 | **Tuto** | Mise à jour complète de Nagios (sources). | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](NAGIOS-Core-mise-a-jour-depuis-les-sources.md) |
-| **Config** | Exemple : `contacts.cfg` | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](Exemple-contacts.cfg.md) |
-| **Config** | Exemple : `nagios.cfg` | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](Exemple-nagios.cfg.md) |
-| **Config** | Exemple : `templates.cfg` | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](Exemple-templates.cfg.md) |
-| **Config** | Exemple : `hostextinfo.cfg` | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](Exemple-hostextinfo.cfg.md) |
-| **Config** | Exemple : `server-linux.cfg` | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](Exemple-server-linux.cfg.md) |
-| **Config** | Exemple : `router.cfg` | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](Exemple-router.cfg.md) |
-| **Config** | Exemple : `ip-public.cfg` | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](Exemple-ip-public.cfg.md) |
+| **Config** | Exemple : `contacts.cfg` | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](NAGIOS-Exemple-contacts.cfg.md) |
+| **Config** | Exemple : `nagios.cfg` | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](NAGIOS-Exemple-nagios.cfg.md) |
+| **Config** | Exemple : `templates.cfg` | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](NAGIOS-Exemple-templates.cfg.md) |
+| **Config** | Exemple : `hostextinfo.cfg` | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](NAGIOS-Exemple-hostextinfo.cfg.md) |
+| **Config** | Exemple : `server-linux.cfg` | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](NAGIOS-Exemple-server-linux.cfg.md) |
+| **Config** | Exemple : `router.cfg` | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](NAGIOS-Exemple-router.cfg.md) |
+| **Config** | Exemple : `ip-public.cfg` | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](NAGIOS-Exemple-ip-public.cfg.md) |
 
 </div>
 
