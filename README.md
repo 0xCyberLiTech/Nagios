@@ -66,7 +66,6 @@ Légende des couleurs des boutons :
 | Catégorie | Sujet | Accès Rapide |
 |:---:|:---|:---:|
 | **Tuto** | Installation complète de Nagios (sources). | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](NAGIOS-Core-installation-depuis-les-sources.md) |
-| **Tuto** | Script d'installation automatisé | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](NAGIOS-Script-installation-automatise.md) |
 | **Tuto** | Mise à jour complète de Nagios (sources). | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](NAGIOS-Core-mise-a-jour-depuis-les-sources.md) |
 | **Config** | Exemple : `contacts.cfg` | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](NAGIOS-Exemple-contacts.cfg.md) |
 | **Config** | Exemple : `nagios.cfg` | [<img src="https://img.shields.io/badge/EXPLORER-brightgreen?style=for-the-badge&logo=github&logoColor=white">](NAGIOS-Exemple-nagios.cfg.md) |
