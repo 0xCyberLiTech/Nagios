@@ -89,7 +89,9 @@ cfg_file=/usr/local/nagios/etc/objects/localhost.cfg
 # Definitions for monitoring a network printer
 #cfg_file=/usr/local/nagios/etc/objects/printer.cfg
 ```
+
 Nous pouvons constater que les lignes suivantes de base ne sont pas commentées (#) :
+
 ```
 cfg_file=/usr/local/nagios/etc/objects/commands.cfg
 cfg_file=/usr/local/nagios/etc/objects/contacts.cfg
@@ -97,8 +99,10 @@ cfg_file=/usr/local/nagios/etc/objects/timeperiods.cfg
 cfg_file=/usr/local/nagios/etc/objects/templates.cfg
 cfg_file=/usr/local/nagios/etc/objects/localhost.cfg
 ```
+
 Donc ces fichiers existent vers /usr/local/nagios/etc/objects/
 Il est donc possible de déclarer arbitrairement de nouveaux fichiers dans /usr/local/nagios/etc/nagios.cfg
+
 ```
 Exemples :
 
@@ -107,29 +111,37 @@ cfg_file=/usr/local/nagios/etc/objects/serveurs-windows.cfg
 cfg_file=/usr/local/nagios/etc/objects/routeurs.cfg
 cfg_file=/usr/local/nagios/etc/objects/imprimantes.cfg
 ```
+
 A partir de cet instant il faudra créer ceux-ci vers /usr/local/nagios/etc/objects/
+
 ```
 touch /usr/local/nagios/etc/objects/serveurs-linux.cfg
 touch /usr/local/nagios/etc/objects/serveurs-windows.cfg
 touch /usr/local/nagios/etc/objects/routeurs.cfg
 touch /usr/local/nagios/etc/objects/imprimantes.cfg
 ```
+
 Je vous conseille de mettre en service qu'un fichier à la fois.
+
 ```
 cfg_file=/usr/local/nagios/etc/objects/serveurs-linux.cfg
 #cfg_file=/usr/local/nagios/etc/objects/serveurs-windows.cfg
 #cfg_file=/usr/local/nagios/etc/objects/routeurs.cfg
 #cfg_file=/usr/local/nagios/etc/objects/imprimantes.cfg
 ```
+
 Ne pas oublier de sauvegarder votre fichier /usr/local/nagios/etc/nagios.cfg
 Positionner les droits qui conviennent sur ces fichiers.
+
 ```
 chown nagios:nagios /usr/local/nagios/etc/objects/serveurs-linux.cfg
 chown nagios:nagios /usr/local/nagios/etc/objects/serveurs-windows.cfg
 chown nagios:nagios /usr/local/nagios/etc/objects/routeurs.cfg
 chown nagios:nagios /usr/local/nagios/etc/objects/imprimantes.cfg
 ```
+
 Exemple, configuration injectée dans le fichier /usr/local/nagios/etc/objects/serveur-linux.cfg
+
 ```
 # --------------------------------------------------------------------------
 # 0xCyberLiTech
@@ -307,7 +319,9 @@ define service {
      retry_interval          1
 }
 ```
+
 Tester dabord votre nouvelle configuration que vous avez saisie dans le fichier /usr/local/nagios/etc/objects/serveur-linux.cfg à l'aide de la commande suivante :
+
 ```
 # --------------------------------------------------------------------------
 # - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG - MOD DEBUG -
@@ -337,10 +351,13 @@ Checking misc settings...
 Total Warnings: 0
 Total Errors:   0
 ```
+
 Si il n'y a pas d'erreur sur cette nouvelle configuration (server-linux.cfg), redémarrer Nagios pour la prise en compte de cette configuration.
+
 ```
 systemctl restart nagios.service
 ```
+
 ```
 systemctl status nagios.service
 
@@ -368,6 +385,7 @@ systemctl status nagios.service
              ├─13295 /usr/local/nagios/libexec/check_ping -H 192.168.50.110 -w 100.0,20% -c 500.0,60% -p 5
              └─13297 /usr/bin/ping -n -U -w 10 -c 5 192.168.50.110
 ```
+
 Nous pouvons voir, que la machine (srv-linux-01) en local est monitorée.
 
 ![Check_command_Nagios](./images/Nagios_check_command.png)
