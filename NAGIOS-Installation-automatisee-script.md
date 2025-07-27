@@ -187,6 +187,7 @@ echo "Mot de passe : $NAGIOS_PASS"
 ```bash
 chmod +x install-nagios.sh
 ```
+
 ```bash
 sudo ./install-nagios.sh
 ```
