@@ -235,23 +235,7 @@ systemctl restart apache2.service
 systemctl restart nagios.service
 ```
 
-## 🧹 Nettoyage (si applicable).
-
-```bash
-rm -rf $TEMP_FOLDER
-```
-
 ---
-
-## 🤖 Installation automatisée.
-
-Un script est disponible :
-
-```bash
-touch install-nagios.sh
-chmod +x install-nagios.sh
-sudo ./install-nagios.sh
-```
 
 ## 🎉 Félicitations !
 
