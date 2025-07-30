@@ -1,6 +1,10 @@
-<div align="center">
+<p align="center">
+  <a href="https://github.com/0xCyberLiTech" target="_blank" rel="noopener">
+    <img src="./images/nagios.png" alt="Logo Nagios" width="360">
+  </a>
+</p>
 
-  ![Nagios](./images/nagios.png)
+<div align="center">
 
   <a href="https://github.com/0xCyberLiTech">
     <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=32&pause=1000&color=D14A4A&center=true&vCenter=true&width=650&lines=SUPERVISION+AVEC+NAGIOS;Installation+%26+Configuration;Tutoriels+%26+Fichiers+d'Exemple" alt="Typing SVG" />
