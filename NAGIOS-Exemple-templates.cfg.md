@@ -5,11 +5,7 @@
       <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=50&duration=6000&pause=1000000000&color=FF0048&center=true&vCenter=true&width=1100&lines=%3ESUPERVISION+NAGIOS_" alt="Titre dynamique SUPERVISION NAGIOS" />
     </a>
   <br></br>
-  
-  <a href="https://github.com/0xCyberLiTech">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=32&pause=1000&color=D14A4A&center=true&vCenter=true&width=650&lines=SUPERVISION+AVEC+NAGIOS;Installation+%26+Configuration;Tutoriels+%26+Fichiers+d'Exemple" alt="Typing SVG" />
-  </a>
-  
+
   <p align="center">
     <em>Tutoriels et configurations pour la supervision avec Nagios Core.</em><br>
     <b>📊 Monitoring – 📈 Performance – ⚙️ Fiabilité</b>
