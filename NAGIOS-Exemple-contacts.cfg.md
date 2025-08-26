@@ -62,8 +62,6 @@ Le contenu est structuré, accessible et optimisé SEO pour répondre aux besoin
 
 ---
 
-<a name="Exemple-contacts.cfg.md"></a>
-
 ## Exemple concernant le fichier /usr/local/nagios/etc/contacts.cfg
 
 ```
