@@ -72,18 +72,18 @@ Le contenu est structuré, accessible et optimisé SEO pour répondre aux besoin
 
 <div align="center">
 
-| Catégorie | Sujet | Accès Rapide |
-|:---:|:---|:---:|
-| **Tuto** | Installation complète de Nagios (sources). | [![Explorer](https://img.shields.io/badge/EXPLORER-4CAF50?style=for-the-badge&logo=github&logoColor=white)](NAGIOS-Core-installation-depuis-les-sources.md) |
-| **Tuto** | Mise à jour complète de Nagios (sources). | [![Explorer](https://img.shields.io/badge/EXPLORER-4CAF50?style=for-the-badge&logo=github&logoColor=white)](NAGIOS-Core-mise-a-jour-depuis-les-sources.md) |
-| **Script** | Installation automatisée de Nagios (sources). | [![Explorer](https://img.shields.io/badge/EXPLORER-4CAF50?style=for-the-badge&logo=github&logoColor=white)](NAGIOS-Installation-automatisee-script.md) |
-| **Config** | Exemple : `contacts.cfg` | [![Explorer](https://img.shields.io/badge/EXPLORER-4CAF50?style=for-the-badge&logo=github&logoColor=white)](NAGIOS-Exemple-contacts.cfg.md) |
-| **Config** | Exemple : `nagios.cfg` | [![Explorer](https://img.shields.io/badge/EXPLORER-4CAF50?style=for-the-badge&logo=github&logoColor=white)](NAGIOS-Exemple-nagios.cfg.md) |
-| **Config** | Exemple : `templates.cfg` | [![Explorer](https://img.shields.io/badge/EXPLORER-4CAF50?style=for-the-badge&logo=github&logoColor=white)](NAGIOS-Exemple-templates.cfg.md) |
-| **Config** | Exemple : `hostextinfo.cfg` | [![Explorer](https://img.shields.io/badge/EXPLORER-4CAF50?style=for-the-badge&logo=github&logoColor=white)](NAGIOS-Exemple-hostextinfo.cfg.md) |
-| **Config** | Exemple : `server-linux.cfg` | [![Explorer](https://img.shields.io/badge/EXPLORER-4CAF50?style=for-the-badge&logo=github&logoColor=white)](NAGIOS-Exemple-server-linux.cfg.md) |
-| **Config** | Exemple : `router.cfg` | [![Explorer](https://img.shields.io/badge/EXPLORER-4CAF50?style=for-the-badge&logo=github&logoColor=white)](NAGIOS-Exemple-router.cfg.md) |
-| **Config** | Exemple : `ip-public.cfg` | [![Explorer](https://img.shields.io/badge/EXPLORER-4CAF50?style=for-the-badge&logo=github&logoColor=white)](NAGIOS-Exemple-ip-public.cfg.md) |
+| Catégorie  | Sujet                                         | Accès Rapide                                                                                                                                                |
+|------------|-----------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Tuto**   | Installation complète de Nagios (sources).    | [![Explorer](https://img.shields.io/badge/EXPLORER-4CAF50?style=for-the-badge&logo=github&logoColor=white)](NAGIOS-Core-installation-depuis-les-sources.md) |
+| **Tuto**   | Mise à jour complète de Nagios (sources).     | [![Explorer](https://img.shields.io/badge/EXPLORER-4CAF50?style=for-the-badge&logo=github&logoColor=white)](NAGIOS-Core-mise-a-jour-depuis-les-sources.md)  |
+| **Script** | Installation automatisée de Nagios (sources). | [![Explorer](https://img.shields.io/badge/EXPLORER-4CAF50?style=for-the-badge&logo=github&logoColor=white)](NAGIOS-Installation-automatisee-script.md)      |
+| **Config** | Exemple : `contacts.cfg`                      | [![Explorer](https://img.shields.io/badge/EXPLORER-4CAF50?style=for-the-badge&logo=github&logoColor=white)](NAGIOS-Exemple-contacts.cfg.md)                 |
+| **Config** | Exemple : `nagios.cfg`                        | [![Explorer](https://img.shields.io/badge/EXPLORER-4CAF50?style=for-the-badge&logo=github&logoColor=white)](NAGIOS-Exemple-nagios.cfg.md)                   |
+| **Config** | Exemple : `templates.cfg`                     | [![Explorer](https://img.shields.io/badge/EXPLORER-4CAF50?style=for-the-badge&logo=github&logoColor=white)](NAGIOS-Exemple-templates.cfg.md)                |
+| **Config** | Exemple : `hostextinfo.cfg`                   | [![Explorer](https://img.shields.io/badge/EXPLORER-4CAF50?style=for-the-badge&logo=github&logoColor=white)](NAGIOS-Exemple-hostextinfo.cfg.md)              |
+| **Config** | Exemple : `server-linux.cfg`                  | [![Explorer](https://img.shields.io/badge/EXPLORER-4CAF50?style=for-the-badge&logo=github&logoColor=white)](NAGIOS-Exemple-server-linux.cfg.md)             |
+| **Config** | Exemple : `router.cfg`                        | [![Explorer](https://img.shields.io/badge/EXPLORER-4CAF50?style=for-the-badge&logo=github&logoColor=white)](NAGIOS-Exemple-router.cfg.md)                   |
+| **Config** | Exemple : `ip-public.cfg`                     | [![Explorer](https://img.shields.io/badge/EXPLORER-4CAF50?style=for-the-badge&logo=github&logoColor=white)](NAGIOS-Exemple-ip-public.cfg.md)                |
 
 </div>
 
